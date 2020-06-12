@@ -3,7 +3,7 @@
 @section('content')
 <div class="container" style="height: auto;">
   <div class="row align-items-center">
-    <div class="col-lg-4 col-md-6 col-sm-8 ml-auto mr-auto">
+    <div class="col-lg-8 col-md-12 col-sm-8 ml-auto mr-auto">
       <form class="form" method="POST" action="{{ route('register') }}">
         @csrf
 
@@ -31,7 +31,7 @@
                       <i class="material-icons">face</i>
                   </span>
                 </div>
-                <input type="text" name="name" class="form-control" placeholder="{{ __('Name...') }}" value="{{ old('name') }}" required>
+                <input type="text" name="name" class="form-control" placeholder="{{ __(' Name...') }}" value="{{ old('name') }}" required>
               </div>
               @if ($errors->has('name'))
                 <div id="name-error" class="error text-danger pl-3" for="name" style="display: block;">
@@ -39,6 +39,120 @@
                 </div>
               @endif
             </div>
+
+            <div class="bmd-form-group mt-3">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">lock_outline</i>
+                  </span>
+                </div>
+                <input type="number" name="cpf" id="cpf" class="form-control" placeholder="{{ __(' CPF...') }}" required>
+              </div>
+            </div>
+
+            <div class="bmd-form-group mt-3">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">lock_outline</i>
+                  </span>
+                </div>
+                <input type="number" name="rg" id="rg" class="form-control cpf-mask" placeholder="{{ __(' RG...') }}" required>
+              </div>
+            </div>
+
+            {{-- <div class="bmd-form-group mt-3">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">lock_outline</i>
+                  </span>
+                </div>
+                <input type="text" name="nascimento" id="nascimento" class="form-control" placeholder="{{ __(' Data de Nascimento...') }}" onfocus="(this.type='date')" required>
+              </div>
+            </div> --}}
+
+            <div class="bmd-form-group mt-3">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">lock_outline</i>
+                  </span>
+                </div>
+                <input type="number" name="cep" id="cep" class="form-control" placeholder="{{ __(' CEP...') }}" required>
+              </div>
+            </div>
+
+            <div class="bmd-form-group mt-3">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">lock_outline</i>
+                  </span>
+                </div>
+                <input type="text" name="rua" id="rua" class="form-control w-50" placeholder="{{ __(' Rua...') }}"  required>
+                <input type="number" name="numero" id="numero" class="form-control" placeholder="{{ __(' Número') }}" required>
+              </div>
+            </div>
+
+            <div class="bmd-form-group mt-3">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">lock_outline</i>
+                  </span>
+                </div>
+                <input type="text" name="bairro" id="bairro" class="form-control w-50" placeholder="{{ __(' Bairro...') }}" required>
+                <input type="text" name="complemento" id="complemento" class="form-control" placeholder="{{ __(' Complemento') }}" required>
+              </div>
+            </div>
+
+            <div class="bmd-form-group mt-3">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">lock_outline</i>
+                  </span>
+                </div>
+                <input type="text" name="cidade" id="cidade" class="form-control w-50" placeholder="{{ __(' Cidade...') }}" required>
+                <input type="text" name="estado" id="estado" class="form-control" placeholder="{{ __(' Estado') }}" required>
+              </div>
+            </div>
+
+            <div class="bmd-form-group mt-3">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">lock_outline</i>
+                  </span>
+                </div>
+                <input type="text" name="referencia" id="referencia" class="form-control w-50" placeholder="{{ __(' Ponto de referência...') }}" required>
+              </div>
+            </div>
+
+            <div class="bmd-form-group mt-3">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">lock_outline</i>
+                  </span>
+                </div>
+                <input type="number" name="telefone_fixo" id="telefone_fixo" class="form-control w-50" placeholder="{{ __(' Telefone Fixo...') }}" required>
+              </div>
+            </div>
+
+            <div class="bmd-form-group{{ $errors->has('celular') ? ' has-danger' : '' }} mt-3">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">lock_outline</i>
+                  </span>
+                </div>
+                <input type="number" name="celular" id="celular" class="form-control w-50" placeholder="{{ __(' Celular/WhatsApp...') }}" required>
+              </div>
+            </div>
+
             <div class="bmd-form-group{{ $errors->has('email') ? ' has-danger' : '' }} mt-3">
               <div class="input-group">
                 <div class="input-group-prepend">
@@ -54,6 +168,7 @@
                 </div>
               @endif
             </div>
+            
             <div class="bmd-form-group{{ $errors->has('password') ? ' has-danger' : '' }} mt-3">
               <div class="input-group">
                 <div class="input-group-prepend">
@@ -69,6 +184,7 @@
                 </div>
               @endif
             </div>
+
             <div class="bmd-form-group{{ $errors->has('password_confirmation') ? ' has-danger' : '' }} mt-3">
               <div class="input-group">
                 <div class="input-group-prepend">
@@ -84,6 +200,8 @@
                 </div>
               @endif
             </div>
+
+
             <div class="form-check mr-auto ml-3 mt-3">
               <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" id="policy" name="policy" {{ old('policy', 1) ? 'checked' : '' }} >

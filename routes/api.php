@@ -24,7 +24,7 @@ Route::namespace('Api')->group(function() {
     Route::prefix('/users')->group(function(){
         Route::get('/', 'UserController@index')->name('index_api_user');
         Route::get('/{id}', 'UserController@show')->name('show_api_user');
-        Route::post('/', 'RegisterController@store')->name('create_api_user');
+        Route::post('/', 'UserController@store')->name('create_api_user');
         Route::put('/{id}', 'UserController@update')->name('update_api_user');
         Route::delete('/{id}', 'UserController@delete')->name('delete_api_user');
     });
