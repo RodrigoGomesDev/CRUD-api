@@ -679,7 +679,7 @@ These will be removed in ramsey/uuid version 4.0.0:
 
 ### Fixed
 
-* Gracefully handle cases where `glob()` returns false when searching
+* Gracefully handle cases where `glob()` returns false when Searching
   `/sys/class/net/*/address` files on Linux
 * Fix off-by-one error in `DefaultTimeGenerator`
 

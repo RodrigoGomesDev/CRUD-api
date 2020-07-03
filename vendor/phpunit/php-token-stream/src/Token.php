@@ -193,7 +193,7 @@ abstract class PHP_TokenWithScopeAndVisibility extends PHP_TokenWithScope
               !($tokens[$i] instanceof PHP_Token_STATIC ||
                 $tokens[$i] instanceof PHP_Token_FINAL ||
                 $tokens[$i] instanceof PHP_Token_ABSTRACT)) {
-                // no keywords; stop visibility search
+                // no keywords; stop visibility Search
                 break;
             }
         }

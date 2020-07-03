@@ -55,7 +55,7 @@ final class Help
             ['arg'  => '--list-suites', 'desc' => 'List available test suites'],
             ['arg'  => '--list-tests', 'desc' => 'List available tests'],
             ['arg'  => '--list-tests-xml <file>', 'desc' => 'List available tests in XML format'],
-            ['arg'  => '--test-suffix <suffixes>', 'desc' => 'Only search for test in files with specified suffix(es). Default: Test.php,.phpt'],
+            ['arg'  => '--test-suffix <suffixes>', 'desc' => 'Only Search for test in files with specified suffix(es). Default: Test.php,.phpt'],
         ],
 
         'Test Execution Options' => [

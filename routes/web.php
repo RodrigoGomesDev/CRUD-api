@@ -54,15 +54,14 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('pages.language');
 	})->name('language');
 
-	Route::get('upgrade', function () {
-		return view('pages.upgrade');
-	})->name('upgrade');
+	Route::get('info-user', ['as' => 'info-user', 'uses' => 'ProfileController@newEdit']);
 });
 
 Route::group([], function () {
 	Route::resource('user', 'UserController', ['except' => ['show']]);
 	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
+	Route::put('profileteste', ['as' => 'profile.newUpdate', 'uses' => 'ProfileController@newUpdate']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
 });
 

@@ -83,7 +83,7 @@ class Translator extends Translation\Translator
     }
 
     /**
-     * Returns the list of directories translation files are searched in.
+     * Returns the list of directories translation files are Searched in.
      *
      * @return array
      */
@@ -93,7 +93,7 @@ class Translator extends Translation\Translator
     }
 
     /**
-     * Set list of directories translation files are searched in.
+     * Set list of directories translation files are Searched in.
      *
      * @param array $directories new directories list
      *
@@ -107,7 +107,7 @@ class Translator extends Translation\Translator
     }
 
     /**
-     * Add a directory to the list translation files are searched in.
+     * Add a directory to the list translation files are Searched in.
      *
      * @param string $directory new directory
      *
@@ -121,7 +121,7 @@ class Translator extends Translation\Translator
     }
 
     /**
-     * Remove a directory from the list translation files are searched in.
+     * Remove a directory from the list translation files are Searched in.
      *
      * @param string $directory directory path
      *
@@ -129,10 +129,10 @@ class Translator extends Translation\Translator
      */
     public function removeDirectory(string $directory)
     {
-        $search = rtrim(strtr($directory, '\\', '/'), '/');
+        $Search = rtrim(strtr($directory, '\\', '/'), '/');
 
-        return $this->setDirectories(array_filter($this->getDirectories(), function ($item) use ($search) {
-            return rtrim(strtr($item, '\\', '/'), '/') !== $search;
+        return $this->setDirectories(array_filter($this->getDirectories(), function ($item) use ($Search) {
+            return rtrim(strtr($item, '\\', '/'), '/') !== $Search;
         }));
     }
 

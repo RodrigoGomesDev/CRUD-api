@@ -127,19 +127,19 @@ class Swift_Transport_StreamBuffer extends Swift_ByteStream_AbstractFilterableIn
      */
     public function setWriteTranslations(array $replacements)
     {
-        foreach ($this->translations as $search => $replace) {
-            if (!isset($replacements[$search])) {
-                $this->removeFilter($search);
-                unset($this->translations[$search]);
+        foreach ($this->translations as $Search => $replace) {
+            if (!isset($replacements[$Search])) {
+                $this->removeFilter($Search);
+                unset($this->translations[$Search]);
             }
         }
 
-        foreach ($replacements as $search => $replace) {
-            if (!isset($this->translations[$search])) {
+        foreach ($replacements as $Search => $replace) {
+            if (!isset($this->translations[$Search])) {
                 $this->addFilter(
-                    $this->replacementFactory->createFilter($search, $replace), $search
+                    $this->replacementFactory->createFilter($Search, $replace), $Search
                     );
-                $this->translations[$search] = true;
+                $this->translations[$Search] = true;
             }
         }
     }

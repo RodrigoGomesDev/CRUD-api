@@ -611,12 +611,12 @@ class Finder implements \IteratorAggregate, \Countable
         }
 
         if (1 === \count($this->dirs) && 0 === \count($this->iterators)) {
-            return $this->searchInDirectory($this->dirs[0]);
+            return $this->SearchInDirectory($this->dirs[0]);
         }
 
         $iterator = new \AppendIterator();
         foreach ($this->dirs as $dir) {
-            $iterator->append($this->searchInDirectory($dir));
+            $iterator->append($this->SearchInDirectory($dir));
         }
 
         foreach ($this->iterators as $it) {
@@ -678,7 +678,7 @@ class Finder implements \IteratorAggregate, \Countable
         return iterator_count($this->getIterator());
     }
 
-    private function searchInDirectory(string $dir): \Iterator
+    private function SearchInDirectory(string $dir): \Iterator
     {
         $exclude = $this->exclude;
         $notPaths = $this->notPaths;

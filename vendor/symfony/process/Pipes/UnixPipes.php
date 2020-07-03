@@ -115,7 +115,7 @@ class UnixPipes extends AbstractPipes
         foreach ($r as $pipe) {
             // prior PHP 5.4 the array passed to stream_select is modified and
             // lose key association, we have to find back the key
-            $read[$type = array_search($pipe, $this->pipes, true)] = '';
+            $read[$type = array_Search($pipe, $this->pipes, true)] = '';
 
             do {
                 $data = @fread($pipe, self::CHUNK_SIZE);

@@ -22,7 +22,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 /**
  * Psy Shell history command.
  *
- * Shows, searches and replays readline history. Not too shabby.
+ * Shows, Searches and replays readline history. Not too shabby.
  */
 class HistoryCommand extends Command
 {
@@ -77,7 +77,7 @@ class HistoryCommand extends Command
             ->setDescription('Show the Psy Shell history.')
             ->setHelp(
                 <<<'HELP'
-Show, search, save or replay the Psy Shell history.
+Show, Search, save or replay the Psy Shell history.
 
 e.g.
 <return>>>> history --grep /[bB]acon/</return>

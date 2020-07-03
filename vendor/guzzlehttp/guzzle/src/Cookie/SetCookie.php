@@ -53,9 +53,9 @@ class SetCookie
                 $data['Name'] = $key;
                 $data['Value'] = $value;
             } else {
-                foreach (array_keys(self::$defaults) as $search) {
-                    if (!strcasecmp($search, $key)) {
-                        $data[$search] = $value;
+                foreach (array_keys(self::$defaults) as $Search) {
+                    if (!strcasecmp($Search, $key)) {
+                        $data[$Search] = $value;
                         continue 2;
                     }
                 }

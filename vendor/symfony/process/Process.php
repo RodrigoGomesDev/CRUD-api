@@ -1093,7 +1093,7 @@ class Process implements \IteratorAggregate
     {
         if (null === $this->cwd) {
             // getcwd() will return false if any one of the parent directories does not have
-            // the readable or search mode set, even if the current directory does
+            // the readable or Search mode set, even if the current directory does
             return getcwd() ?: null;
         }
 

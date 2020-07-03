@@ -193,9 +193,9 @@ class ArrayCollection implements \IteratorAggregate, \Countable, \ArrayAccess
      */
     public function indexOf($element)
     {
-        @trigger_error(sprintf('The "%s:%s" method is deprecated since league/commonmark 1.4, use "%s" instead.', self::class, 'indexOf()', 'array_search($value, $collection->toArray(), true)'), E_USER_DEPRECATED);
+        @trigger_error(sprintf('The "%s:%s" method is deprecated since league/commonmark 1.4, use "%s" instead.', self::class, 'indexOf()', 'array_Search($value, $collection->toArray(), true)'), E_USER_DEPRECATED);
 
-        return \array_search($element, $this->elements, true);
+        return \array_Search($element, $this->elements, true);
     }
 
     /**

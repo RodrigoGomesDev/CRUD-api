@@ -71,7 +71,7 @@ class Registry
     public static function hasLogger($logger): bool
     {
         if ($logger instanceof Logger) {
-            $index = array_search($logger, self::$loggers, true);
+            $index = array_Search($logger, self::$loggers, true);
 
             return false !== $index;
         }
@@ -87,7 +87,7 @@ class Registry
     public static function removeLogger($logger): void
     {
         if ($logger instanceof Logger) {
-            if (false !== ($idx = array_search($logger, self::$loggers, true))) {
+            if (false !== ($idx = array_Search($logger, self::$loggers, true))) {
                 unset(self::$loggers[$idx]);
             }
         } else {

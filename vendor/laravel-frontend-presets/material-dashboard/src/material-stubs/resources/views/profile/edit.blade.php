@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'profile', 'titlePage' => __('User Profile')])
+@extends('layouts.app', ['activePage' => 'profile', 'titlePage' => __('Perfil de usuário')])
 
 @section('content')
   <div class="content">
@@ -11,8 +11,8 @@
 
             <div class="card ">
               <div class="card-header card-header-primary">
-                <h4 class="card-title">{{ __('Edit Profile') }}</h4>
-                <p class="card-category">{{ __('User information') }}</p>
+                <h4 class="card-title">{{ __('Editar perfil') }}</h4>
+                <p class="card-category">{{ __('Informações de usuário') }}</p>
               </div>
               <div class="card-body ">
                 @if (session('status'))
@@ -51,7 +51,7 @@
                 </div>
               </div>
               <div class="card-footer ml-auto mr-auto">
-                <button type="submit" class="btn btn-primary">{{ __('Save') }}</button>
+                <button type="submit" class="btn btn-primary">{{ __('Salvar') }}</button>
               </div>
             </div>
           </form>
@@ -65,8 +65,8 @@
 
             <div class="card ">
               <div class="card-header card-header-primary">
-                <h4 class="card-title">{{ __('Change password') }}</h4>
-                <p class="card-category">{{ __('Password') }}</p>
+                <h4 class="card-title">{{ __('Alterar senha') }}</h4>
+                <p class="card-category">{{ __('Senha') }}</p>
               </div>
               <div class="card-body ">
                 @if (session('status_password'))
@@ -113,7 +113,7 @@
                 </div>
               </div>
               <div class="card-footer ml-auto mr-auto">
-                <button type="submit" class="btn btn-primary">{{ __('Change password') }}</button>
+                <button type="submit" class="btn btn-primary">{{ __('Alterar senha') }}</button>
               </div>
             </div>
           </form>

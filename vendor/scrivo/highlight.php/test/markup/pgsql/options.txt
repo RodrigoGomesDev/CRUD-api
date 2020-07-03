@@ -23,13 +23,13 @@ WITH, WITH ( .. ), (),
     SCHEMA, VERSION, FROM, CASCADE;
     -- create operator
     PROCEDURE=, LEFTARG=, RIGHTARG=, COMMUTATOR=, NEGATOR=, RESTRICT=, JOIN=, HASHES=, MERGES=
-    -- create text search configuration
+    -- create text Search configuration
     PARSER=, COPY=;
-    -- create text search dictionary
+    -- create text Search dictionary
     TEMPLATE=;
-    -- create text search parser
+    -- create text Search parser
     START=, GETTOKEN=, END=, LEXTYPES=, HEADLINE=;
-    -- create text search template
+    -- create text Search template
     INIT=, LEXIZE=;
     -- create type
     SUBTYPE=, SUBTYPE_OPCLASS=, COLLATION=, CANONICAL=, SUBTYPE_DIFF=,

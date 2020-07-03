@@ -61,5 +61,5 @@ class offers the following methods:
 * ``getMockName()`` - return the name of the mock object
 * ``getMethodName()`` - return the name of the method the failing expectation
   is attached to
-* ``getActualArguments()`` - return actual arguments used to search for a
+* ``getActualArguments()`` - return actual arguments used to Search for a
   matching expectation

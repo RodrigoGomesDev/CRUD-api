@@ -78,7 +78,7 @@ CHANGELOG
  * the base `DataCollector` doesn't implement `Serializable` anymore, you should
    store all the serialized state in the data property instead
  * `DumpDataCollector` has been marked as `final`
- * added an event listener to prevent search engines from indexing applications in debug mode.
+ * added an event listener to prevent Search engines from indexing applications in debug mode.
  * renamed `FilterControllerArgumentsEvent` to `ControllerArgumentsEvent`
  * renamed `FilterControllerEvent` to `ControllerEvent`
  * renamed `FilterResponseEvent` to `ResponseEvent`

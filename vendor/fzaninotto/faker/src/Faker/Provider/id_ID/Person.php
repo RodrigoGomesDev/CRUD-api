@@ -28,7 +28,7 @@ class Person extends \Faker\Provider\Person
     );
 
     /**
-     * @link http://www.nama.web.id/search.php?gender=male&origin=Indonesia+-+Jawa&letter=&submit=Search
+     * @link http://www.nama.web.id/Search.php?gender=male&origin=Indonesia+-+Jawa&letter=&submit=Search
      */
     protected static $firstNameMale = array(
         'Abyasa', 'Ade', 'Adhiarja', 'Adiarja', 'Adika', 'Adikara', 'Adinata',

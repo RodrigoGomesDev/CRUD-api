@@ -122,7 +122,7 @@ final class DelimiterStack
      *
      * @return DelimiterInterface|null
      */
-    public function searchByCharacter($characters): ?DelimiterInterface
+    public function SearchByCharacter($characters): ?DelimiterInterface
     {
         if (!\is_array($characters)) {
             $characters = [$characters];
@@ -186,7 +186,7 @@ final class DelimiterStack
                     // opener (one that matches the character and can open).
                     // If an opener was rejected because of the number of
                     // delimiters (e.g. because of the "multiple of 3"
-                    // Set lower bound for future searches for openersrule),
+                    // Set lower bound for future Searches for openersrule),
                     // we want to consider it next time because the number
                     // of delimiters can change as we continue processing.
                     $openersBottom[$delimiterChar] = $closer->getPrevious();

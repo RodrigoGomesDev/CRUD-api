@@ -117,8 +117,8 @@ class Profiler implements ResetInterface
      * Finds profiler tokens for the given criteria.
      *
      * @param string|null $limit The maximum number of tokens to return
-     * @param string|null $start The start date to search from
-     * @param string|null $end   The end date to search to
+     * @param string|null $start The start date to Search from
+     * @param string|null $end   The end date to Search to
      *
      * @return array An array of tokens
      *

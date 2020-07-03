@@ -18,10 +18,10 @@ export function getModuleInstanceState(node: Node): ModuleInstanceState {
         forEachChild(node, n => {
             switch (getModuleInstanceState(n)) {
                 case ModuleInstanceState.NonInstantiated:
-                    // child is non-instantiated - continue searching
+                    // child is non-instantiated - continue Searching
                     return false;
                 case ModuleInstanceState.ConstEnumOnly:
-                    // child is const enum only - record state and continue searching
+                    // child is const enum only - record state and continue Searching
                     state = ModuleInstanceState.ConstEnumOnly;
                     return false;
                 case ModuleInstanceState.Instantiated:

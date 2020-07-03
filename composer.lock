@@ -773,7 +773,7 @@
             "license": [
                 "MIT"
             ],
-            "description": "Laravel 5.x Front-end preset for material dashboard",
+            "description": "Laravel 5.x Front-end preset for BMS Care",
             "homepage": "https://github.com/creativetimofficial/material-dashboard-laravel",
             "keywords": [
                 "laravel",
@@ -1271,7 +1271,7 @@
             "require-dev": {
                 "aws/aws-sdk-php": "^2.4.9 || ^3.0",
                 "doctrine/couchdb": "~1.0@dev",
-                "elasticsearch/elasticsearch": "^6.0",
+                "elasticSearch/elasticSearch": "^6.0",
                 "graylog2/gelf-php": "^1.4.2",
                 "php-amqplib/php-amqplib": "~2.4",
                 "php-console/php-console": "^3.1.3",
@@ -1286,7 +1286,7 @@
             "suggest": {
                 "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
                 "doctrine/couchdb": "Allow sending log messages to a CouchDB server",
-                "elasticsearch/elasticsearch": "Allow sending log messages to an Elasticsearch server via official client",
+                "elasticSearch/elasticSearch": "Allow sending log messages to an ElasticSearch server via official client",
                 "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
                 "ext-mbstring": "Allow to work properly with unicode symbols",
                 "ext-mongodb": "Allow sending log messages to a MongoDB server (via driver)",

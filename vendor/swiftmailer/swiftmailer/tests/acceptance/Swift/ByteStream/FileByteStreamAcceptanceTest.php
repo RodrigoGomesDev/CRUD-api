@@ -145,9 +145,9 @@ class Swift_ByteStream_FileByteStreamAcceptanceTest extends \PHPUnit\Framework\T
         $file->write('y');
     }
 
-    private function createFilter($search, $replace)
+    private function createFilter($Search, $replace)
     {
-        return new Swift_StreamFilters_StringReplacementFilter($search, $replace);
+        return new Swift_StreamFilters_StringReplacementFilter($Search, $replace);
     }
 
     private function createMockInputStream()

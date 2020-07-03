@@ -19,7 +19,7 @@ class MaterialPresetServiceProvider extends ServiceProvider
         UiCommand::macro('material', function ($command) {
             MaterialPreset::install();
             
-            $command->info('Material Dashboard scaffolding installed successfully.');
+            $command->info('BMS Care scaffolding installed successfully.');
         });
     }
 

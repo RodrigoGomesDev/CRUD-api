@@ -143,10 +143,10 @@ class EmailLexer extends AbstractLexer
      */
     public function find($type)
     {
-        $search = clone $this;
-        $search->skipUntil($type);
+        $Search = clone $this;
+        $Search->skipUntil($type);
 
-        if (!$search->lookahead) {
+        if (!$Search->lookahead) {
             throw new \UnexpectedValueException($type . ' not found');
         }
         return true;

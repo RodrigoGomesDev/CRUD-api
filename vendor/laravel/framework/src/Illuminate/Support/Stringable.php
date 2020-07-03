@@ -31,23 +31,23 @@ class Stringable
     /**
      * Return the remainder of a string after the first occurrence of a given value.
      *
-     * @param  string  $search
+     * @param  string  $Search
      * @return static
      */
-    public function after($search)
+    public function after($Search)
     {
-        return new static(Str::after($this->value, $search));
+        return new static(Str::after($this->value, $Search));
     }
 
     /**
      * Return the remainder of a string after the last occurrence of a given value.
      *
-     * @param  string  $search
+     * @param  string  $Search
      * @return static
      */
-    public function afterLast($search)
+    public function afterLast($Search)
     {
-        return new static(Str::afterLast($this->value, $search));
+        return new static(Str::afterLast($this->value, $Search));
     }
 
     /**
@@ -86,23 +86,23 @@ class Stringable
     /**
      * Get the portion of a string before the first occurrence of a given value.
      *
-     * @param  string  $search
+     * @param  string  $Search
      * @return static
      */
-    public function before($search)
+    public function before($Search)
     {
-        return new static(Str::before($this->value, $search));
+        return new static(Str::before($this->value, $Search));
     }
 
     /**
      * Get the portion of a string before the last occurrence of a given value.
      *
-     * @param  string  $search
+     * @param  string  $Search
      * @return static
      */
-    public function beforeLast($search)
+    public function beforeLast($Search)
     {
-        return new static(Str::beforeLast($this->value, $search));
+        return new static(Str::beforeLast($this->value, $Search));
     }
 
     /**
@@ -385,49 +385,49 @@ class Stringable
     /**
      * Replace the given value in the given string.
      *
-     * @param  string|string[]  $search
+     * @param  string|string[]  $Search
      * @param  string|string[]  $replace
      * @return static
      */
-    public function replace($search, $replace)
+    public function replace($Search, $replace)
     {
-        return new static(str_replace($search, $replace, $this->value));
+        return new static(str_replace($Search, $replace, $this->value));
     }
 
     /**
      * Replace a given value in the string sequentially with an array.
      *
-     * @param  string  $search
+     * @param  string  $Search
      * @param  array  $replace
      * @return static
      */
-    public function replaceArray($search, array $replace)
+    public function replaceArray($Search, array $replace)
     {
-        return new static(Str::replaceArray($search, $replace, $this->value));
+        return new static(Str::replaceArray($Search, $replace, $this->value));
     }
 
     /**
      * Replace the first occurrence of a given value in the string.
      *
-     * @param  string  $search
+     * @param  string  $Search
      * @param  string  $replace
      * @return static
      */
-    public function replaceFirst($search, $replace)
+    public function replaceFirst($Search, $replace)
     {
-        return new static(Str::replaceFirst($search, $replace, $this->value));
+        return new static(Str::replaceFirst($Search, $replace, $this->value));
     }
 
     /**
      * Replace the last occurrence of a given value in the string.
      *
-     * @param  string  $search
+     * @param  string  $Search
      * @param  string  $replace
      * @return static
      */
-    public function replaceLast($search, $replace)
+    public function replaceLast($Search, $replace)
     {
-        return new static(Str::replaceLast($search, $replace, $this->value));
+        return new static(Str::replaceLast($Search, $replace, $this->value));
     }
 
     /**

@@ -14,7 +14,7 @@ class Packagist
         $parts = explode('\\', $className);
         $queryParts = array_splice($parts, 0, 2);
 
-        $url = 'https://packagist.org/search.json?q='.implode(' ', $queryParts);
+        $url = 'https://packagist.org/Search.json?q='.implode(' ', $queryParts);
 
         try {
             $packages = json_decode(file_get_contents($url));

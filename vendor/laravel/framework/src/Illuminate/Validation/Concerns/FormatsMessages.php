@@ -24,7 +24,7 @@ trait FormatsMessages
 
         // First we will retrieve the custom message for the validation rule if one
         // exists. If a custom validation message is being used we'll return the
-        // custom message, otherwise we'll keep searching for a valid message.
+        // custom message, otherwise we'll keep Searching for a valid message.
         if (! is_null($inlineMessage)) {
             return $inlineMessage;
         }
@@ -133,14 +133,14 @@ trait FormatsMessages
      * Check the given messages for a wildcard key.
      *
      * @param  array  $messages
-     * @param  string  $search
+     * @param  string  $Search
      * @param  string  $default
      * @return string
      */
-    protected function getWildcardCustomMessages($messages, $search, $default)
+    protected function getWildcardCustomMessages($messages, $Search, $default)
     {
         foreach ($messages as $key => $message) {
-            if ($search === $key || (Str::contains($key, ['*']) && Str::is($key, $search))) {
+            if ($Search === $key || (Str::contains($key, ['*']) && Str::is($key, $Search))) {
                 return $message;
             }
         }

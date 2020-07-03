@@ -340,7 +340,7 @@ class Expectation implements ExpectationInterface
             reset($this->_expectedArgs);
 
             if ($this->isAndAnyOtherArgumentsMatcher($lastExpectedArgument)) {
-                $args = array_slice($args, 0, array_search($lastExpectedArgument, $this->_expectedArgs, true));
+                $args = array_slice($args, 0, array_Search($lastExpectedArgument, $this->_expectedArgs, true));
                 return $this->_matchArgs($args);
             }
 

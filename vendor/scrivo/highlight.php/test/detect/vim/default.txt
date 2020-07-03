@@ -1,6 +1,6 @@
 if foo > 2 || has("gui_running")
   syntax on
-  set hlsearch
+  set hlSearch
 endif
 
 set autoindent

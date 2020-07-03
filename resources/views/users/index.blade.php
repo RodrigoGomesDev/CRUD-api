@@ -12,12 +12,12 @@
 
     <!--  Social tags      -->
     <meta name="keywords" content="creative tim, html dashboard, laravel, html css dashboard laravel, web dashboard, bootstrap 4 dashboard laravel, bootstrap 4, css3 dashboard, bootstrap 4 admin laravel, material ui dashboard bootstrap 4 laravel, frontend, responsive bootstrap 4 dashboard, material design, material laravel bootstrap 4 dashboard">
-    <meta name="description" content="Material Dashboard Laravel is a Free Material Bootstrap Admin Preset for Laravel with a fresh, new design inspired by Google's Material Design.">
+    <meta name="description" content="BMS Care Laravel is a Free Material Bootstrap Admin Preset for Laravel with a fresh, new design inspired by Google's Material Design.">
 
 
     <!-- Schema.org markup for Google+ -->
-    <meta itemprop="name" content="Material Dashboard Laravel by Creative Tim">
-    <meta itemprop="description" content="Material Dashboard Laravel is a Free Material Bootstrap Admin Preset for Laravel with a fresh, new design inspired by Google's Material Design.">
+    <meta itemprop="name" content="BMS Care Laravel by Creative Tim">
+    <meta itemprop="description" content="BMS Care Laravel is a Free Material Bootstrap Admin Preset for Laravel with a fresh, new design inspired by Google's Material Design.">
 
     <meta itemprop="image" content="https://s3.amazonaws.com/creativetim_bucket/products/154/opt_md_laravel_thumbnail.jpg">
 
@@ -25,23 +25,23 @@
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="product">
     <meta name="twitter:site" content="@creativetim">
-    <meta name="twitter:title" content="Material Dashboard Laravel by Creative Tim">
+    <meta name="twitter:title" content="BMS Care Laravel by Creative Tim">
 
-    <meta name="twitter:description" content="Material Dashboard Laravel is a Free Material Bootstrap Admin Preset for Laravel with a fresh, new design inspired by Google's Material Design.">
+    <meta name="twitter:description" content="BMS Care Laravel is a Free Material Bootstrap Admin Preset for Laravel with a fresh, new design inspired by Google's Material Design.">
     <meta name="twitter:creator" content="@creativetim">
     <meta name="twitter:image" content="https://s3.amazonaws.com/creativetim_bucket/products/154/opt_md_laravel_thumbnail.jpg">
 
 
     <!-- Open Graph data -->
     <meta property="fb:app_id" content="655968634437471">
-    <meta property="og:title" content="Material Dashboard Laravel by Creative Tim" />
+    <meta property="og:title" content="BMS Care Laravel by Creative Tim" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://material-dashboard-laravel.creative-tim.com/" />
     <meta property="og:image" content="https://s3.amazonaws.com/creativetim_bucket/products/154/opt_md_laravel_thumbnail.jpg"/>
-    <meta property="og:description" content="Material Dashboard Laravel is a Free Material Bootstrap Admin Preset for Laravel with a fresh, new design inspired by Google's Material Design." />
+    <meta property="og:description" content="BMS Care Laravel is a Free Material Bootstrap Admin Preset for Laravel with a fresh, new design inspired by Google's Material Design." />
     <meta property="og:site_name" content="Creative Tim" />
     
-    <title>{{ __('Material Dashboard Laravel - Free Frontend Preset for Laravel') }}</title>
+    <title>{{ __('BMS Care') }}</title>
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('material') }}/img/apple-icon.png">
     <link rel="icon" type="image/png" href="{{ asset('material') }}/img/favicon.png">
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
@@ -91,7 +91,7 @@
                   <li class="nav-item">
                     <a class="nav-link" data-toggle="collapse" href="#laravelExample" aria-expanded="true">
                       <i><img style="width:25px" src="{{ asset('material') }}/img/laravel.svg"></i>
-                      <p>{{ __('Laravel Examples') }}
+                      <p>{{ __('Areá de usuário') }}
                         <b class="caret"></b>
                       </p>
                     </a>
@@ -100,7 +100,7 @@
                         <li class="nav-item">
                           <a class="nav-link" href="{{ route('profile.edit') }}">
                             <span class="sidebar-mini"> UP </span>
-                            <span class="sidebar-normal">{{ __('User profile') }} </span>
+                            <span class="sidebar-normal">{{ __('Perfil de usuário') }} </span>
                           </a>
                         </li>
                         <li class="nav-item active">
@@ -148,12 +148,6 @@
                       <p>{{ __('RTL Support') }}</p>
                     </a>
                   </li>
-                  <li class="nav-item active-pro">
-                    <a class="nav-link" href="{{ route('upgrade') }}">
-                      <i class="material-icons">unarchive</i>
-                      <p>{{ __('Upgrade to PRO') }}</p>
-                    </a>
-                  </li>
                 </ul>
               </div>
             </div>
@@ -174,7 +168,7 @@
   <div class="collapse navbar-collapse justify-content-end">
     <form class="navbar-form">
       <span class="bmd-form-group"><div class="input-group no-border">
-      <input type="text" value="" class="form-control" placeholder="Search...">
+      <input type="text" value="" class="form-control" placeholder="Pesquisar...">
       <button type="submit" class="btn btn-white btn-round btn-just-icon">
         <i class="material-icons">search</i>
         <div class="ripple-container"></div>
@@ -279,10 +273,6 @@
               </div>
             </div>
           </div>
-          <div class="alert alert-danger">
-            <span style="font-size:18px;">
-              <b> </b> This is a PRO feature!</span>
-          </div>
       </div>
     </div>
   </div>
@@ -325,7 +315,7 @@
 </div>
 </div>
                       
-      <div class="fixed-plugin">
+      <div class="fixed-plugin" style="display: none">
         <div class="dropdown show-dropdown">
           <a href="#" data-toggle="dropdown">
             <i class="fa fa-cog fa-2x"> </i>
@@ -335,10 +325,10 @@
             <li class="adjustments-line">
               <a href="javascript:void(0)" class="switch-trigger active-color">
                 <div class="badge-colors ml-auto mr-auto">
-                  <span class="badge filter badge-purple" data-color="purple"></span>
+                  <span class="badge filter badge-purple active" data-color="purple"></span>
                   <span class="badge filter badge-azure" data-color="azure"></span>
                   <span class="badge filter badge-green" data-color="green"></span>
-                  <span class="badge filter badge-warning active" data-color="orange"></span>
+                  <span class="badge filter badge-warning" data-color="orange"></span>
                   <span class="badge filter badge-danger" data-color="danger"></span>
                   <span class="badge filter badge-rose" data-color="rose"></span>
                 </div>
@@ -380,11 +370,6 @@
                 View Documentation
               </a>
             </li>
-            <li class="button-container">
-              <a href="https://www.creative-tim.com/product/material-dashboard-pro-laravel" target="_blank" class="btn btn-danger btn-block btn-round">
-                Upgrade to PRO
-              </a>
-            </li>
             <li class="button-container github-star">
               <a class="github-button" href="https://github.com/creativetimofficial/material-dashboard-laravel" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ntkme/github-buttons on GitHub">Star</a>
             </li>
@@ -399,6 +384,10 @@
         </div>
       </div>
         <!--   Core JS Files   -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
         <script src="{{ asset('material') }}/js/core/jquery.min.js"></script>
         <script src="{{ asset('material') }}/js/core/popper.min.js"></script>
         <script src="{{ asset('material') }}/js/core/bootstrap-material-design.min.js"></script>
@@ -437,9 +426,9 @@
         <script src="{{ asset('material') }}/js/plugins/chartist.min.js"></script>
         <!--  Notifications Plugin    -->
         <script src="{{ asset('material') }}/js/plugins/bootstrap-notify.js"></script>
-        <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+        <!-- Control Center for BMS Care: parallax effects, scripts for the example pages etc -->
         <script src="{{ asset('material') }}/js/material-dashboard.js?v=2.1.1" type="text/javascript"></script>
-        <!-- Material Dashboard DEMO methods, don't include it in your project! -->
+        <!-- BMS Care DEMO methods, don't include it in your project! -->
         <script src="{{ asset('material') }}/demo/demo.js"></script>
         <script src="{{ asset('material') }}/js/settings.js"></script>
         <script>

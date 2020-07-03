@@ -798,7 +798,7 @@ HeaderInterface (e.g. toArray(), getAll(), etc.).
 
 ### Deprecations
 
-* The ability to case-insensitively search for header values
+* The ability to case-insensitively Search for header values
 * Guzzle\Http\Message\Header::hasExactHeader
 * Guzzle\Http\Message\Header::raw. Use getAll()
 * Deprecated cache control specific methods on Guzzle\Http\Message\AbstractMessage. Use the CacheControl header object
@@ -966,8 +966,8 @@ class YourClient extends \Guzzle\Service\Client
         <command name="list_groups" method="GET" uri="groups.json">
             <doc>Get a list of groups</doc>
         </command>
-        <command name="search_groups" method="GET" uri='search.json?query="{{query}} type:group"'>
-            <doc>Uses a search query to get a list of groups</doc>
+        <command name="Search_groups" method="GET" uri='Search.json?query="{{query}} type:group"'>
+            <doc>Uses a Search query to get a list of groups</doc>
             <param name="query" type="string" required="true" />
         </command>
         <command name="create_group" method="POST" uri="groups.json">
@@ -1005,10 +1005,10 @@ class YourClient extends \Guzzle\Service\Client
             "uri":       "groups.json",
             "summary":   "Get a list of groups"
         },
-        "search_groups":{
+        "Search_groups":{
             "httpMethod":"GET",
-            "uri":       "search.json?query=\"{query} type:group\"",
-            "summary":   "Uses a search query to get a list of groups",
+            "uri":       "Search.json?query=\"{query} type:group\"",
+            "summary":   "Uses a Search query to get a list of groups",
             "parameters":{
                 "query":{
                     "location":   "uri",

@@ -37,7 +37,7 @@
 <span class="hljs-keyword">FAMILY</span>,
 <span class="hljs-keyword">FOR</span> <span class="hljs-keyword">ROLE</span> .. <span class="hljs-keyword">IN</span> <span class="hljs-keyword">SCHEMA</span>,
 <span class="hljs-keyword">FOR</span> <span class="hljs-keyword">USER</span>,
-<span class="hljs-keyword">FOR</span> <span class="hljs-keyword">SEARCH</span>, <span class="hljs-keyword">FOR</span> <span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span>,
+<span class="hljs-keyword">FOR</span> <span class="hljs-keyword">Search</span>, <span class="hljs-keyword">FOR</span> <span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span>,
 <span class="hljs-keyword">FOR</span> <span class="hljs-keyword">TABLE</span>, <span class="hljs-keyword">FOR</span> <span class="hljs-keyword">ALL</span> <span class="hljs-keyword">TABLES</span>,
 <span class="hljs-keyword">FOR</span> <span class="hljs-keyword">VALUES</span>, <span class="hljs-keyword">FOR</span> <span class="hljs-keyword">VALUES</span> <span class="hljs-keyword">FROM</span> .. <span class="hljs-keyword">TO</span>, <span class="hljs-keyword">FOR</span> <span class="hljs-keyword">VALUES</span> <span class="hljs-keyword">IN</span> ( .. ),
 <span class="hljs-keyword">FOR</span> <span class="hljs-keyword">ROW</span>, <span class="hljs-keyword">FOR</span> <span class="hljs-keyword">EACH</span> <span class="hljs-keyword">ROW</span>, <span class="hljs-keyword">FOR</span> <span class="hljs-keyword">STATEMENT</span>, <span class="hljs-keyword">FOR</span> <span class="hljs-keyword">EACH</span> <span class="hljs-keyword">STATEMENT</span>,

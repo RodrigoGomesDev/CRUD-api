@@ -35,8 +35,8 @@ class FilterOptions
     {
         return [
             new InputOption('grep',        'G', InputOption::VALUE_REQUIRED, 'Limit to items matching the given pattern (string or regex).'),
-            new InputOption('insensitive', 'i', InputOption::VALUE_NONE,     'Case-insensitive search (requires --grep).'),
-            new InputOption('invert',      'v', InputOption::VALUE_NONE,     'Inverted search (requires --grep).'),
+            new InputOption('insensitive', 'i', InputOption::VALUE_NONE,     'Case-insensitive Search (requires --grep).'),
+            new InputOption('invert',      'v', InputOption::VALUE_NONE,     'Inverted Search (requires --grep).'),
         ];
     }
 

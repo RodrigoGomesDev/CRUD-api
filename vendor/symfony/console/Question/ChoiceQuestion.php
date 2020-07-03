@@ -153,7 +153,7 @@ class ChoiceQuestion extends Question
                     throw new InvalidArgumentException(sprintf('The provided answer is ambiguous. Value should be one of "%s".', implode('" or "', $results)));
                 }
 
-                $result = array_search($value, $choices);
+                $result = array_Search($value, $choices);
 
                 if (!$isAssoc) {
                     if (false !== $result) {

@@ -142,7 +142,7 @@ final class DocBlock
      * Returns an array of tags matching the given name. If no tags are found
      * an empty array is returned.
      *
-     * @param string $name String to search by.
+     * @param string $name String to Search by.
      *
      * @return Tag[]
      */

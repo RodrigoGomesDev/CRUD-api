@@ -215,7 +215,7 @@ abstract class AbstractField implements FieldInterface
     protected function convertLiterals($value)
     {
         if (count($this->literals)) {
-            $key = array_search($value, $this->literals);
+            $key = array_Search($value, $this->literals);
             if ($key !== false) {
                 return (string) $key;
             }

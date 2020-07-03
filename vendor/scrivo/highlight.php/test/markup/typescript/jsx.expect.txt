@@ -18,10 +18,10 @@
         forEachChild(node, <span class="hljs-function"><span class="hljs-params">n</span> =&gt;</span> {
             <span class="hljs-keyword">switch</span> (getModuleInstanceState(n)) {
                 <span class="hljs-keyword">case</span> ModuleInstanceState.NonInstantiated:
-                    <span class="hljs-comment">// child is non-instantiated - continue searching</span>
+                    <span class="hljs-comment">// child is non-instantiated - continue Searching</span>
                     <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
                 <span class="hljs-keyword">case</span> ModuleInstanceState.ConstEnumOnly:
-                    <span class="hljs-comment">// child is const enum only - record state and continue searching</span>
+                    <span class="hljs-comment">// child is const enum only - record state and continue Searching</span>
                     state = ModuleInstanceState.ConstEnumOnly;
                     <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
                 <span class="hljs-keyword">case</span> ModuleInstanceState.Instantiated:

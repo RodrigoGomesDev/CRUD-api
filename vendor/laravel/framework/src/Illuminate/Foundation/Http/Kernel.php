@@ -260,7 +260,7 @@ class Kernel implements KernelContract
      */
     public function prependMiddleware($middleware)
     {
-        if (array_search($middleware, $this->middleware) === false) {
+        if (array_Search($middleware, $this->middleware) === false) {
             array_unshift($this->middleware, $middleware);
         }
 
@@ -275,7 +275,7 @@ class Kernel implements KernelContract
      */
     public function pushMiddleware($middleware)
     {
-        if (array_search($middleware, $this->middleware) === false) {
+        if (array_Search($middleware, $this->middleware) === false) {
             $this->middleware[] = $middleware;
         }
 
@@ -297,7 +297,7 @@ class Kernel implements KernelContract
             throw new InvalidArgumentException("The [{$group}] middleware group has not been defined.");
         }
 
-        if (array_search($middleware, $this->middlewareGroups[$group]) === false) {
+        if (array_Search($middleware, $this->middlewareGroups[$group]) === false) {
             array_unshift($this->middlewareGroups[$group], $middleware);
         }
 
@@ -321,7 +321,7 @@ class Kernel implements KernelContract
             throw new InvalidArgumentException("The [{$group}] middleware group has not been defined.");
         }
 
-        if (array_search($middleware, $this->middlewareGroups[$group]) === false) {
+        if (array_Search($middleware, $this->middlewareGroups[$group]) === false) {
             $this->middlewareGroups[$group][] = $middleware;
         }
 

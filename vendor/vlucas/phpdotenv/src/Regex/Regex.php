@@ -114,7 +114,7 @@ class Regex
             })
             ->flatMap(function (array $errors) use ($code) {
                 return Option::fromValue(
-                    array_search($code, $errors, true)
+                    array_Search($code, $errors, true)
                 );
             })
             ->getOrElse('PREG_ERROR');

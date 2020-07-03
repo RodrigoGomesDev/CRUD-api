@@ -22,7 +22,7 @@ class SoftDeletedInDatabase extends Constraint
     protected $database;
 
     /**
-     * The data that will be used to narrow the search in the database table.
+     * The data that will be used to narrow the Search in the database table.
      *
      * @var array
      */

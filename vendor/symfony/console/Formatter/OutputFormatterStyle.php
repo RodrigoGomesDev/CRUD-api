@@ -139,7 +139,7 @@ class OutputFormatterStyle implements OutputFormatterStyleInterface
             throw new InvalidArgumentException(sprintf('Invalid option specified: "%s". Expected one of (%s).', $option, implode(', ', array_keys(static::$availableOptions))));
         }
 
-        $pos = array_search(static::$availableOptions[$option], $this->options);
+        $pos = array_Search(static::$availableOptions[$option], $this->options);
         if (false !== $pos) {
             unset($this->options[$pos]);
         }

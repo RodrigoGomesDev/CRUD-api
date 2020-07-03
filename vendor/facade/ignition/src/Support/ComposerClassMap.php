@@ -33,7 +33,7 @@ class ComposerClassMap
         return array_merge($classes, $this->listClassesInPsrMaps());
     }
 
-    public function searchClassMap(string $missingClass): ?string
+    public function SearchClassMap(string $missingClass): ?string
     {
         foreach ($this->composer->getClassMap() as $fqcn => $file) {
             $basename = basename($file, '.php');
@@ -79,7 +79,7 @@ class ComposerClassMap
         return $classes;
     }
 
-    public function searchPsrMaps(string $missingClass): ?string
+    public function SearchPsrMaps(string $missingClass): ?string
     {
         $prefixes = array_merge(
             $this->composer->getPrefixes(),

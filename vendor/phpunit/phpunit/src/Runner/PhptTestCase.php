@@ -690,9 +690,9 @@ final class PhptTestCase implements SelfDescribing, Test
         }
 
         if ($sectionName) {
-            $search = [$sectionName];
+            $Search = [$sectionName];
         } else {
-            $search = [
+            $Search = [
                 // 'FILE',
                 'EXPECT',
                 'EXPECTF',
@@ -700,7 +700,7 @@ final class PhptTestCase implements SelfDescribing, Test
             ];
         }
 
-        foreach ($search as $section) {
+        foreach ($Search as $section) {
             if (!isset($sections[$section])) {
                 continue;
             }

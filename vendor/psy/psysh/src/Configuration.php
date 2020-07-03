@@ -374,7 +374,7 @@ class Configuration
      *
      * If a `configFile` option was passed to the Configuration constructor,
      * this file will be returned. If not, all possible config directories will
-     * be searched, and the first `config.php` or `rc.php` file which exists
+     * be Searched, and the first `config.php` or `rc.php` file which exists
      * will be returned.
      *
      * If you're trying to decide where to put your config file, pick

@@ -27,7 +27,7 @@ class MissingImportSolutionProvider implements HasSolutionsForThrowable
 
         $this->composerClassMap = new ComposerClassMap();
 
-        $this->search($class);
+        $this->Search($class);
 
         return ! is_null($this->foundClass);
     }
@@ -37,12 +37,12 @@ class MissingImportSolutionProvider implements HasSolutionsForThrowable
         return [new SuggestImportSolution($this->foundClass)];
     }
 
-    protected function search(string $missingClass)
+    protected function Search(string $missingClass)
     {
-        $this->foundClass = $this->composerClassMap->searchClassMap($missingClass);
+        $this->foundClass = $this->composerClassMap->SearchClassMap($missingClass);
 
         if (is_null($this->foundClass)) {
-            $this->foundClass = $this->composerClassMap->searchPsrMaps($missingClass);
+            $this->foundClass = $this->composerClassMap->SearchPsrMaps($missingClass);
         }
     }
 }

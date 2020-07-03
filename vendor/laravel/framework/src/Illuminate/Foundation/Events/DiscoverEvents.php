@@ -13,7 +13,7 @@ use Symfony\Component\Finder\Finder;
 class DiscoverEvents
 {
     /**
-     * Get all of the events and listeners by searching the given listener directory.
+     * Get all of the events and listeners by Searching the given listener directory.
      *
      * @param  string  $listenerPath
      * @param  string  $basePath

@@ -68,5 +68,5 @@
 
 #### ElasticSearchHandler
 
-- As support for the official Elasticsearch library was added, the former ElasticSearchHandler has been
-  renamed to ElasticaHandler and the new one added as ElasticsearchHandler.
+- As support for the official ElasticSearch library was added, the former ElasticSearchHandler has been
+  renamed to ElasticaHandler and the new one added as ElasticSearchHandler.

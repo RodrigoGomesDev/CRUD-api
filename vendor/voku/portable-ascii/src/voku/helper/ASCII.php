@@ -312,7 +312,7 @@ final class ASCII
      *
      * EXAMPLE: <code>
      * $array = ASCII::charsArrayWithOneLanguage('ru');
-     * $tmpKey = \array_search('yo', $array['replace']);
+     * $tmpKey = \array_Search('yo', $array['replace']);
      * echo $array['orig'][$tmpKey]; // 'ё'
      * </code>
      *
@@ -412,7 +412,7 @@ final class ASCII
      *
      * EXAMPLE: <code>
      * $array = ASCII::charsArrayWithSingleLanguageValues();
-     * $tmpKey = \array_search('hnaik', $array['replace']);
+     * $tmpKey = \array_Search('hnaik', $array['replace']);
      * echo $array['orig'][$tmpKey]; // '၌'
      * </code>
      *

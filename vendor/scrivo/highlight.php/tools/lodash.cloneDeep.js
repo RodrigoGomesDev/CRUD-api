@@ -798,7 +798,7 @@ function assignValue(object, key, value) {
  *
  * @private
  * @param {Array} array The array to inspect.
- * @param {*} key The key to search for.
+ * @param {*} key The key to Search for.
  * @returns {number} Returns the index of the matched value, else `-1`.
  */
 function assocIndexOf(array, key) {

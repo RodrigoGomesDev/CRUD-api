@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" href="{{ asset('material') }}/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-      {{ __('Material Dashboard by Creative Tim') }}
+      {{ __('BMS Care by Creative Tim') }}
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -99,12 +99,6 @@
               <p>پشتیبانی از راست به چپ</p>
             </a>
           </li>
-           <li class="nav-item active-pro ">
-                <a class="nav-link" href="{{ route('upgrade') }}">
-                    <i class="material-icons">unarchive</i>
-                    <p>Upgrade to PRO</p>
-                </a>
-            </li> 
         </ul>
       </div>
     </div>
@@ -678,6 +672,12 @@
       </div>
     </div>
     <!--   Core JS Files   -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
     <script src="{{ asset('material') }}/js/core/jquery.min.js"></script>
     <script src="{{ asset('material') }}/js/core/popper.min.js"></script>
     <script src="{{ asset('material') }}/js/core/bootstrap-material-design.min.js"></script>
@@ -689,9 +689,9 @@
     <script src="{{ asset('material') }}/js/plugins/chartist.min.js"></script>
     <!--  Notifications Plugin    -->
     <script src="{{ asset('material') }}/js/plugins/bootstrap-notify.js"></script>
-    <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+    <!-- Control Center for BMS Care: parallax effects, scripts for the example pages etc -->
     <script src="{{ asset('material') }}/js/material-dashboard.js?v=2.1.1" type="text/javascript"></script>
-    <!-- Material Dashboard DEMO methods, don't include it in your project! -->
+    <!-- BMS Care DEMO methods, don't include it in your project! -->
     <script src="{{ asset('material') }}/demo/demo.js"></script>
     <script src="{{ asset('material') }}/js/settings.js"></script>
 </body>

@@ -80,8 +80,8 @@ class VariableEnumerator extends Enumerator
     {
         $scopeVars = $this->context->getAll();
         \uksort($scopeVars, function ($a, $b) {
-            $aIndex = \array_search($a, self::$specialNames);
-            $bIndex = \array_search($b, self::$specialNames);
+            $aIndex = \array_Search($a, self::$specialNames);
+            $bIndex = \array_Search($b, self::$specialNames);
 
             if ($aIndex !== false) {
                 if ($bIndex !== false) {

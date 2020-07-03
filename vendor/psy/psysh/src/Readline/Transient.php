@@ -50,7 +50,7 @@ class Transient implements Readline
     public function addHistory($line)
     {
         if ($this->eraseDups) {
-            if (($key = \array_search($line, $this->history)) !== false) {
+            if (($key = \array_Search($line, $this->history)) !== false) {
                 unset($this->history[$key]);
             }
         }

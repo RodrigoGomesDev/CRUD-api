@@ -42,7 +42,7 @@ class CronExpression
     private $fieldFactory;
 
     /**
-     * @var int Max iteration count when searching for next run date
+     * @var int Max iteration count when Searching for next run date
      */
     private $maxIterationCount = 1000;
 
@@ -163,9 +163,9 @@ class CronExpression
     }
 
     /**
-     * Set max iteration count for searching next run dates
+     * Set max iteration count for Searching next run dates
      *
-     * @param int $maxIterationCount Max iteration count when searching for next run date
+     * @param int $maxIterationCount Max iteration count when Searching for next run date
      *
      * @return CronExpression
      */

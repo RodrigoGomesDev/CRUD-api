@@ -1704,7 +1704,7 @@ EOT;
     do not charge anything for copies of this eBook, complying with the
     rules is very easy.  You may use this eBook for nearly any purpose
     such as creation of derivative works, reports, performances and
-    research.  They may be modified and printed and given away--you may do
+    reSearch.  They may be modified and printed and given away--you may do
     practically ANYTHING with public domain eBooks.  Redistribution is
     subject to the trademark license, especially commercial
     redistribution.
@@ -1872,7 +1872,7 @@ EOT;
     1.F.
 
     1.F.1.  Project Gutenberg volunteers and employees expend considerable
-    effort to identify, do copyright research on, transcribe and proofread
+    effort to identify, do copyright reSearch on, transcribe and proofread
     public domain works in creating the Project Gutenberg-tm
     collection.  Despite these efforts, Project Gutenberg-tm electronic
     works, and the medium on which they may be stored, may contain
@@ -2024,7 +2024,7 @@ EOT;
     unless a copyright notice is included.  Thus, we do not necessarily
     keep eBooks in compliance with any particular paper edition.
 
-    Most people start at our Web site which has the main PG search facility:
+    Most people start at our Web site which has the main PG Search facility:
 
          http://www.gutenberg.org
 

@@ -516,7 +516,7 @@ class Router implements BindingRegistrar, RegistrarContract
 
         // Here we will set this controller name on the action array just so we always
         // have a copy of it for reference if we need it. This can be used while we
-        // search for a controller name or do some other type of fetch operation.
+        // Search for a controller name or do some other type of fetch operation.
         $action['controller'] = $action['uses'];
 
         return $action;

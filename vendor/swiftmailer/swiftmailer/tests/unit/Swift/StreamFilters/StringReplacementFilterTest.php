@@ -52,8 +52,8 @@ class Swift_StreamFilters_StringReplacementFilterTest extends \PHPUnit\Framework
         $this->assertFalse($filter->shouldBuffer(''));
     }
 
-    private function createFilter($search, $replace)
+    private function createFilter($Search, $replace)
     {
-        return new Swift_StreamFilters_StringReplacementFilter($search, $replace);
+        return new Swift_StreamFilters_StringReplacementFilter($Search, $replace);
     }
 }

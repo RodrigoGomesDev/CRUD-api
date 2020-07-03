@@ -49,9 +49,9 @@ class ExecutableFinder
     public function find(string $name, string $default = null, array $extraDirs = [])
     {
         if (ini_get('open_basedir')) {
-            $searchPath = array_merge(explode(PATH_SEPARATOR, ini_get('open_basedir')), $extraDirs);
+            $SearchPath = array_merge(explode(PATH_SEPARATOR, ini_get('open_basedir')), $extraDirs);
             $dirs = [];
-            foreach ($searchPath as $path) {
+            foreach ($SearchPath as $path) {
                 // Silencing against https://bugs.php.net/69240
                 if (@is_dir($path)) {
                     $dirs[] = $path;

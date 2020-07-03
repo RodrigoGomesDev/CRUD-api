@@ -16,7 +16,7 @@ use Symfony\Component\HttpKernel\Event\ResponseEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 
 /**
- * Ensures that the application is not indexed by search engines.
+ * Ensures that the application is not indexed by Search engines.
  *
  * @author Gary PEGEOT <garypegeot@gmail.com>
  */

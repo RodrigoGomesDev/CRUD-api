@@ -35,7 +35,7 @@ class PrettyPageHandler extends Handler
      *
      * @var array
      */
-    private $searchPaths = [];
+    private $SearchPaths = [];
 
     /**
      * Fast lookup cache for known resource locations.
@@ -144,8 +144,8 @@ class PrettyPageHandler extends Handler
             $this->setEditor('xdebug');
         }
 
-        // Add the default, local resource search path:
-        $this->searchPaths[] = __DIR__ . "/../Resources";
+        // Add the default, local resource Search path:
+        $this->SearchPaths[] = __DIR__ . "/../Resources";
 
         // blacklist php provided auth based values
         $this->blacklist('_SERVER', 'PHP_AUTH_PW');
@@ -609,7 +609,7 @@ class PrettyPageHandler extends Handler
     }
 
     /**
-     * Adds a path to the list of paths to be searched for resources.
+     * Adds a path to the list of paths to be Searched for resources.
      *
      * @param  string $path
      *
@@ -625,7 +625,7 @@ class PrettyPageHandler extends Handler
             );
         }
 
-        array_unshift($this->searchPaths, $path);
+        array_unshift($this->SearchPaths, $path);
     }
 
     /**
@@ -656,13 +656,13 @@ class PrettyPageHandler extends Handler
      */
     public function getResourcePaths()
     {
-        return $this->searchPaths;
+        return $this->SearchPaths;
     }
 
     /**
-     * Finds a resource, by its relative path, in all available search paths.
+     * Finds a resource, by its relative path, in all available Search paths.
      *
-     * The search is performed starting at the last search path, and all the
+     * The Search is performed starting at the last Search path, and all the
      * way back to the first, enabling a cascading-type system of overrides for
      * all resources.
      *
@@ -680,9 +680,9 @@ class PrettyPageHandler extends Handler
             return $this->resourceCache[$resource];
         }
 
-        // Search through available search paths, until we find the
+        // Search through available Search paths, until we find the
         // resource we're after:
-        foreach ($this->searchPaths as $path) {
+        foreach ($this->SearchPaths as $path) {
             $fullPath = $path . "/$resource";
 
             if (is_file($fullPath)) {
@@ -695,7 +695,7 @@ class PrettyPageHandler extends Handler
         // If we got this far, nothing was found.
         throw new RuntimeException(
             "Could not find resource '$resource' in any resource paths."
-            . "(searched: " . join(", ", $this->searchPaths). ")"
+            . "(Searched: " . join(", ", $this->SearchPaths). ")"
         );
     }
 

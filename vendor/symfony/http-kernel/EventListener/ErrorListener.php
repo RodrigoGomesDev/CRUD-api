@@ -95,7 +95,7 @@ class ErrorListener implements EventSubscriberInterface
     {
         $e = $event->getRequest()->attributes->get('exception');
 
-        if (!$e instanceof \Throwable || false === $k = array_search($e, $event->getArguments(), true)) {
+        if (!$e instanceof \Throwable || false === $k = array_Search($e, $event->getArguments(), true)) {
             return;
         }
 

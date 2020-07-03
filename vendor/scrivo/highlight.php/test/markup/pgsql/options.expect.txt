@@ -23,13 +23,13 @@
     <span class="hljs-keyword">SCHEMA</span>, <span class="hljs-keyword">VERSION</span>, <span class="hljs-keyword">FROM</span>, <span class="hljs-keyword">CASCADE</span>;
     <span class="hljs-comment">-- create operator</span>
     PROCEDURE=, LEFTARG=, RIGHTARG=, COMMUTATOR=, NEGATOR=, RESTRICT=, JOIN=, HASHES=, MERGES=
-    <span class="hljs-comment">-- create text search configuration</span>
+    <span class="hljs-comment">-- create text Search configuration</span>
     PARSER=, COPY=;
-    <span class="hljs-comment">-- create text search dictionary</span>
+    <span class="hljs-comment">-- create text Search dictionary</span>
     TEMPLATE=;
-    <span class="hljs-comment">-- create text search parser</span>
+    <span class="hljs-comment">-- create text Search parser</span>
     START=, GETTOKEN=, END=, LEXTYPES=, HEADLINE=;
-    <span class="hljs-comment">-- create text search template</span>
+    <span class="hljs-comment">-- create text Search template</span>
     INIT=, LEXIZE=;
     <span class="hljs-comment">-- create type</span>
     SUBTYPE=, SUBTYPE_OPCLASS=, COLLATION=, CANONICAL=, SUBTYPE_DIFF=,

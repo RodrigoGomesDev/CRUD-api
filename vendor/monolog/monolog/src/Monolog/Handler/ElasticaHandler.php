@@ -108,7 +108,7 @@ class ElasticaHandler extends AbstractProcessingHandler
     }
 
     /**
-     * Use Elasticsearch bulk API to send list of documents
+     * Use ElasticSearch bulk API to send list of documents
      * @throws \RuntimeException
      */
     protected function bulkSend(array $documents): void
@@ -117,7 +117,7 @@ class ElasticaHandler extends AbstractProcessingHandler
             $this->client->addDocuments($documents);
         } catch (ExceptionInterface $e) {
             if (!$this->options['ignore_error']) {
-                throw new \RuntimeException("Error sending messages to Elasticsearch", 0, $e);
+                throw new \RuntimeException("Error sending messages to ElasticSearch", 0, $e);
             }
         }
     }

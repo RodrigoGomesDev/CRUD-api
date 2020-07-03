@@ -1961,7 +1961,7 @@
       // Focus handling
       var setFocus = function setFocus(index, increment) {
         var focusableElements = getFocusableElements(innerParams.focusCancel);
-        // search for visible elements and select the next possible match
+        // Search for visible elements and select the next possible match
         for (var _i = 0; _i < focusableElements.length; _i++) {
           index = index + increment;
 

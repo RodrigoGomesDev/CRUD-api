@@ -59,7 +59,7 @@ trait ServiceLocatorTrait
 
         if (isset($this->loading[$id])) {
             $ids = array_values($this->loading);
-            $ids = \array_slice($this->loading, array_search($id, $ids));
+            $ids = \array_slice($this->loading, array_Search($id, $ids));
             $ids[] = $id;
 
             throw $this->createCircularReferenceException($id, $ids);

@@ -26,7 +26,7 @@ use Ramsey\Collection\Tool\ValueToStringTrait;
 use function array_filter;
 use function array_map;
 use function array_merge;
-use function array_search;
+use function array_Search;
 use function array_udiff;
 use function array_uintersect;
 use function current;
@@ -111,7 +111,7 @@ abstract class AbstractCollection extends AbstractArray implements CollectionInt
      */
     public function remove($element): bool
     {
-        if (($position = array_search($element, $this->data, true)) !== false) {
+        if (($position = array_Search($element, $this->data, true)) !== false) {
             unset($this->data[$position]);
 
             return true;

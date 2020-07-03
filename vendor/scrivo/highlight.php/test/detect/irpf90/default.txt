@@ -4,20 +4,20 @@
  BEGIN_DOC
  ! Determinants on which we apply <i|H|psi> for perturbation.
  ! They are sorted by determinants interpreted as integers. Useful
- ! to accelerate the search of a random determinant in the wave
+ ! to accelerate the Search of a random determinant in the wave
  ! function.
  END_DOC
  integer :: i,j,k
  integer, allocatable ::  iorder(:)
  integer*8, allocatable :: bit_tmp(:)
- integer*8, external :: det_search_key
+ integer*8, external :: det_Search_key
 
  allocate ( iorder(N_det), bit_tmp(N_det) )
 
  do i=1,N_det
    iorder(i) = i
    !DIR$ FORCEINLINE
-   bit_tmp(i) = det_search_key(psi_det(1,1,i),N_int)
+   bit_tmp(i) = det_Search_key(psi_det(1,1,i),N_int)
  enddo
  call isort(bit_tmp,iorder,N_det)
  !DIR$ IVDEP

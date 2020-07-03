@@ -63,17 +63,17 @@
           return result;
         }());
         var toString = {}.toString;
-        var startsWith = function(search) {
+        var startsWith = function(Search) {
           if (this == null) {
             throw new TypeError();
           }
           var string = String(this);
-          if (search && toString.call(search) == '[object RegExp]') {
+          if (Search && toString.call(Search) == '[object RegExp]') {
             throw new TypeError();
           }
           var stringLength = string.length;
-          var searchString = String(search);
-          var searchLength = searchString.length;
+          var SearchString = String(Search);
+          var SearchLength = SearchString.length;
           var position = arguments.length > 1 ? arguments[1] : undefined;
           // `ToInteger`
           var pos = position ? Number(position) : 0;
@@ -82,12 +82,12 @@
           }
           var start = Math.min(Math.max(pos, 0), stringLength);
           // Avoid the `indexOf` call if no match is possible
-          if (searchLength + start > stringLength) {
+          if (SearchLength + start > stringLength) {
             return false;
           }
           var index = -1;
-          while (++index < searchLength) {
-            if (string.charCodeAt(start + index) != searchString.charCodeAt(index)) {
+          while (++index < SearchLength) {
+            if (string.charCodeAt(start + index) != SearchString.charCodeAt(index)) {
               return false;
             }
           }
@@ -196,13 +196,13 @@
     };
     //</editor-fold>
 
-    function stringSearch(li, searchString, method, normalize) {
+    function stringSearch(li, SearchString, method, normalize) {
       var stringTypes = [
           'content',
           'subtext',
           'tokens'
         ],
-        searchSuccess = false;
+        SearchSuccess = false;
 
       for (var i = 0; i < stringTypes.length; i++) {
         var stringType = stringTypes[i],
@@ -220,16 +220,16 @@
           string = string.toUpperCase();
 
           if (method === 'contains') {
-            searchSuccess = string.indexOf(searchString) >= 0;
+            SearchSuccess = string.indexOf(SearchString) >= 0;
           } else {
-            searchSuccess = string.startsWith(searchString);
+            SearchSuccess = string.startsWith(SearchString);
           }
 
-          if (searchSuccess) break;
+          if (SearchSuccess) break;
         }
       }
 
-      return searchSuccess;
+      return SearchSuccess;
     }
 
     function toInteger(value) {
@@ -457,8 +457,8 @@
         },
         current: {
           map: {}
-        }, // current changes if a search is in progress
-        search: {
+        }, // current changes if a Search is in progress
+        Search: {
           map: {}
         },
         view: {},
@@ -578,7 +578,7 @@
         this.$button = this.$newElement.children('button');
         this.$menu = this.$newElement.children('.dropdown-menu');
         this.$menuInner = this.$menu.children('.inner');
-        this.$searchbox = this.$menu.find('input');
+        this.$Searchbox = this.$menu.find('input');
 
         this.$element.removeClass('bs-select-hidden');
 
@@ -666,8 +666,8 @@
           autofocus = this.autofocus ? ' autofocus' : '';
         // Elements
         var header = this.options.header ? '<div class="' + classNames.POPOVERHEADER + '"><button type="button" class="close" aria-hidden="true">&times;</button>' + this.options.header + '</div>' : '';
-        var searchbox = this.options.liveSearch ?
-          '<div class="bs-searchbox">' +
+        var Searchbox = this.options.liveSearch ?
+          '<div class="bs-Searchbox">' +
           '<input type="text" class="form-control" autocomplete="off"' +
           (null === this.options.liveSearchPlaceholder ? '' : ' placeholder="' + htmlEscape(this.options.liveSearchPlaceholder) + '"') + ' role="textbox" aria-label="Search">' +
           '</div>' :
@@ -710,7 +710,7 @@
           '</button>' +
           '<div class="dropdown-menu ' + (version.major === '4' ? '' : classNames.SHOW) + '" role="combobox">' +
           header +
-          searchbox +
+          Searchbox +
           actionsbox +
           '<div class="inner ' + classNames.SHOW + '" role="listbox" aria-expanded="false" tabindex="-1">' +
           '<ul class="dropdown-menu inner ' + (version.major === '4' ? classNames.SHOW : '') + '">' +
@@ -757,7 +757,7 @@
 
         var that = this;
 
-        this.selectpicker.current = isSearching ? this.selectpicker.search : this.selectpicker.main;
+        this.selectpicker.current = isSearching ? this.selectpicker.Search : this.selectpicker.main;
 
         var $lis;
         var active = [];
@@ -866,11 +866,11 @@
 
             that.setOptionStatus();
 
-            // if searching, check to make sure the list has actually been updated before updating DOM
+            // if Searching, check to make sure the list has actually been updated before updating DOM
             // this prevents unnecessary repaints
             if (isSearching || (isVirtual === false && init)) menuIsDifferent = !isEqual(previousElements, that.selectpicker.view.visibleElements);
 
-            // if virtual scroll is disabled and not searching,
+            // if virtual scroll is disabled and not Searching,
             // menu should never need to be updated more than once
             if ((init || isVirtual === true) && menuIsDifferent) {
               var menuInner = that.$menuInner[0],
@@ -1478,7 +1478,7 @@
           a = document.createElement('a'),
           text = document.createElement('span'),
           header = this.options.header && this.$menu.find('.' + classNames.POPOVERHEADER).length > 0 ? this.$menu.find('.' + classNames.POPOVERHEADER)[0].cloneNode(true) : null,
-          search = this.options.liveSearch ? document.createElement('div') : null,
+          Search = this.options.liveSearch ? document.createElement('div') : null,
           actions = this.options.actionsBox && this.multiple && this.$menu.find('.bs-actionsbox').length > 0 ? this.$menu.find('.bs-actionsbox')[0].cloneNode(true) : null,
           doneButton = this.options.doneButton && this.multiple && this.$menu.find('.bs-donebutton').length > 0 ? this.$menu.find('.bs-donebutton')[0].cloneNode(true) : null;
 
@@ -1507,12 +1507,12 @@
         menuInnerInner.appendChild(divider);
         menuInnerInner.appendChild(dropdownHeader);
         if (header) menu.appendChild(header);
-        if (search) {
+        if (Search) {
           var input = document.createElement('input');
-          search.className = 'bs-searchbox';
+          Search.className = 'bs-Searchbox';
           input.className = 'form-control';
-          search.appendChild(input);
-          menu.appendChild(search);
+          Search.appendChild(input);
+          menu.appendChild(Search);
         }
         if (actions) menu.appendChild(actions);
         menuInner.appendChild(menuInnerInner);
@@ -1525,7 +1525,7 @@
         var liHeight = a.offsetHeight,
           dropdownHeaderHeight = dropdownHeader ? dropdownHeader.offsetHeight : 0,
           headerHeight = header ? header.offsetHeight : 0,
-          searchHeight = search ? search.offsetHeight : 0,
+          SearchHeight = Search ? Search.offsetHeight : 0,
           actionsHeight = actions ? actions.offsetHeight : 0,
           doneButtonHeight = doneButton ? doneButton.offsetHeight : 0,
           dividerHeight = $(divider).outerHeight(true),
@@ -1562,7 +1562,7 @@
         this.sizeInfo.liHeight = liHeight;
         this.sizeInfo.dropdownHeaderHeight = dropdownHeaderHeight;
         this.sizeInfo.headerHeight = headerHeight;
-        this.sizeInfo.searchHeight = searchHeight;
+        this.sizeInfo.SearchHeight = SearchHeight;
         this.sizeInfo.actionsHeight = actionsHeight;
         this.sizeInfo.doneButtonHeight = doneButtonHeight;
         this.sizeInfo.dividerHeight = dividerHeight;
@@ -1610,7 +1610,7 @@
         var selectWidth = this.sizeInfo['selectWidth'],
           liHeight = this.sizeInfo['liHeight'],
           headerHeight = this.sizeInfo['headerHeight'],
-          searchHeight = this.sizeInfo['searchHeight'],
+          SearchHeight = this.sizeInfo['SearchHeight'],
           actionsHeight = this.sizeInfo['actionsHeight'],
           doneButtonHeight = this.sizeInfo['doneButtonHeight'],
           divHeight = this.sizeInfo['dividerHeight'],
@@ -1636,7 +1636,7 @@
         if (this.options.size === 'auto') {
           _minHeight = this.selectpicker.current.elements.length > 3 ? this.sizeInfo.liHeight * 3 + this.sizeInfo.menuExtras.vert - 2 : 0;
           menuHeight = this.sizeInfo.selectOffsetBot - this.sizeInfo.menuExtras.vert;
-          minHeight = _minHeight + headerHeight + searchHeight + actionsHeight + doneButtonHeight;
+          minHeight = _minHeight + headerHeight + SearchHeight + actionsHeight + doneButtonHeight;
           menuInnerMinHeight = Math.max(_minHeight - menuPadding.vert, 0);
 
           if (this.$newElement.hasClass(classNames.DROPUP)) {
@@ -1644,7 +1644,7 @@
           }
 
           maxHeight = menuHeight;
-          menuInnerHeight = menuHeight - headerHeight - searchHeight - actionsHeight - doneButtonHeight - menuPadding.vert;
+          menuInnerHeight = menuHeight - headerHeight - SearchHeight - actionsHeight - doneButtonHeight - menuPadding.vert;
         } else if (this.options.size && this.options.size != 'auto' && this.selectpicker.current.elements.length > this.options.size) {
           for (var i = 0; i < this.options.size; i++) {
             if (this.selectpicker.current.data[i].type === 'divider') divLength++;
@@ -1652,7 +1652,7 @@
 
           menuHeight = liHeight * this.options.size + divLength * divHeight + menuPadding.vert;
           menuInnerHeight = menuHeight - menuPadding.vert;
-          maxHeight = menuHeight + headerHeight + searchHeight + actionsHeight + doneButtonHeight;
+          maxHeight = menuHeight + headerHeight + SearchHeight + actionsHeight + doneButtonHeight;
           minHeight = menuInnerMinHeight = '';
         }
 
@@ -1698,14 +1698,14 @@
         this.setMenuSize();
 
         if (this.options.size === 'auto') {
-          this.$searchbox.off('input.setMenuSize propertychange.setMenuSize').on('input.setMenuSize propertychange.setMenuSize', function() {
+          this.$Searchbox.off('input.setMenuSize propertychange.setMenuSize').on('input.setMenuSize propertychange.setMenuSize', function() {
             return that.setMenuSize();
           });
           $window.off('resize.setMenuSize scroll.setMenuSize').on('resize.setMenuSize scroll.setMenuSize', function() {
             return that.setMenuSize();
           });
         } else if (this.options.size && this.options.size != 'auto' && this.selectpicker.current.elements.length > this.options.size) {
-          this.$searchbox.off('input.setMenuSize propertychange.setMenuSize');
+          this.$Searchbox.off('input.setMenuSize propertychange.setMenuSize');
           $window.off('resize.setMenuSize scroll.setMenuSize');
         }
 
@@ -1870,7 +1870,7 @@
           // if the current option is being selected, it's NOT multiple, and
           // activeIndex is undefined:
           //  - when the menu is first being opened, OR
-          //  - after a search has been performed, OR
+          //  - after a Search has been performed, OR
           //  - when retainActive is false when selecting a new option (i.e. index of the newly selected option is not the same as the current activeIndex)
           keepActive = thisIsActive || selected && !this.multiple && !activeIndexIsSet;
 
@@ -2018,7 +2018,7 @@
           }
 
           if (that.options.liveSearch) {
-            that.$searchbox.focus();
+            that.$Searchbox.focus();
           } else {
             that.$menuInner.focus();
           }
@@ -2125,7 +2125,7 @@
             if (!that.multiple || (that.multiple && that.options.maxOptions === 1)) {
               that.$button.focus();
             } else if (that.options.liveSearch) {
-              that.$searchbox.focus();
+              that.$Searchbox.focus();
             }
 
             // Trigger select 'change'
@@ -2145,7 +2145,7 @@
             e.preventDefault();
             e.stopPropagation();
             if (that.options.liveSearch && !$(e.target).hasClass('close')) {
-              that.$searchbox.focus();
+              that.$Searchbox.focus();
             } else {
               that.$button.focus();
             }
@@ -2156,7 +2156,7 @@
           e.preventDefault();
           e.stopPropagation();
           if (that.options.liveSearch) {
-            that.$searchbox.focus();
+            that.$Searchbox.focus();
           } else {
             that.$button.focus();
           }
@@ -2166,13 +2166,13 @@
           that.$button.click();
         });
 
-        this.$searchbox.on('click', function(e) {
+        this.$Searchbox.on('click', function(e) {
           e.stopPropagation();
         });
 
         this.$menu.on('click', '.actions-btn', function(e) {
           if (that.options.liveSearch) {
-            that.$searchbox.focus();
+            that.$Searchbox.focus();
           } else {
             that.$button.focus();
           }
@@ -2204,30 +2204,30 @@
           no_results = document.createElement('li');
 
         this.$button.on('click.bs.dropdown.data-api', function() {
-          if (!!that.$searchbox.val()) {
-            that.$searchbox.val('');
+          if (!!that.$Searchbox.val()) {
+            that.$Searchbox.val('');
           }
         });
 
-        this.$searchbox.on('click.bs.dropdown.data-api focus.bs.dropdown.data-api touchend.bs.dropdown.data-api', function(e) {
+        this.$Searchbox.on('click.bs.dropdown.data-api focus.bs.dropdown.data-api touchend.bs.dropdown.data-api', function(e) {
           e.stopPropagation();
         });
 
-        this.$searchbox.on('input propertychange', function() {
-          var searchValue = that.$searchbox.val();
+        this.$Searchbox.on('input propertychange', function() {
+          var SearchValue = that.$Searchbox.val();
 
-          that.selectpicker.search.map.newIndex = {};
-          that.selectpicker.search.map.originalIndex = {};
-          that.selectpicker.search.elements = [];
-          that.selectpicker.search.data = [];
+          that.selectpicker.Search.map.newIndex = {};
+          that.selectpicker.Search.map.originalIndex = {};
+          that.selectpicker.Search.elements = [];
+          that.selectpicker.Search.data = [];
 
-          if (searchValue) {
+          if (SearchValue) {
             var i,
-              searchMatch = [],
-              q = searchValue.toUpperCase(),
+              SearchMatch = [],
+              q = SearchValue.toUpperCase(),
               cache = {},
               cacheArr = [],
-              searchStyle = that._searchStyle(),
+              SearchStyle = that._SearchStyle(),
               normalizeSearch = that.options.liveSearchNormalize;
 
             that._$lisSelected = that.$menuInner.find('.selected');
@@ -2236,7 +2236,7 @@
               var li = that.selectpicker.main.data[i];
 
               if (!cache[i]) {
-                cache[i] = stringSearch(li, q, searchStyle, normalizeSearch);
+                cache[i] = stringSearch(li, q, SearchStyle, normalizeSearch);
               }
 
               if (cache[i] && li.headerIndex !== undefined && cacheArr.indexOf(li.headerIndex) === -1) {
@@ -2261,22 +2261,22 @@
                 liPrev = that.selectpicker.main.data[prevIndex];
 
               if (li.type !== 'divider' || (li.type === 'divider' && liPrev && liPrev.type !== 'divider' && cacheLen - 1 !== i)) {
-                that.selectpicker.search.data.push(li);
-                searchMatch.push(that.selectpicker.main.elements[index]);
-                that.selectpicker.search.map.newIndex[li.originalIndex] = searchMatch.length - 1;
-                that.selectpicker.search.map.originalIndex[searchMatch.length - 1] = li.originalIndex;
+                that.selectpicker.Search.data.push(li);
+                SearchMatch.push(that.selectpicker.main.elements[index]);
+                that.selectpicker.Search.map.newIndex[li.originalIndex] = SearchMatch.length - 1;
+                that.selectpicker.Search.map.originalIndex[SearchMatch.length - 1] = li.originalIndex;
               }
             }
 
             that.activeIndex = undefined;
             that.noScroll = true;
             that.$menuInner.scrollTop(0);
-            that.selectpicker.search.elements = searchMatch;
+            that.selectpicker.Search.elements = SearchMatch;
             that.createView(true);
 
-            if (!searchMatch.length) {
+            if (!SearchMatch.length) {
               no_results.className = 'no-results';
-              no_results.innerHTML = that.options.noneResultsText.replace('{0}', '"' + htmlEscape(searchValue) + '"');
+              no_results.innerHTML = that.options.noneResultsText.replace('{0}', '"' + htmlEscape(SearchValue) + '"');
               that.$menuInner[0].firstChild.appendChild(no_results);
             }
           } else {
@@ -2286,7 +2286,7 @@
         });
       },
 
-      _searchStyle: function() {
+      _SearchStyle: function() {
         return this.options.liveSearchStyle || 'contains';
       },
 
@@ -2460,7 +2460,7 @@
           if (updateScroll) that.$menuInner[0].scrollTop = offset;
 
           if (that.options.liveSearch) {
-            that.$searchbox.focus();
+            that.$Searchbox.focus();
           } else {
             $this.focus();
           }
@@ -2468,7 +2468,7 @@
           !REGEXP_TAB_OR_ESCAPE.test(e.which) ||
           (e.which === keyCodes.SPACE && that.selectpicker.keydown.keyHistory)
         ) {
-          var searchMatch,
+          var SearchMatch,
             matches = [],
             keyHistory;
 
@@ -2481,7 +2481,7 @@
 
           keyHistory = that.selectpicker.keydown.keyHistory;
 
-          // if all letters are the same, set keyHistory to just the first character when searching
+          // if all letters are the same, set keyHistory to just the first character when Searching
           if (/^(.)\1+$/.test(keyHistory)) {
             keyHistory = keyHistory.charAt(0);
           }
@@ -2515,9 +2515,9 @@
               }
             }
 
-            searchMatch = that.selectpicker.current.map.newIndex[matches[matchIndex]];
+            SearchMatch = that.selectpicker.current.map.newIndex[matches[matchIndex]];
 
-            activeLi = that.selectpicker.current.data[searchMatch];
+            activeLi = that.selectpicker.current.data[SearchMatch];
 
             if (scrollTop - activeLi.position > 0) {
               offset = activeLi.position - activeLi.height;
@@ -2528,7 +2528,7 @@
               updateScroll = activeLi.position > scrollTop + that.sizeInfo.menuInnerHeight;
             }
 
-            liActive = that.selectpicker.current.elements[searchMatch];
+            liActive = that.selectpicker.current.elements[SearchMatch];
             liActive.classList.add('active');
             if (liActive.firstChild) liActive.firstChild.classList.add('active');
             that.activeIndex = matches[matchIndex];
@@ -2678,8 +2678,8 @@
 
     $(document)
       .off('keydown.bs.dropdown.data-api')
-      .on('keydown.bs.select', '.bootstrap-select [data-toggle="dropdown"], .bootstrap-select [role="listbox"], .bs-searchbox input', Selectpicker.prototype.keydown)
-      .on('focusin.modal', '.bootstrap-select [data-toggle="dropdown"], .bootstrap-select [role="listbox"], .bs-searchbox input', function(e) {
+      .on('keydown.bs.select', '.bootstrap-select [data-toggle="dropdown"], .bootstrap-select [role="listbox"], .bs-Searchbox input', Selectpicker.prototype.keydown)
+      .on('focusin.modal', '.bootstrap-select [data-toggle="dropdown"], .bootstrap-select [role="listbox"], .bs-Searchbox input', function(e) {
         e.stopPropagation();
       });
 

@@ -1,6 +1,6 @@
 FrameBegin 0
 Display "Scene" "framebuffer" "rgb"
-Option "searchpath" "shader" "+&:/home/kew"
+Option "Searchpath" "shader" "+&:/home/kew"
 Option "trace" "int maxdepth" [4]
 Attribute "visibility" "trace" [1]
 Attribute "irradiance" "maxerror" [0.1]

@@ -315,7 +315,7 @@ class File extends Base
         ),
         'application/x-msmetafile'                                                  => array('wmf', 'wmz', 'emf', 'emz'),
         'application/x-rar-compressed'                                              => 'rar',
-        'application/x-research-info-systems'                                       => 'ris',
+        'application/x-reSearch-info-systems'                                       => 'ris',
         'application/x-sh'                                                          => 'sh',
         'application/x-shar'                                                        => 'shar',
         'application/x-shockwave-flash'                                             => 'swf',

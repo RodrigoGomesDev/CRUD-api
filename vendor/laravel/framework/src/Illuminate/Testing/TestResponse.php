@@ -635,7 +635,7 @@ class TestResponse implements ArrayAccess
     }
 
     /**
-     * Get the strings we need to search for when examining the JSON.
+     * Get the strings we need to Search for when examining the JSON.
      *
      * @param  string  $key
      * @param  string  $value

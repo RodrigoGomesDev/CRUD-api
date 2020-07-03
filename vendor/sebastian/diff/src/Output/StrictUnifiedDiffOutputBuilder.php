@@ -141,7 +141,7 @@ final class StrictUnifiedDiffOutputBuilder implements DiffOutputBuilderInterface
                 \array_splice($diff, $upperLimit, 0, [["\n\\ No newline at end of file\n", Differ::NO_LINE_END_EOF_WARNING]]);
             }
         } else {
-            // search back for the last `+` and `-` line,
+            // Search back for the last `+` and `-` line,
             // check if has trailing linebreak, else add under it warning under it
             $toFind = [1 => true, 2 => true];
 

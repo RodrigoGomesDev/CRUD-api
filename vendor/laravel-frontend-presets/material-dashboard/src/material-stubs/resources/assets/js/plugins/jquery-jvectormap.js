@@ -379,7 +379,7 @@ jvm.$ = jQuery;
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
  */
 if (!Array.prototype.indexOf) {
-  Array.prototype.indexOf = function(searchElement, fromIndex) {
+  Array.prototype.indexOf = function(SearchElement, fromIndex) {
 
     var k;
 
@@ -431,9 +431,9 @@ if (!Array.prototype.indexOf) {
       //        internal method of O with the argument ToString(k).
       //   ii.  Let same be the result of applying the
       //        Strict Equality Comparison Algorithm to
-      //        searchElement and elementK.
+      //        SearchElement and elementK.
       //  iii.  If same is true, return k.
-      if (k in O && O[k] === searchElement) {
+      if (k in O && O[k] === SearchElement) {
         return k;
       }
       k++;

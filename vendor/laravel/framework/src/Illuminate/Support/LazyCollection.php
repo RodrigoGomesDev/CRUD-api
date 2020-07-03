@@ -896,7 +896,7 @@ class LazyCollection implements Enumerable
      * @param  bool  $strict
      * @return mixed
      */
-    public function search($value, $strict = false)
+    public function Search($value, $strict = false)
     {
         $predicate = $this->useAsCallable($value)
             ? $value

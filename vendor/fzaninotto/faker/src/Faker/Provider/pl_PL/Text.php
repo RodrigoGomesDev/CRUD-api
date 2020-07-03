@@ -2591,7 +2591,7 @@ EOT;
 
     Or /etext02, 01, 00, 99, 98, 97, 96, 95, 94, 93, 92, 92, 91 or 90
 
-    Just search by the first five letters of the filename you want,
+    Just Search by the first five letters of the filename you want,
     as it appears in our Newsletters.
 
     Information about Project Gutenberg (one page)
@@ -2599,7 +2599,7 @@ EOT;
     We produce about two million dollars for each hour we work.  The
     time it takes us, a rather conservative estimate, is fifty hours
     to get any eBook selected, entered, proofread, edited, copyright
-    searched and analyzed, the copyright letters written, etc.   Our
+    Searched and analyzed, the copyright letters written, etc.   Our
     projected audience is one hundred million readers.  If the value
     per text is nominally estimated at one dollar then we produce $2
     million dollars per hour in 2002 as we release over 100 new text

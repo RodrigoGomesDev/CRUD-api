@@ -827,7 +827,7 @@ interfaces.
   `Guzzle\Service\Command\ArrayCommandInterface`.
 * Added `Guzzle\Http\Message\RequestInterface::startResponse()` to the RequestInterface to handle injecting a response
   on a request while the request is still being transferred
-* The ability to case-insensitively search for header values
+* The ability to case-insensitively Search for header values
 * Guzzle\Http\Message\Header::hasExactHeader
 * Guzzle\Http\Message\Header::raw. Use getAll()
 * Deprecated cache control specific methods on Guzzle\Http\Message\AbstractMessage. Use the CacheControl header object

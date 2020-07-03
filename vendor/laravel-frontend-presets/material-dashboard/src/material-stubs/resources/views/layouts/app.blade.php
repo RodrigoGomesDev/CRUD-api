@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ __('Material Dashboard Laravel - Free Frontend Preset for Laravel') }}</title>
+    <title>{{ __('BMS Care') }}</title>
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('material') }}/img/apple-icon.png">
     <link rel="icon" type="image/png" href="{{ asset('material') }}/img/favicon.png">
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
@@ -33,15 +33,15 @@
             <a href="#" data-toggle="dropdown">
               <i class="fa fa-cog fa-2x"> </i>
             </a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu" style="display: none">
               <li class="header-title"> Sidebar Filters</li>
               <li class="adjustments-line">
                 <a href="javascript:void(0)" class="switch-trigger active-color">
                   <div class="badge-colors ml-auto mr-auto">
-                    <span class="badge filter badge-purple " data-color="purple"></span>
+                    <span class="badge filter badge-purple active" data-color="purple"></span>
                     <span class="badge filter badge-azure" data-color="azure"></span>
                     <span class="badge filter badge-green" data-color="green"></span>
-                    <span class="badge filter badge-warning active" data-color="orange"></span>
+                    <span class="badge filter badge-warning" data-color="orange"></span>
                     <span class="badge filter badge-danger" data-color="danger"></span>
                     <span class="badge filter badge-rose" data-color="rose"></span>
                   </div>
@@ -83,11 +83,6 @@
                   View Documentation
                 </a>
               </li>
-              <li class="button-container">
-                <a href="https://www.creative-tim.com/product/material-dashboard-pro-laravel" target="_blank" class="btn btn-danger btn-block btn-round">
-                  Upgrade to PRO
-                </a>
-              </li>
               <li class="button-container github-star">
                 <a class="github-button" href="https://github.com/creativetimofficial/material-dashboard-laravel" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ntkme/github-buttons on GitHub">Star</a>
               </li>
@@ -102,6 +97,12 @@
           </div>
         </div>
         <!--   Core JS Files   -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
         <script src="{{ asset('material') }}/js/core/jquery.min.js"></script>
         <script src="{{ asset('material') }}/js/core/popper.min.js"></script>
         <script src="{{ asset('material') }}/js/core/bootstrap-material-design.min.js"></script>
@@ -140,9 +141,9 @@
         <script src="{{ asset('material') }}/js/plugins/chartist.min.js"></script>
         <!--  Notifications Plugin    -->
         <script src="{{ asset('material') }}/js/plugins/bootstrap-notify.js"></script>
-        <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+        <!-- Control Center for BMS Care: parallax effects, scripts for the example pages etc -->
         <script src="{{ asset('material') }}/js/material-dashboard.js?v=2.1.1" type="text/javascript"></script>
-        <!-- Material Dashboard DEMO methods, don't include it in your project! -->
+        <!-- BMS Care DEMO methods, don't include it in your project! -->
         <script src="{{ asset('material') }}/demo/demo.js"></script>
         <script src="{{ asset('material') }}/js/settings.js"></script>
         @stack('js')

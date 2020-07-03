@@ -1,7 +1,7 @@
 /*!
 
  =========================================================
- * Material Dashboard - v2.1.1
+ * BMS Care - v2.1.1
  =========================================================
 
  * Product Page: https://www.creative-tim.com/product/material-dashboard
@@ -31,7 +31,7 @@
 
 var breakCards = true;
 
-var searchVisible = 0;
+var SearchVisible = 0;
 var transparent = true;
 
 var transparentDemo = true;
@@ -171,7 +171,7 @@ md = {
 
     $.notify({
       icon: "add_alert",
-      message: "Welcome to <b>Material Dashboard Pro</b> - a beautiful admin panel for every web developer."
+      message: "Welcome to <b>BMS Care Pro</b> - a beautiful admin panel for every web developer."
 
     }, {
       type: type[color],

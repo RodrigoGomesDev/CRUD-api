@@ -56,34 +56,34 @@ class Str
      * Return the remainder of a string after the first occurrence of a given value.
      *
      * @param  string  $subject
-     * @param  string  $search
+     * @param  string  $Search
      * @return string
      */
-    public static function after($subject, $search)
+    public static function after($subject, $Search)
     {
-        return $search === '' ? $subject : array_reverse(explode($search, $subject, 2))[0];
+        return $Search === '' ? $subject : array_reverse(explode($Search, $subject, 2))[0];
     }
 
     /**
      * Return the remainder of a string after the last occurrence of a given value.
      *
      * @param  string  $subject
-     * @param  string  $search
+     * @param  string  $Search
      * @return string
      */
-    public static function afterLast($subject, $search)
+    public static function afterLast($subject, $Search)
     {
-        if ($search === '') {
+        if ($Search === '') {
             return $subject;
         }
 
-        $position = strrpos($subject, (string) $search);
+        $position = strrpos($subject, (string) $Search);
 
         if ($position === false) {
             return $subject;
         }
 
-        return substr($subject, $position + strlen($search));
+        return substr($subject, $position + strlen($Search));
     }
 
     /**
@@ -102,28 +102,28 @@ class Str
      * Get the portion of a string before the first occurrence of a given value.
      *
      * @param  string  $subject
-     * @param  string  $search
+     * @param  string  $Search
      * @return string
      */
-    public static function before($subject, $search)
+    public static function before($subject, $Search)
     {
-        return $search === '' ? $subject : explode($search, $subject)[0];
+        return $Search === '' ? $subject : explode($Search, $subject)[0];
     }
 
     /**
      * Get the portion of a string before the last occurrence of a given value.
      *
      * @param  string  $subject
-     * @param  string  $search
+     * @param  string  $Search
      * @return string
      */
-    public static function beforeLast($subject, $search)
+    public static function beforeLast($subject, $Search)
     {
-        if ($search === '') {
+        if ($Search === '') {
             return $subject;
         }
 
-        $pos = mb_strrpos($subject, $search);
+        $pos = mb_strrpos($subject, $Search);
 
         if ($pos === false) {
             return $subject;
@@ -434,19 +434,19 @@ class Str
     /**
      * Replace a given value in the string sequentially with an array.
      *
-     * @param  string  $search
+     * @param  string  $Search
      * @param  array<int|string, string>  $replace
      * @param  string  $subject
      * @return string
      */
-    public static function replaceArray($search, array $replace, $subject)
+    public static function replaceArray($Search, array $replace, $subject)
     {
-        $segments = explode($search, $subject);
+        $segments = explode($Search, $subject);
 
         $result = array_shift($segments);
 
         foreach ($segments as $segment) {
-            $result .= (array_shift($replace) ?? $search).$segment;
+            $result .= (array_shift($replace) ?? $Search).$segment;
         }
 
         return $result;
@@ -455,21 +455,21 @@ class Str
     /**
      * Replace the first occurrence of a given value in the string.
      *
-     * @param  string  $search
+     * @param  string  $Search
      * @param  string  $replace
      * @param  string  $subject
      * @return string
      */
-    public static function replaceFirst($search, $replace, $subject)
+    public static function replaceFirst($Search, $replace, $subject)
     {
-        if ($search == '') {
+        if ($Search == '') {
             return $subject;
         }
 
-        $position = strpos($subject, $search);
+        $position = strpos($subject, $Search);
 
         if ($position !== false) {
-            return substr_replace($subject, $replace, $position, strlen($search));
+            return substr_replace($subject, $replace, $position, strlen($Search));
         }
 
         return $subject;
@@ -478,17 +478,17 @@ class Str
     /**
      * Replace the last occurrence of a given value in the string.
      *
-     * @param  string  $search
+     * @param  string  $Search
      * @param  string  $replace
      * @param  string  $subject
      * @return string
      */
-    public static function replaceLast($search, $replace, $subject)
+    public static function replaceLast($Search, $replace, $subject)
     {
-        $position = strrpos($subject, $search);
+        $position = strrpos($subject, $Search);
 
         if ($position !== false) {
-            return substr_replace($subject, $replace, $position, strlen($search));
+            return substr_replace($subject, $replace, $position, strlen($Search));
         }
 
         return $subject;

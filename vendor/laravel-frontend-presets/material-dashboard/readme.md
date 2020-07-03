@@ -1,8 +1,8 @@
-# [Material Dashboard Laravel - Free Frontend Preset for Laravel](https://material-dashboard-laravel.creative-tim.com/?ref=adnp-readme) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/home?status=Material%20Dashboard%20Laravel%20is%20a%20Free%20Frontend%20Preset%20for%20Laravel%20%E2%9D%A4%EF%B8%8F%0Ahttps%3A//material-dashboard-laravel.creative-tim.com/%20%23%material%20%23design%20%23dashboard%20%23laravel%20%23free%20via%20%40CreativeTim)
+# [BMS Care Laravel - Free Frontend Preset for Laravel](https://material-dashboard-laravel.creative-tim.com/?ref=adnp-readme) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/home?status=Material%20Dashboard%20Laravel%20is%20a%20Free%20Frontend%20Preset%20for%20Laravel%20%E2%9D%A4%EF%B8%8F%0Ahttps%3A//material-dashboard-laravel.creative-tim.com/%20%23%material%20%23design%20%23dashboard%20%23laravel%20%23free%20via%20%40CreativeTim)
 
 ![version](https://img.shields.io/badge/version-1.0.9-blue.svg) ![license](https://img.shields.io/badge/license-MIT-blue.svg) [![GitHub issues open](https://img.shields.io/github/issues/laravel-frontend-presets/material-dashboard.svg?maxAge=2592000)](https://github.com/laravel-frontend-presets/material-dashboard/issues?q=is%3Aopen+is%3Aissue) [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/laravel-frontend-presets/material-dashboard.svg?maxAge=2592000)](https://github.com/laravel-frontend-presets/material-dashboard/issues?q=is%3Aissue+is%3Aclosed)
 
-*Frontend version*: Material Dashboard v2.1.1. More info at https://www.creative-tim.com/product/material-dashboard
+*Frontend version*: BMS Care v2.1.1. More info at https://www.creative-tim.com/product/material-dashboard
 
 ![Product Image](https://s3.amazonaws.com/creativetim_bucket/products/154/original/opt_md_laravel_thumbnail.jpg?1554814177)
 
@@ -56,7 +56,7 @@ After initializing a fresh instance of Laravel (and making all the necessary con
 
 Register a user or login using **admin@material.com** and **secret** and start testing the preset (make sure to run the migrations and seeders for these credentials to be available).
 
-Besides the dashboard and the auth pages this preset also has an edit profile page. All the necessary files (controllers, requests, views) are installed out of the box and all the needed routes are added to `routes/web.php`. Keep in mind that all of the features can be viewed once you login using the credentials provided above or by registering your own user. 
+Besides the dashboard and the auth pages this preset also has an Editar perfil page. All the necessary files (controllers, requests, views) are installed out of the box and all the needed routes are added to `routes/web.php`. Keep in mind that all of the features can be viewed once you login using the credentials provided above or by registering your own user. 
 
 ### Dashboard
 
@@ -73,7 +73,7 @@ public function update(ProfileRequest $request)
 {
     auth()->user()->update($request->all());
 
-    return back()->withStatus(__('Profile successfully updated.'));
+    return back()->withStatus(__('Perfil editado com sucesso'));
 }
 ```
 
@@ -108,7 +108,7 @@ public function rules()
 
 | HTML | LARAVEL |
 | --- | --- |
-| [![Material Dashboard HTML](https://s3.amazonaws.com/creativetim_bucket/products/50/original/opt_md_thumbnail.jpg?1522232645)](https://demos.creative-tim.com/material-dashboard/examples/dashboard.html?ref=mdl-readme) | [![Material Dashboard Laravel](https://s3.amazonaws.com/creativetim_bucket/products/154/original/opt_md_laravel_thumbnail.jpg?1554814177)](https://material-dashboard-laravel.creative-tim.com/?ref=mdl-readme)
+| [![BMS Care HTML](https://s3.amazonaws.com/creativetim_bucket/products/50/original/opt_md_thumbnail.jpg?1522232645)](https://demos.creative-tim.com/material-dashboard/examples/dashboard.html?ref=mdl-readme) | [![BMS Care Laravel](https://s3.amazonaws.com/creativetim_bucket/products/154/original/opt_md_laravel_thumbnail.jpg?1554814177)](https://material-dashboard-laravel.creative-tim.com/?ref=mdl-readme)
 
 ## Demo
 
@@ -122,7 +122,7 @@ public function rules()
 [View More](https://material-dashboard-laravel.creative-tim.com/?ref=mdl-readme)
 
 ## Documentation
-The documentation for the Material Dashboard Laravel is hosted at our [website](https://material-dashboard-laravel.creative-tim.com/docs/getting-started/laravel-setup.html?ref=mdl-readme).
+The documentation for the BMS Care Laravel is hosted at our [website](https://material-dashboard-laravel.creative-tim.com/docs/getting-started/laravel-setup.html?ref=mdl-readme).
 
 ## File Structure
 ```
@@ -438,7 +438,7 @@ At present, we officially aim to support the last two versions of the following 
 
 | HTML | LARAVEL |
 | --- | --- |
-| [![Material Dashboard HTML](https://s3.amazonaws.com/creativetim_bucket/products/50/original/opt_md_thumbnail.jpg?1522232645)](https://demos.creative-tim.com/material-dashboard/examples/dashboard.html?ref=mdl-readme) | [![Material Dashboard Laravel](https://s3.amazonaws.com/creativetim_bucket/products/154/original/opt_md_laravel_thumbnail.jpg?1554814177)](https://material-dashboard-laravel.creative-tim.com/?ref=mdl-readme)
+| [![BMS Care HTML](https://s3.amazonaws.com/creativetim_bucket/products/50/original/opt_md_thumbnail.jpg?1522232645)](https://demos.creative-tim.com/material-dashboard/examples/dashboard.html?ref=mdl-readme) | [![BMS Care Laravel](https://s3.amazonaws.com/creativetim_bucket/products/154/original/opt_md_laravel_thumbnail.jpg?1554814177)](https://material-dashboard-laravel.creative-tim.com/?ref=mdl-readme)
 
 ## Change log
 
@@ -451,9 +451,9 @@ Please see the [changelog](CHANGELOG.md) for more information on what has change
 
 ## Reporting Issues
 
-We use GitHub Issues as the official bug tracker for the Material Dashboard Laravel. Here are some advices for our users that want to report an issue:
+We use GitHub Issues as the official bug tracker for the BMS Care Laravel. Here are some advices for our users that want to report an issue:
 
-1. Make sure that you are using the latest version of the Material Dashboard Laravel. Check the CHANGELOG from your dashboard on our [website](https://www.creative-tim.com/?ref=mdl-readme).
+1. Make sure that you are using the latest version of the BMS Care Laravel. Check the CHANGELOG from your dashboard on our [website](https://www.creative-tim.com/?ref=mdl-readme).
 2. Providing us reproducible steps for the issue will shorten the time it takes for it to be fixed.
 3. Some issues may be browser specific, so specifying in what browser you encountered the issue might help.
 

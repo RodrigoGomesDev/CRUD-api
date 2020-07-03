@@ -427,18 +427,18 @@ class Container implements ArrayAccess, ContainerContract
     /**
      * Remove an alias from the contextual binding alias cache.
      *
-     * @param  string  $searched
+     * @param  string  $Searched
      * @return void
      */
-    protected function removeAbstractAlias($searched)
+    protected function removeAbstractAlias($Searched)
     {
-        if (! isset($this->aliases[$searched])) {
+        if (! isset($this->aliases[$Searched])) {
             return;
         }
 
         foreach ($this->abstractAliases as $abstract => $aliases) {
             foreach ($aliases as $index => $alias) {
-                if ($alias == $searched) {
+                if ($alias == $Searched) {
                     unset($this->abstractAliases[$abstract][$index]);
                 }
             }

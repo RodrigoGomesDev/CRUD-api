@@ -33,7 +33,7 @@ CHANGELOG
 -----
 
  * added the `Process::isTtySupported()` method that allows to check for TTY support
- * made `PhpExecutableFinder` look for the `PHP_BINARY` env var when searching the php binary
+ * made `PhpExecutableFinder` look for the `PHP_BINARY` env var when Searching the php binary
  * added the `ProcessSignaledException` class to properly catch signaled process errors
 
 4.0.0

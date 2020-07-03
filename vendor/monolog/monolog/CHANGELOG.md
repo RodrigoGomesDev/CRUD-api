@@ -11,7 +11,7 @@
 
 ### 2.0.2 (2019-12-20)
 
-  * Fixed ElasticsearchHandler swallowing exceptions details when failing to index log records
+  * Fixed ElasticSearchHandler swallowing exceptions details when failing to index log records
   * Fixed normalization of SoapFault objects containing non-strings as "detail" in LineFormatter
   * Fixed formatting of resources in JsonFormatter
   * Fixed RedisHandler failing to use MULTI properly when passed a proxied Redis instance (e.g. in Symfony with lazy services)
@@ -70,7 +70,7 @@
   * Added SendGridHandler to use the SendGrid API to send emails
   * Added LogmaticHandler to use the Logmatic.io API to store log records
   * Added SqsHandler to send log records to an AWS SQS queue
-  * Added ElasticsearchHandler to send records via the official ES library. Elastica users should now use ElasticaHandler instead of ElasticSearchHandler
+  * Added ElasticSearchHandler to send records via the official ES library. Elastica users should now use ElasticaHandler instead of ElasticSearchHandler
   * Added NoopHandler which is similar to the NullHandle but does not prevent the bubbling of log records to handlers further down the configuration, useful for temporarily disabling a handler in configuration files
   * Added ProcessHandler to write log output to the STDIN of a given process
   * Added HostnameProcessor that adds the machine's hostname to log records

@@ -669,7 +669,7 @@ class Application implements ResetInterface
             }
             $abbrevs = array_map(function ($cmd) use ($commandList, $usableWidth, $maxLen, &$commands) {
                 if ($commandList[$cmd]->isHidden()) {
-                    unset($commands[array_search($cmd, $commands)]);
+                    unset($commands[array_Search($cmd, $commands)]);
 
                     return false;
                 }

@@ -19,27 +19,27 @@ class Swift_StreamFilters_StringReplacementFilterFactory implements Swift_Replac
     private $filters = [];
 
     /**
-     * Create a new StreamFilter to replace $search with $replace in a string.
+     * Create a new StreamFilter to replace $Search with $replace in a string.
      *
-     * @param string $search
+     * @param string $Search
      * @param string $replace
      *
      * @return Swift_StreamFilter
      */
-    public function createFilter($search, $replace)
+    public function createFilter($Search, $replace)
     {
-        if (!isset($this->filters[$search][$replace])) {
-            if (!isset($this->filters[$search])) {
-                $this->filters[$search] = [];
+        if (!isset($this->filters[$Search][$replace])) {
+            if (!isset($this->filters[$Search])) {
+                $this->filters[$Search] = [];
             }
 
-            if (!isset($this->filters[$search][$replace])) {
-                $this->filters[$search][$replace] = [];
+            if (!isset($this->filters[$Search][$replace])) {
+                $this->filters[$Search][$replace] = [];
             }
 
-            $this->filters[$search][$replace] = new Swift_StreamFilters_StringReplacementFilter($search, $replace);
+            $this->filters[$Search][$replace] = new Swift_StreamFilters_StringReplacementFilter($Search, $replace);
         }
 
-        return $this->filters[$search][$replace];
+        return $this->filters[$Search][$replace];
     }
 }

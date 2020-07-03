@@ -7,14 +7,14 @@ use Dotenv\Store\File\Paths;
 class StoreBuilder
 {
     /**
-     * The paths to search within.
+     * The paths to Search within.
      *
      * @var string[]
      */
     private $paths;
 
     /**
-     * The file names to search for.
+     * The file names to Search for.
      *
      * @var string[]|null
      */

@@ -931,10 +931,10 @@ class Collection implements ArrayAccess, Enumerable
      * @param  bool  $strict
      * @return mixed
      */
-    public function search($value, $strict = false)
+    public function Search($value, $strict = false)
     {
         if (! $this->useAsCallable($value)) {
-            return array_search($value, $this->items, $strict);
+            return array_Search($value, $this->items, $strict);
         }
 
         foreach ($this->items as $key => $item) {

@@ -20,24 +20,24 @@ class Swift_StreamFilters_ByteArrayReplacementFilter implements Swift_StreamFilt
     /** The replacement(s) to make */
     private $replace;
 
-    /** The Index for searching */
+    /** The Index for Searching */
     private $index;
 
     /** The Search Tree */
     private $tree = [];
 
-    /**  Gives the size of the largest search */
+    /**  Gives the size of the largest Search */
     private $treeMaxLen = 0;
 
     private $repSize;
 
     /**
-     * Create a new ByteArrayReplacementFilter with $search and $replace.
+     * Create a new ByteArrayReplacementFilter with $Search and $replace.
      *
-     * @param array $search
+     * @param array $Search
      * @param array $replace
      */
-    public function __construct($search, $replace)
+    public function __construct($Search, $replace)
     {
         $this->index = [];
         $this->tree = [];
@@ -47,14 +47,14 @@ class Swift_StreamFilters_ByteArrayReplacementFilter implements Swift_StreamFilt
         $tree = null;
         $i = null;
         $last_size = $size = 0;
-        foreach ($search as $i => $search_element) {
+        foreach ($Search as $i => $Search_element) {
             if (null !== $tree) {
                 $tree[-1] = min(count($replace) - 1, $i - 1);
                 $tree[-2] = $last_size;
             }
             $tree = &$this->tree;
-            if (is_array($search_element)) {
-                foreach ($search_element as $k => $char) {
+            if (is_array($Search_element)) {
+                foreach ($Search_element as $k => $char) {
                     $this->index[$char] = true;
                     if (!isset($tree[$char])) {
                         $tree[$char] = [];
@@ -65,12 +65,12 @@ class Swift_StreamFilters_ByteArrayReplacementFilter implements Swift_StreamFilt
                 $size = max($size, $last_size);
             } else {
                 $last_size = 1;
-                if (!isset($tree[$search_element])) {
-                    $tree[$search_element] = [];
+                if (!isset($tree[$Search_element])) {
+                    $tree[$Search_element] = [];
                 }
-                $tree = &$tree[$search_element];
+                $tree = &$tree[$Search_element];
                 $size = max($last_size, $size);
-                $this->index[$search_element] = true;
+                $this->index[$Search_element] = true;
             }
         }
         if (null !== $i) {
@@ -122,18 +122,18 @@ class Swift_StreamFilters_ByteArrayReplacementFilter implements Swift_StreamFilt
         $buf_size = count($buffer);
         $last_size = 0;
         for ($i = 0; $i < $buf_size; ++$i) {
-            $search_pos = $this->tree;
+            $Search_pos = $this->tree;
             $last_found = PHP_INT_MAX;
-            // We try to find if the next byte is part of a search pattern
+            // We try to find if the next byte is part of a Search pattern
             for ($j = 0; $j <= $this->treeMaxLen; ++$j) {
-                // We have a new byte for a search pattern
-                if (isset($buffer[$p = $i + $j]) && isset($search_pos[$buffer[$p]])) {
-                    $search_pos = $search_pos[$buffer[$p]];
+                // We have a new byte for a Search pattern
+                if (isset($buffer[$p = $i + $j]) && isset($Search_pos[$buffer[$p]])) {
+                    $Search_pos = $Search_pos[$buffer[$p]];
                     // We have a complete pattern, save, in case we don't find a better match later
-                    if (isset($search_pos[-1]) && $search_pos[-1] < $last_found
-                        && $search_pos[-1] > $minReplaces) {
-                        $last_found = $search_pos[-1];
-                        $last_size = $search_pos[-2];
+                    if (isset($Search_pos[-1]) && $Search_pos[-1] < $last_found
+                        && $Search_pos[-1] > $minReplaces) {
+                        $last_found = $Search_pos[-1];
+                        $last_size = $Search_pos[-2];
                     }
                 }
                 // We got a complete pattern

@@ -58,7 +58,7 @@ class MimeType
      * @param  string  $mimeType
      * @return string|null
      */
-    public static function search($mimeType)
+    public static function Search($mimeType)
     {
         return Arr::first(self::getMimeTypes()->getExtensions($mimeType));
     }

@@ -21,12 +21,12 @@ use Elastica\Document;
 class ElasticaFormatter extends NormalizerFormatter
 {
     /**
-     * @var string Elastic search index name
+     * @var string Elastic Search index name
      */
     protected $index;
 
     /**
-     * @var string Elastic search document type
+     * @var string Elastic Search document type
      */
     protected $type;
 
@@ -36,7 +36,7 @@ class ElasticaFormatter extends NormalizerFormatter
      */
     public function __construct(string $index, string $type)
     {
-        // elasticsearch requires a ISO 8601 format date with optional millisecond precision.
+        // elasticSearch requires a ISO 8601 format date with optional millisecond precision.
         parent::__construct('Y-m-d\TH:i:s.uP');
 
         $this->index = $index;

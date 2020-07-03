@@ -508,55 +508,55 @@ return function (root, x) {
 
         function showCurrent(state)
         {
-            var currentNode = state.current(), currentRect, searchRect;
+            var currentNode = state.current(), currentRect, SearchRect;
             if (currentNode) {
                 reveal(currentNode);
                 highlight(root, currentNode, state.nodes);
                 if ('scrollIntoView' in currentNode) {
                     currentNode.scrollIntoView(true);
                     currentRect = currentNode.getBoundingClientRect();
-                    searchRect = search.getBoundingClientRect();
-                    if (currentRect.top < (searchRect.top + searchRect.height)) {
-                        window.scrollBy(0, -(searchRect.top + searchRect.height + 5));
+                    SearchRect = Search.getBoundingClientRect();
+                    if (currentRect.top < (SearchRect.top + SearchRect.height)) {
+                        window.scrollBy(0, -(SearchRect.top + SearchRect.height + 5));
                     }
                 }
             }
             counter.textContent = (state.isEmpty() ? 0 : state.idx + 1) + ' of ' + state.count();
         }
 
-        var search = doc.createElement('div');
-        search.className = 'sf-dump-search-wrapper sf-dump-search-hidden';
-        search.innerHTML = '
-            <input type="text" class="sf-dump-search-input">
-            <span class="sf-dump-search-count">0 of 0<\/span>
-            <button type="button" class="sf-dump-search-input-previous" tabindex="-1">
+        var Search = doc.createElement('div');
+        Search.className = 'sf-dump-Search-wrapper sf-dump-Search-hidden';
+        Search.innerHTML = '
+            <input type="text" class="sf-dump-Search-input">
+            <span class="sf-dump-Search-count">0 of 0<\/span>
+            <button type="button" class="sf-dump-Search-input-previous" tabindex="-1">
                 <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1683 1331l-166 165q-19 19-45 19t-45-19L896 965l-531 531q-19 19-45 19t-45-19l-166-165q-19-19-19-45.5t19-45.5l742-741q19-19 45-19t45 19l742 741q19 19 19 45.5t-19 45.5z"\/><\/svg>
             <\/button>
-            <button type="button" class="sf-dump-search-input-next" tabindex="-1">
+            <button type="button" class="sf-dump-Search-input-next" tabindex="-1">
                 <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1683 808l-742 741q-19 19-45 19t-45-19L109 808q-19-19-19-45.5t19-45.5l166-165q19-19 45-19t45 19l531 531 531-531q19-19 45-19t45 19l166 165q19 19 19 45.5t-19 45.5z"\/><\/svg>
             <\/button>
         ';
-        root.insertBefore(search, root.firstChild);
+        root.insertBefore(Search, root.firstChild);
 
         var state = new SearchState();
-        var searchInput = search.querySelector('.sf-dump-search-input');
-        var counter = search.querySelector('.sf-dump-search-count');
-        var searchInputTimer = 0;
+        var SearchInput = Search.querySelector('.sf-dump-Search-input');
+        var counter = Search.querySelector('.sf-dump-Search-count');
+        var SearchInputTimer = 0;
         var previousSearchQuery = '';
 
-        addEventListener(searchInput, 'keyup', function (e) {
-            var searchQuery = e.target.value;
+        addEventListener(SearchInput, 'keyup', function (e) {
+            var SearchQuery = e.target.value;
             /* Don't perform anything if the pressed key didn't change the query */
-            if (searchQuery === previousSearchQuery) {
+            if (SearchQuery === previousSearchQuery) {
                 return;
             }
-            previousSearchQuery = searchQuery;
-            clearTimeout(searchInputTimer);
-            searchInputTimer = setTimeout(function () {
+            previousSearchQuery = SearchQuery;
+            clearTimeout(SearchInputTimer);
+            SearchInputTimer = setTimeout(function () {
                 state.reset();
                 collapseAll(root);
                 resetHighlightedNodes(root);
-                if ('' === searchQuery) {
+                if ('' === SearchQuery) {
                     counter.textContent = '0 of 0';
 
                     return;
@@ -570,7 +570,7 @@ return function (root, x) {
                     "sf-dump-private",
                 ].map(xpathHasClass).join(' or ');
 
-                var xpathResult = doc.evaluate('.//span[' + classMatches + '][contains(translate(child::text(), ' + xpathString(searchQuery.toUpperCase()) + ', ' + xpathString(searchQuery.toLowerCase()) + '), ' + xpathString(searchQuery.toLowerCase()) + ')]', root, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);
+                var xpathResult = doc.evaluate('.//span[' + classMatches + '][contains(translate(child::text(), ' + xpathString(SearchQuery.toUpperCase()) + ', ' + xpathString(SearchQuery.toLowerCase()) + '), ' + xpathString(SearchQuery.toLowerCase()) + ')]', root, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);
 
                 while (node = xpathResult.iterateNext()) state.nodes.push(node);
 
@@ -578,39 +578,39 @@ return function (root, x) {
             }, 400);
         });
 
-        Array.from(search.querySelectorAll('.sf-dump-search-input-next, .sf-dump-search-input-previous')).forEach(function (btn) {
+        Array.from(Search.querySelectorAll('.sf-dump-Search-input-next, .sf-dump-Search-input-previous')).forEach(function (btn) {
             addEventListener(btn, 'click', function (e) {
                 e.preventDefault();
                 -1 !== e.target.className.indexOf('next') ? state.next() : state.previous();
-                searchInput.focus();
+                SearchInput.focus();
                 collapseAll(root);
                 showCurrent(state);
             })
         });
 
         addEventListener(root, 'keydown', function (e) {
-            var isSearchActive = !/\bsf-dump-search-hidden\b/.test(search.className);
+            var isSearchActive = !/\bsf-dump-Search-hidden\b/.test(Search.className);
             if ((114 === e.keyCode && !isSearchActive) || (isCtrlKey(e) && 70 === e.keyCode)) {
                 /* F3 or CMD/CTRL + F */
-                if (70 === e.keyCode && document.activeElement === searchInput) {
+                if (70 === e.keyCode && document.activeElement === SearchInput) {
                    /*
-                    * If CMD/CTRL + F is hit while having focus on search input,
-                    * the user probably meant to trigger browser search instead.
+                    * If CMD/CTRL + F is hit while having focus on Search input,
+                    * the user probably meant to trigger browser Search instead.
                     * Let the browser execute its behavior:
                     */
                     return;
                 }
 
                 e.preventDefault();
-                search.className = search.className.replace(/\bsf-dump-search-hidden\b/, '');
-                searchInput.focus();
+                Search.className = Search.className.replace(/\bsf-dump-Search-hidden\b/, '');
+                SearchInput.focus();
             } else if (isSearchActive) {
                 if (27 === e.keyCode) {
                     /* ESC key */
-                    search.className += ' sf-dump-search-hidden';
+                    Search.className += ' sf-dump-Search-hidden';
                     e.preventDefault();
                     resetHighlightedNodes(root);
-                    searchInput.value = '';
+                    SearchInput.value = '';
                 } else if (
                     (isCtrlKey(e) && 71 === e.keyCode) /* CMD/CTRL + G */
                     || 13 === e.keyCode /* Enter */
@@ -729,10 +729,10 @@ pre.sf-dump code {
     border: 1px solid #ffa500;
     border-radius: 3px;
 }
-pre.sf-dump .sf-dump-search-hidden {
+pre.sf-dump .sf-dump-Search-hidden {
     display: none !important;
 }
-pre.sf-dump .sf-dump-search-wrapper {
+pre.sf-dump .sf-dump-Search-wrapper {
     font-size: 0;
     white-space: nowrap;
     margin-bottom: 5px;
@@ -741,7 +741,7 @@ pre.sf-dump .sf-dump-search-wrapper {
     position: sticky;
     top: 5px;
 }
-pre.sf-dump .sf-dump-search-wrapper > * {
+pre.sf-dump .sf-dump-Search-wrapper > * {
     vertical-align: top;
     box-sizing: border-box;
     height: 21px;
@@ -751,7 +751,7 @@ pre.sf-dump .sf-dump-search-wrapper > * {
     color: #757575;
     border: 1px solid #BBB;
 }
-pre.sf-dump .sf-dump-search-wrapper > input.sf-dump-search-input {
+pre.sf-dump .sf-dump-Search-wrapper > input.sf-dump-Search-input {
     padding: 3px;
     height: 21px;
     font-size: 12px;
@@ -762,25 +762,25 @@ pre.sf-dump .sf-dump-search-wrapper > input.sf-dump-search-input {
     min-width: 15px;
     width: 100%;
 }
-pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-next,
-pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-previous {
+pre.sf-dump .sf-dump-Search-wrapper > .sf-dump-Search-input-next,
+pre.sf-dump .sf-dump-Search-wrapper > .sf-dump-Search-input-previous {
     background: #F2F2F2;
     outline: none;
     border-left: none;
     font-size: 0;
     line-height: 0;
 }
-pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-next {
+pre.sf-dump .sf-dump-Search-wrapper > .sf-dump-Search-input-next {
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
 }
-pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-next > svg,
-pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-previous > svg {
+pre.sf-dump .sf-dump-Search-wrapper > .sf-dump-Search-input-next > svg,
+pre.sf-dump .sf-dump-Search-wrapper > .sf-dump-Search-input-previous > svg {
     pointer-events: none;
     width: 12px;
     height: 12px;
 }
-pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-count {
+pre.sf-dump .sf-dump-Search-wrapper > .sf-dump-Search-count {
     display: inline-block;
     padding: 0 5px;
     margin: 0;
