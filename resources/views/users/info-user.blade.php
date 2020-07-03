@@ -1,4 +1,7 @@
 {{-- @extends('layouts.app', ['class' => 'off-canvas-sidebar', 'activePage' => 'register', 'title' => __('BMS Care')]) --}}
+@extends('layouts.app', ['activePage' => 'info-user', 'titlePage' => __('Informações de usuário')])
+
+@section('content')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,7 +37,7 @@
 
 
     <!-- Open Graph data -->
-    <meta property="fb:app_id" content="655968634437471">
+    <meta property="fb:app_id" content="655968622437471">
     <meta property="og:title" content="BMS Care Laravel by Creative Tim" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://material-dashboard-laravel.creative-tim.com/" />
@@ -126,7 +129,8 @@
       </style>
 </head>
 <body>
-<div class="container" style="height: auto;">
+
+<div class="mt-5" style="height: auto;">
     <div class="row align-items-center">
       <div class="col-lg-8 col-md-12 col-sm-8 ml-auto mr-auto  mt-5">
         <form method="POST" action="{{ route('profile.newUpdate') }}"  autocomplete="off" class="form-horizontal">
@@ -209,12 +213,12 @@
                     <option value="Masculino">Masculino</option>
                     <option value="Feminino">Feminino</option>
                   </select> --}}
-                  <div class="dropdown m-0 p-0" style="height: 30px; width: 634px ">
+                  <div class="dropdown m-0 p-0" style=" width: 622px ">
                       <button class="btn btn-primary dropdown-toggle p-0 m-0 mb-1 d-flex" id="dropdown1" style="background-color: white; box-shadow: none; height: 30px; width: 100%" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                         <input type="text" name="sexo" style="cursor: pointer; width: 100%" id="sexo" class="form-control " placeholder="{{ __(' Sexo') }}" value="{{ old('sexo') }}" readonly  >
                         <span class="caret"></span>
                       </button>
-                        <div class="dropdown-menu slideIn" id="teste1" style="width: 634px " aria-labelledby="dropdownMenuButton">
+                        <div class="dropdown-menu slideIn" id="teste1" style="width: 622px " aria-labelledby="dropdownMenuButton">
                           <li class="dropdown-item" style="cursor: pointer;">Masculino</li>
                           <li class="dropdown-item" style="cursor: pointer;">Feminino</li>
                         </div>
@@ -259,12 +263,12 @@
                     <option value="Negro">Negro</option>
                     <option value="Outro">Outro</option>
                   </select> --}}
-                  <div class="dropdown m-0 p-0" style="height: 30px; width: 634px ">
+                  <div class="dropdown m-0 p-0" style="height: 30px; width: 622px ">
                     <button class="btn btn-primary dropdown-toggle p-0 m-0 mb-1 d-flex" style="background-color: white; box-shadow: none; height: 30px; width: 100%" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                       <input type="text" name="cor" style="cursor: pointer; width: 100%" id="cor" class="form-control " placeholder="{{ __(' Cor') }}" value="{{ old('cor') }}" readonly >
                       <span class="caret"></span>
                     </button>
-                      <div class="dropdown-menu slideIn" style="width: 634px " aria-labelledby="dropdownMenuButton">
+                      <div class="dropdown-menu slideIn" style="width: 622px " aria-labelledby="dropdownMenuButton">
                         <li class="dropdown-item" style="cursor: pointer;">Branco</li>
                         <li class="dropdown-item" style="cursor: pointer;">Pardo</li>
                         <li class="dropdown-item" style="cursor: pointer;">Amarelo</li>
@@ -289,12 +293,12 @@
                     <option value="Divorciado">Divorciado</option>
                     <option value="Outros">Outros</option>
                   </select> --}}
-                  <div class="dropdown m-0 p-0" style="height: 30px; width: 634px ">
+                  <div class="dropdown m-0 p-0" style="height: 30px; width: 622px ">
                     <button class="btn btn-primary dropdown-toggle p-0 m-0 mb-1 d-flex" style="background-color: white; box-shadow: none; height: 30px; width: 100%" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                       <input type="text" name="estado_civil" style="cursor: pointer; width: 100%" id="estado_civil" class="form-control " placeholder="{{ __(' Estado Civil') }}" value="{{ old('estado_civil') }}" readonly >
                       <span class="caret"></span>
                     </button>
-                      <div class="dropdown-menu slideIn" style="width: 634px " aria-labelledby="dropdownMenuButton">
+                      <div class="dropdown-menu slideIn" style="width: 622px " aria-labelledby="dropdownMenuButton">
                         <li class="dropdown-item" style="cursor: pointer;">Casado</li>
                         <li class="dropdown-item" style="cursor: pointer;">Solteiro</li>
                         <li class="dropdown-item" style="cursor: pointer;">Divorciado</li>
@@ -341,12 +345,12 @@
                     <option value="Budista">Budista</option>
                     <option value="Outros">Outros</option>
                   </select> --}}
-                  <div class="dropdown m-0 p-0" style="height: 30px; width: 634px ">
+                  <div class="dropdown m-0 p-0" style="height: 30px; width: 622px ">
                     <button class="btn btn-primary dropdown-toggle p-0 m-0 mb-1 d-flex" style="background-color: white; box-shadow: none; height: 30px; width: 100%" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                       <input type="text" name="credo_religiao" style="cursor: pointer; width: 100%" id="credo_religiao" class="form-control " placeholder="{{ __(' Credo/Religião') }}" value="{{ old('credo_religiao') }}" readonly >
                       <span class="caret"></span>
                     </button>
-                      <div class="dropdown-menu slideIn" style="width: 634px " aria-labelledby="dropdownMenuButton">
+                      <div class="dropdown-menu slideIn" style="width: 622px " aria-labelledby="dropdownMenuButton">
                         <li class="dropdown-item" style="cursor: pointer;">Cristão</li>
                         <li class="dropdown-item" style="cursor: pointer;">Muçulmano</li>
                         <li class="dropdown-item" style="cursor: pointer;">Judeu</li>
@@ -372,12 +376,12 @@
                     <option value="Superior incompleto">Superior incompleto</option>
                     <option value="Superior completo">Superior completo</option>
                   </select> --}}
-                  <div class="dropdown m-0 p-0" style="height: 30px; width: 634px ">
+                  <div class="dropdown m-0 p-0" style="height: 30px; width: 622px ">
                     <button class="btn btn-primary dropdown-toggle p-0 m-0 mb-1 d-flex" style="background-color: white; box-shadow: none; height: 30px; width: 100%" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                       <input type="text" name="escolaridade" style="cursor: pointer; width: 100%" id="escolaridade" class="form-control " placeholder="{{ __(' Escolaridade') }}" value="{{ old('escolaridade') }}" readonly  >
                       <span class="caret"></span>
                     </button>
-                      <div class="dropdown-menu slideIn" style="width: 634px " aria-labelledby="dropdownMenuButton">
+                      <div class="dropdown-menu slideIn" style="width: 622px " aria-labelledby="dropdownMenuButton">
                         <li class="dropdown-item" style="cursor: pointer;">1º grau incompleto</li>
                         <li class="dropdown-item" style="cursor: pointer;">1ª grau completo</li>
                         <li class="dropdown-item" style="cursor: pointer;">2ª grau incompleto</li>
@@ -404,12 +408,12 @@
                     <option value="Empresário">Empresário</option>
                     <option value="Outros">Outros</option>
                   </select> --}}
-                  <div class="dropdown m-0 p-0" style="height: 30px; width: 634px ">
+                  <div class="dropdown m-0 p-0" style="height: 30px; width: 622px ">
                     <button class="btn btn-primary dropdown-toggle p-0 m-0 mb-1 d-flex" style="background-color: white; box-shadow: none; height: 30px; width: 100%" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                       <input type="text" name="profissao" style="cursor: pointer; width: 100%" id="profissao" class="form-control " placeholder="{{ __(' Profissão') }}" value="{{ old('profissao') }}" readonly >
                       <span class="caret"></span>
                     </button>
-                      <div class="dropdown-menu slideIn" style="width: 634px " aria-labelledby="dropdownMenuButton">
+                      <div class="dropdown-menu slideIn" style="width: 622px " aria-labelledby="dropdownMenuButton">
                         <li class="dropdown-item" style="cursor: pointer;">Funcionário Empresa Privada</li>
                         <li class="dropdown-item" style="cursor: pointer;">Funcionário Público</li>
                         <li class="dropdown-item" style="cursor: pointer;">Profissional Liberal</li>
@@ -435,12 +439,12 @@
                     <option value="Aposentadoria por invalidez">Aposentadoria por invalidez</option>
                     <option value="Aposentadoria especial por tempo de contribuição">Aposentadoria especial por tempo de contribuição</option>
                   </select> --}}
-                  <div class="dropdown m-0 p-0" style="height: 30px; width: 634px ">
+                  <div class="dropdown m-0 p-0" style="height: 30px; width: 622px ">
                     <button class="btn btn-primary dropdown-toggle p-0 m-0 mb-1 d-flex" style="background-color: white; box-shadow: none; height: 30px; width: 100%" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                       <input type="text" name="situacao_previdenciaria" style="cursor: pointer; width: 100%" id="situacao_previdenciaria" class="form-control " placeholder="{{ __(' Situação previdenciária') }}" value="{{ old('situacao_previdenciaria') }}" readonly >
                       <span class="caret"></span>
                     </button>
-                      <div class="dropdown-menu slideIn" style="width: 634px " aria-labelledby="dropdownMenuButton">
+                      <div class="dropdown-menu slideIn" style="width: 622px " aria-labelledby="dropdownMenuButton">
                         <li class="dropdown-item" style="cursor: pointer;">Sem aposentadoria</li>
                         <li class="dropdown-item" style="cursor: pointer;">Aposentadoria por idade</li>
                         <li class="dropdown-item" style="cursor: pointer;">Aposentadoria por tempo de contribuição</li>
@@ -487,12 +491,12 @@
                   </select>
                   <textarea name="textarea" class="form-control w-100" id="txtarea" rows="3" placeholder="{{ __(' Descrever') }}"></textarea>  --}}
                   
-                  <div class="dropdown m-0 p-0" style="height: 30px; width: 634px ">
-                    <button class="btn btn-primary dropdown-toggle p-0 m-0 mb-1 d-flex" id="teste1" style="background-color: white; box-shadow: none; height: 30px; width: 100%" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                      <input type="text" name="cirurgia" style="cursor: pointer; width: 100%" id="cirurgia" class="form-control " placeholder="{{ __(' Passou por alguma cirurgia recentemente') }}" value="{{ old('cirurgia') }}" readonly >
+                  <div class="dropdown m-0 p-0" style="width: 622px ">
+                    <button class="btn btn-primary dropdown-toggle p-0 m-0 mb-1 d-flex" style="background-color: white; box-shadow: none; height: 30px; width: 100%" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                      <input type="text" name="cirurgia" style="cursor: pointer; width: 603px" id="cirurgia" class="form-control " placeholder="{{ __(' Passou por alguma cirurgia recentemente') }}" value="{{ old('cirurgia') }}" readonly >
                       <span class="caret"></span>
                     </button>
-                      <div class="dropdown-menu slideIn" id="teste2" style="width: 634px " aria-labelledby="dropdownMenuButton">
+                      <div class="dropdown-menu slideIn"style="width: 622px " aria-labelledby="dropdownMenuButton">
                         <li class="dropdown-item" style="cursor: pointer;">Sim</li>
                         <li class="dropdown-item" style="cursor: pointer;">Não</li>
                       </div>
@@ -516,12 +520,12 @@
                     <option value="Dialítico">Dialítico</option>
                     <option value="Outros">Outros</option>
                   </select>  --}}
-                  <div class="dropdown m-0 p-0" style="height: 30px; width: 634px ">
+                  <div class="dropdown m-0 p-0" style="height: 30px; width: 622px ">
                       <button class="btn btn-primary dropdown-toggle p-0 m-0 mb-1 d-flex" id="teste1" style="background-color: white; box-shadow: none; height: 30px; width: 100%" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        <input type="text" name="doenca_cronica" style="cursor: pointer; width: 100%" id="doenca_cronica" class="form-control " placeholder="{{ __(' Portador de doença crônica?') }}" value="{{ old('doenca_cronica') }}" readonly >
+                        <input type="text" name="doenca_cronica" style="cursor: pointer; width: 603px" id="doenca_cronica" class="form-control " placeholder="{{ __(' Portador de doença crônica?') }}" value="{{ old('doenca_cronica') }}" readonly >
                         <span class="caret"></span>
                       </button>
-                        <div class="dropdown-menu slideIn" id="teste2" style="width: 634px " aria-labelledby="dropdownMenuButton">
+                        <div class="dropdown-menu slideIn" id="teste2" style="width: 622px " aria-labelledby="dropdownMenuButton">
                           <li class="dropdown-item" style="cursor: pointer;">Diabetes</li>
                           <li class="dropdown-item" style="cursor: pointer;">Pressão Alta</li>
                           <li class="dropdown-item" style="cursor: pointer;">Enfisema</li>
@@ -545,12 +549,12 @@
                     <option value="Etilista">Etilista</option>
                     <option value="Outros">Outros</option>
                   </select>  --}}
-                    <div class="dropdown m-0 p-0" style="height: 30px; width: 634px ">
+                    <div class="dropdown m-0 p-0" style="height: 30px; width: 620px ">
                       <button class="btn btn-primary dropdown-toggle p-0 m-0 mb-1 d-flex" id="teste1" style="background-color: white; box-shadow: none; height: 30px; width: 100%" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        <input type="text" name="vicio" style="cursor: pointer; width: 100%" id="vicio" class="form-control " placeholder="{{ __(' Vicios') }}" value="{{ old('vicio') }}" readonly >
+                        <input type="text" name="vicio" style="cursor: pointer; width: 603px" id="vicio" class="form-control " placeholder="{{ __(' Vicios') }}" value="{{ old('vicio') }}" readonly >
                         <span class="caret"></span>
                       </button>
-                        <div class="dropdown-menu slideIn" id="teste2" style="width: 634px " aria-labelledby="dropdownMenuButton">
+                        <div class="dropdown-menu slideIn" id="teste2" style="width: 622px " aria-labelledby="dropdownMenuButton">
                           <li class="dropdown-item" style="cursor: pointer;" value="1">Tabagismo</li>
                           <li class="dropdown-item" style="cursor: pointer;" value="2">Etilista</li>
                           <li class="dropdown-item" style="cursor: pointer;" value="3">Outros</li>
@@ -580,8 +584,8 @@
                 </div>
               </div>
             </div>
-            <div class="card-footer">
-              <button type="button" class="btn btn-warning btn-link btn-lg">{{ __('Não desejo preencher agora') }}</button>
+            <div class="card-footer justify-content-center">
+              {{-- <button type="button" class="btn btn-danger btn-link btn-lg">{{ __('Não desejo preencher agora') }}</button> --}}
 
               <button type="submit" class="btn btn-primary btn-link btn-lg" style="color: #4327c2">{{ __('Salvar') }}</button>
             </div>
@@ -590,6 +594,7 @@
       </div>
     </div>
   </div>
+  @endsection
 </body>
 </html>
 <script

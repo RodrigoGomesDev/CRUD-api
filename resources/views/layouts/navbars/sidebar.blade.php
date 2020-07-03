@@ -28,18 +28,17 @@
           <ul class="nav">
             <li class="nav-item{{ $activePage == 'profile' ? ' active' : '' }}">
               <a class="nav-link" href="{{ route('profile.edit') }}">
-                {{-- <span class="sidebar-mini"> UP </span> --}}
                 <i class="material-icons">person</i>
 
                 <span class="sidebar-normal">{{ __('Perfil de usuário') }} </span>
               </a>
             </li>
-            {{-- <li class="nav-item{{ $activePage == 'user-management' ? ' active' : '' }}">
-              <a class="nav-link" href="{{ route('user.index') }}">
-                <span class="sidebar-mini"> UM </span>
-                <span class="sidebar-normal"> {{ __('User Management') }} </span>
+            <li class="nav-item{{ $activePage == 'info-user' ? ' active' : '' }}">
+              <a class="nav-link" href="{{ route('info-user') }}">
+                <i class="material-icons">person</i>
+                <span class="sidebar-normal"> {{ __('Informações adicionais') }} </span>
               </a>
-            </li> --}}
+            </li>
           </ul>
         </div>
       </li>
