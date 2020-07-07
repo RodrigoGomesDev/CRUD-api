@@ -54,8 +54,14 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('pages.language');
 	})->name('language');
 
+
+
 	Route::get('info-user', ['as' => 'info-user', 'uses' => 'ProfileController@newEdit']);
 });
+
+Route::get('/register-profissional', function() {
+	return view('register-profissional');
+})->name('register-profissional');
 
 Route::group([], function () {
 	Route::resource('user', 'UserController', ['except' => ['show']]);
@@ -65,7 +71,6 @@ Route::group([], function () {
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
 });
 
-
 Route::get('/login', function() {
 	return view('auth.login');
 })->name('login');
@@ -73,5 +78,7 @@ Route::get('/login', function() {
 Route::get('/register', function() {
 	return view('auth.register');
 })->name('register');
+
+
 
 Route::get('admin', 'HomeController@adminHome')->name('admin')->middleware('is_admin');

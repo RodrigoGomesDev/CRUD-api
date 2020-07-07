@@ -2,7 +2,6 @@
 
 namespace App;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -32,6 +31,34 @@ class User extends Authenticatable
         'celular', 
         'email', 
         'password', 
+        'tipo_usuario',
+        'site', 
+        'facebook', 
+        'twitter', 
+        'linkedin', 
+        'instagram', 
+        'foto', 
+        'crm', 
+        'corem', 
+        'crf', 
+        'cofen', 
+        'crn', 
+        'cri', 
+        'formacao', 
+        'especializacao', 
+        'diploma_certificado',
+        'nomeContato1', 
+        'emailContato1', 
+        'telefoneContato1', 
+        'nomeContato2', 
+        'emailContato2', 
+        'telefoneContato2', 
+        'contaCorrente', 
+        'banco', 
+        'agencia', 
+        'conta', 
+        'raioAtuacaoEndereco', 
+        'raioAtuacaoLocalizacao', 
         'cartao_sus', 
         'nome_mae', 
         'sexo', 

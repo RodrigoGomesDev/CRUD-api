@@ -15,6 +15,15 @@
                 <p class="card-category">{{ __('Informações de usuário') }}</p>
               </div>
               <div class="card-body ">
+
+                {{-- @foreach ($users as $user)
+                  @if ($user->foto)
+                  <img src={{ asset("storage/app/$user->foto") }} alt="{{$user->name}}" style="width: 100px; height: 100px; border-radius:5px" >
+                  @else
+                            
+                  @endif
+                @endforeach --}}
+
                 @if (session('status'))
                   <div class="row">
                     <div class="col-sm-12">

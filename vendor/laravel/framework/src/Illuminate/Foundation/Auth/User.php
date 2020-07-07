@@ -18,3 +18,11 @@ class User extends Model implements
 {
     use Authenticatable, Authorizable, CanResetPassword, MustVerifyEmail;
 }
+
+class Profissional extends Model implements
+    AuthenticatableContract,
+    AuthorizableContract,
+    CanResetPasswordContract
+{
+    use Authenticatable, Authorizable, CanResetPassword, MustVerifyEmail;
+}

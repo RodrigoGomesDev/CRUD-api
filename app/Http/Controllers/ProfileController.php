@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ProfileRequest;
 use App\Http\Requests\PasswordRequest;
 use App\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -12,7 +13,8 @@ use Illuminate\Support\Facades\Hash;
 class ProfileController extends Controller
 {
 
-    public function __construct(User $user) {
+    public function __construct(User $user)
+    {
         $this->repository = $user;
     }
 
@@ -23,7 +25,7 @@ class ProfileController extends Controller
      */
     public function edit(User $user)
     {
-        $users = DB::table('users');
+        $users = DB::table('users')->get();
 
         return view('profile.edit', ['users' => $users]);
     }
@@ -51,7 +53,7 @@ class ProfileController extends Controller
     }
 
     public function newUpdate(ProfileRequest $request)
-    {        
+    {
         $user = auth()->user();
         $users = $request->all();
         $user->update($users);

@@ -24,7 +24,7 @@ namespace Composer\Autoload;
  *     // activate the autoloader
  *     $loader->register();
  *
- *     // to enable Searching the include path (eg. for PEAR packages)
+ *     // to enable searching the include path (eg. for PEAR packages)
  *     $loader->setUseIncludePath(true);
  *
  * In this example, if you try to use a class in the Symfony\Component
@@ -231,7 +231,7 @@ class ClassLoader
     }
 
     /**
-     * Turns on Searching the include path for class files.
+     * Turns on searching the include path for class files.
      *
      * @param bool $useIncludePath
      */
@@ -252,7 +252,7 @@ class ClassLoader
     }
 
     /**
-     * Turns off Searching the prefix and fallback directories for classes
+     * Turns off searching the prefix and fallback directories for classes
      * that have not been registered with the class map.
      *
      * @param bool $classMapAuthoritative
@@ -377,10 +377,10 @@ class ClassLoader
             $subPath = $class;
             while (false !== $lastPos = strrpos($subPath, '\\')) {
                 $subPath = substr($subPath, 0, $lastPos);
-                $Search = $subPath . '\\';
-                if (isset($this->prefixDirsPsr4[$Search])) {
+                $search = $subPath . '\\';
+                if (isset($this->prefixDirsPsr4[$search])) {
                     $pathEnd = DIRECTORY_SEPARATOR . substr($logicalPathPsr4, $lastPos + 1);
-                    foreach ($this->prefixDirsPsr4[$Search] as $dir) {
+                    foreach ($this->prefixDirsPsr4[$search] as $dir) {
                         if (file_exists($file = $dir . $pathEnd)) {
                             return $file;
                         }

@@ -51,22 +51,22 @@ class RegisterController extends UserController
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'cpf' => ['required'],
-            'rg' => ['required'],
-            'nascimento' => ['required'],
-            'cep' => ['required'],
+            // 'name' => ['required', 'string', 'max:255'],
+            // 'cpf' => ['required'],
+            // 'rg' => ['required'],
+            // 'nascimento' => ['required'],
+            // 'cep' => ['required'],
             // 'rua' => ['required'],
-            'numero' => ['required'],
+            // 'numero' => ['required'],
             // 'bairro' => ['required'],
             // 'complemento' => ['string'],
             // 'cidade' => ['required'],
             // 'estado' => ['required'],
             // 'referencia' => ['string'],
-            'telefone_fixo' => ['required'],
-            'celular' => ['required'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            // 'telefone_fixo' => ['required'],
+            // 'celular' => ['required'],
+            // 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            // 'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
 
@@ -95,6 +95,13 @@ class RegisterController extends UserController
             'celular' => $data['celular'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'tipo_usuario' => $data['tipo_usuario'],
+            'site' => $data['site'],
+            'facebook' => $data['facebook'],
+            'twitter' => $data['twitter'],
+            'linkedin' => $data['linkedin'],
+            'foto' => $data['foto'],
+            'diploma_certificado' => $data['diploma_certificado']
         ]);
     }
 }

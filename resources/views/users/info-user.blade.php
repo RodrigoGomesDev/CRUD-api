@@ -141,7 +141,7 @@
           
           <div class="card card-login card-hidden mb-3">
      
-            <div class="card-header card-header-secondary text-center" style="background-color: #4327c2">
+            <div class="card-header card-header-primary text-center" style="background-color: #4327c2">
               <h4 class="card-title pt-2 pb-2 "><strong style="font-size: 25px; ">{{ __('Informações pessoais') }}</strong></h4>
             </div>  
 
