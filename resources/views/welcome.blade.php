@@ -1,7 +1,7 @@
 @extends('layouts.app', ['class' => 'off-canvas-sidebar', 'activePage' => 'home', 'title' => __('BMS Care')])
 
 @section('content')
-<div class="container" style="height: auto;">
+<div class="container">
   <div class="row justify-content-center">
       <div class="col-lg-7 col-md-8">
           {{-- <img src="{{ asset('material') }}/img/LOGO.png" height="100%" width="80%" alt="">     --}}

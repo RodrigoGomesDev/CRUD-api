@@ -94,14 +94,63 @@ class RegisterController extends UserController
             'telefone_fixo' => $data['telefone_fixo'],
             'celular' => $data['celular'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+
+
             'tipo_usuario' => $data['tipo_usuario'],
+
+            'password' => Hash::make($data['password']),
+            'forma_pagamento' => Hash::make($data['forma_pagamento']),
+            
             'site' => $data['site'],
             'facebook' => $data['facebook'],
             'twitter' => $data['twitter'],
             'linkedin' => $data['linkedin'],
             'foto' => $data['foto'],
-            'diploma_certificado' => $data['diploma_certificado']
+            'crm' => $data['crm'],
+            'coren' => $data['coren'],
+            'crf' => $data['crf'],
+            'cofen' => $data['cofen'],
+            'crn' => $data['crn'],
+            'cri' => $data['cri'],
+            'assinatura_digital' => $data['assinatura_digital'],
+
+            'tecnico' => $data['tecnico'],
+            'instituicao_tecnico' => $data['instituicao_tecnico'],
+            'conclusao_tecnico' => $data['conclusao_tecnico'],
+
+            'superior_completo' => $data['superior_completo'],
+            'instituicao_superior' => $data['instituicao_superior'],
+            'conclusao_superior' => $data['conclusao_superior'],
+
+            'pos_graduacao' => $data['pos_graduacao'],
+            'instituicao_pos' => $data['instituicao_pos'],
+            'conclusao_pos' => $data['conclusao_pos'],
+
+
+            'mestrado' => $data['mestrado'],
+            'instituicao_mestrado' => $data['instituicao_mestrado'],
+            'conclusao_mestrado' => $data['conclusao_mestrado'],
+
+            'doutorado' => $data['doutorado'],
+            'instituicao_doutorado' => $data['instituicao_doutorado'],
+            'conclusao_doutorado' => $data['conclusao_doutorado'],
+
+            'especializacao' => $data['especializacao'],
+            'instituicao_especializacao' => $data['instituicao_especializacao'],
+            'conclusao_especializacao' => $data['conclusao_especializacao'],
+
+            'diploma_certificado' => $data['diploma_certificado'],
+
+            'nomeContato1' => $data['nomeContato1'],
+            'emailContato1' => $data['emailContato1'],
+            'celContato1' => $data['celContato1'],
+
+            'nomeContato2' => $data['nomeContato2'],
+            'emailContato2' => $data['emailContato2'],
+            'celContato2' => $data['celContato2'],
+
+
+            'forma_recebimento' => $data['forma_recebimento'],
         ]);
     }
 }

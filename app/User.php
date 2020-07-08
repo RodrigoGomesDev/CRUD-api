@@ -15,6 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
+        //Campos padrões
         'name', 
         'cpf', 
         'rg', 
@@ -29,36 +30,75 @@ class User extends Authenticatable
         'referencia', 
         'telefone_fixo', 
         'celular', 
-        'email', 
-        'password', 
+        'email',
+        //============//
+        
+
+        //Escolha de tipo de usuário
         'tipo_usuario',
+        //========================//
+
+        //CLIENTE
+        'password',
+        'forma_pagamento',
+        //=============//
+        
+        //PROFISSIONAL
         'site', 
         'facebook', 
         'twitter', 
         'linkedin', 
-        'instagram', 
         'foto', 
         'crm', 
-        'corem', 
+        'coren', 
         'crf', 
         'cofen', 
         'crn', 
         'cri', 
-        'formacao', 
-        'especializacao', 
+        'assinatura_digital',
+
+        'tecnico',
+        'instituicao_tecnico',
+        'conclusao_tecnico',
+
+        'superior_completo',
+        'instituicao_superior',
+        'conclusao_superior',
+
+        'pos_graduacao',
+        'instituicao_pos',
+        'conclusao_pos',
+
+        'mestrado',
+        'instituicao_mestrado',
+        'conclusao_mestrado',
+
+        'doutorado',
+        'instituicao_doutorado',
+        'conclusao_doutorado',
+
+        'especializacao',
+        'instituicao_especializacao',
+        'conclusao_especializacao',
+
+
         'diploma_certificado',
+
         'nomeContato1', 
         'emailContato1', 
-        'telefoneContato1', 
+        'celContato1', 
+
         'nomeContato2', 
         'emailContato2', 
-        'telefoneContato2', 
-        'contaCorrente', 
-        'banco', 
-        'agencia', 
-        'conta', 
-        'raioAtuacaoEndereco', 
-        'raioAtuacaoLocalizacao', 
+        'celContato2', 
+        
+        'forma_recebimento',
+        //============================//
+
+        // 'raioAtuacaoEndereco', 
+        // 'raioAtuacaoLocalizacao', 
+
+        //Informações adicionais
         'cartao_sus', 
         'nome_mae', 
         'sexo', 
@@ -80,10 +120,12 @@ class User extends Authenticatable
         'vicio', 
         'queixas', 
         'medicacao', 
+        //======================//
+        
         'is_admin'
+
     ];
 
-    // 'nascimento'
 
     /**
      * The attributes that should be hidden for arrays.

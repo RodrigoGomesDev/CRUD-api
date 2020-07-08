@@ -12,10 +12,54 @@
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 
-@section('content')
-<div class="container" style="height: auto;">
+
+<style>
+   input[type="file"] {
+      display: none;
+   }
+
+   label[for="camera"], label[for="diploma_certificado"] {
+    padding: 20px 10px;
+    width: 95%;
+    position: relative;
+    background-color: white;
+    opacity: 0.2;
+    left: 18px;
+    color: #ccc;
+    border-radius:10px;
+    border: 2px dashed #737373;
+    /* border: 2px dashed #949494; */
+    text-align: center;
+    display: block;
+    font-size:30px; 
+    font-family:"Helvetica Neue", Helvetica, Arial;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+select {
+  color: gray;
+  transition: color 0s 2147483647s;
+}
+
+select:focus,
+select:focus {
+  color: black;
+  transition:0s;
+}
+
+select option {
+   color: #999999;
+}
+
+</style>
+
+
+
+ @section('content')
+<div class="container">
   <div class="row align-items-center">
-    <div class="col-lg-8 col-md-12 col-sm-8 ml-auto mr-auto  mt-5">
+    <div class="col-lg-8 col-md-12 col-sm-8 ml-auto mr-auto">
       <form class="form" method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
         @csrf
 
@@ -24,8 +68,8 @@
             <h4 class="card-title pt-2 pb-2 "><strong style="font-size: 25px; ">{{ __('Cadastre-se') }}</strong></h4>
 
           </div>
-          <div class="card-body">
-            <p class="card-description text-center">{{ __('Já tem uma conta? faça ') }} <a href="{{ route('login') }}" style="color: #4327c2"> {{ __( 'Login')}}</a></p>
+          <div class="card-body pl-0 pb-0">
+            <p class="card-description text-center ml-3">{{ __('Já tem uma conta? faça ') }} <a href="{{ route('login') }}" style="color: #4327c2"> {{ __( 'Login')}}</a></p>
             
             {{--
             
@@ -35,11 +79,11 @@
             <div class="bmd-form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
               <div class="input-group">
                 <div class="input-group-prepend">
-                  <span class="input-group-text" style="padding-left: 0">
+                  <span class="input-group-text">
                       <i class="material-icons">face</i>
                   </span>
                 </div>
-                <input type="text" name="name" class="form-control" placeholder="{{ __(' Nome completo') }}" value="{{ old('name') }}">
+                <input type="text" name="name" class="form-control" placeholder="{{ __('Nome completo') }}" value="{{ old('name') }}">
               </div>
               @if ($errors->has('name'))
                 <div id="name-error" class="error text-danger pl-3" for="name" style="display: block;">
@@ -57,11 +101,11 @@
             <div class="bmd-form-group mt-3">
               <div class="input-group">
                 <div class="input-group-prepend">
-                  <span class="input-group-text" style="padding-left: 0">
+                  <span class="input-group-text">
                     <i class="material-icons">article</i>
                   </span>
                 </div>
-                <input type="text" name="cpf" id="CPF" class="form-control" placeholder="{{ __(' CPF') }}" value="{{ old('cpf') }}">
+                <input type="text" name="cpf" id="CPF" class="form-control" placeholder="{{ __('CPF') }}" value="{{ old('cpf') }}">
               </div>
               @if ($errors->has('cpf'))
               <div id="cpf-error" class="error text-danger pl-3" for="cpf" style="display: block;">
@@ -79,17 +123,17 @@
             <div class="bmd-form-group mt-3">
               <div class="input-group">
                 <div class="input-group-prepend">
-                  <span class="input-group-text" style="padding-left: 0">
+                  <span class="input-group-text">
                     <i class="material-icons">article</i>
                   </span>
                 </div>
-                <input type="text" name="rg" id="RG" class="form-control cpf-mask" placeholder="{{ __(' RG') }}" value="{{ old('rg') }}">
+                <input type="text" name="rg" id="RG" class="form-control cpf-mask" placeholder="{{ __('RG') }}" value="{{ old('rg') }}">
               </div>
               @if ($errors->has('rg'))
-              <div id="rg-error" class="error text-danger pl-3" for="rg" style="display: block;">
-                <strong>{{ $errors->first('rg') }}</strong>
-              </div>
-            @endif
+               <div id="rg-error" class="error text-danger pl-3" for="rg" style="display: block;">
+                  <strong>{{ $errors->first('rg') }}</strong>
+               </div>
+              @endif
             </div>
 
             {{--
@@ -102,17 +146,17 @@
             <div class="bmd-form-group mt-3">
               <div class="input-group">
                 <div class="input-group-prepend">
-                  <span class="input-group-text" style="padding-left: 0">
+                  <span class="input-group-text">
                     <i class="material-icons">insert_invitation</i>
                   </span>
                 </div>
-                <input type="text" name="nascimento" id="NASCIMENTO" class="form-control" placeholder="{{ __(' Data de nascimento') }}">
+                <input type="text" name="nascimento" id="NASCIMENTO" class="form-control" placeholder="{{ __('Data de nascimento') }}">
               </div>
               @if ($errors->has('nascimento'))
-              <div id="nascimento-error" class="error text-danger pl-3" for="nascimento" style="display: block;">
-                <strong>{{ $errors->first('nascimento') }}</strong>
-              </div>
-            @endif
+               <div id="nascimento-error" class="error text-danger pl-3" for="nascimento" style="display: block;">
+                  <strong>{{ $errors->first('nascimento') }}</strong>
+               </div>
+               @endif
             </div>
 
             {{--
@@ -124,11 +168,11 @@
             <div class="bmd-form-group mt-3">
               <div class="input-group">
                 <div class="input-group-prepend">
-                  <span class="input-group-text" style="padding-left: 0">
+                  <span class="input-group-text">
                     <i class="material-icons">location_on</i>
                   </span>
                 </div>
-                <input type="text" name="cep" id="CEP" class="form-control" placeholder="{{ __(' CEP') }}" value="{{ old('cep') }}">
+                <input type="text" name="cep" id="CEP" class="form-control" placeholder="{{ __('CEP') }}" value="{{ old('cep') }}">
               </div>
 
               @if ($errors->has('cep'))
@@ -147,13 +191,13 @@
             <div class="bmd-form-group mt-3">
               <div class="input-group">
                 <div class="input-group-prepend">
-                  <span class="input-group-text" style="padding-left: 0">
+                  <span class="input-group-text">
                     <i class="material-icons">home</i>
                   </span>
                 </div>
-                    <input type="text" name="rua" id="rua" class="form-control w-50" placeholder="{{ __(' Rua') }}" value="{{ old('rua') }}">
+                    <input type="text" name="rua" id="rua" class="form-control w-25" placeholder="{{ __('Rua') }}" value="{{ old('rua') }}">
                     <input type="number" name="numero" id="numero" class="form-control" placeholder="{{ __(' Número') }}" value="{{ old('numero') }}">
-                  </div>
+               </div>
             </div>
 
             {{--
@@ -163,15 +207,15 @@
             --}}
 
             <div class="bmd-form-group mt-3">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" style="padding-left: 0">
-                    <i class="material-icons">home</i>
-                  </span>
-                </div>
-                <input type="text" name="bairro" id="bairro" class="form-control w-50" placeholder="{{ __(' Bairro') }}" value="{{ old('bairro') }}">
-                <input type="text" name="complemento" id="complemento" class="form-control" placeholder="{{ __(' Complemento') }}" value="{{ old('complemento') }}">
-              </div>
+               <div class="input-group">
+                  <div class="input-group-prepend">
+                     <span class="input-group-text">
+                     <i class="material-icons">home</i>
+                     </span>
+                  </div>
+                  <input type="text" name="bairro" id="bairro" class="form-control w-25" placeholder="{{ __('Bairro') }}" value="{{ old('bairro') }}">
+                  <input type="text" name="complemento" id="complemento" class="form-control" placeholder="{{ __(' Complemento') }}" value="{{ old('complemento') }}">
+               </div>
             </div>
 
             {{--
@@ -181,15 +225,15 @@
             --}}
 
             <div class="bmd-form-group mt-3">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" style="padding-left: 0">
-                    <i class="material-icons">apartment</i>
-                  </span>
-                </div>
-                <input type="text" name="cidade" id="cidade" class="form-control w-50" placeholder="{{ __(' Cidade') }}" value="{{ old('cidade') }}">
-                <input type="text" name="estado" id="uf" class="form-control" placeholder="{{ __(' Estado') }}" value="{{ old('estado') }}">
-              </div>
+               <div class="input-group">
+                  <div class="input-group-prepend">
+                     <span class="input-group-text">
+                     <i class="material-icons">apartment</i>
+                     </span>
+                  </div>
+                     <input type="text" name="cidade" id="cidade" class="form-control w-25" placeholder="{{ __('Cidade') }}" value="{{ old('cidade') }}">
+                     <input type="text" name="estado" id="uf" class="form-control" placeholder="{{ __(' Estado') }}" value="{{ old('estado') }}">
+               </div>
             </div>
 
             {{--
@@ -199,14 +243,14 @@
             --}}
 
             <div class="bmd-form-group mt-3">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" style="padding-left: 0">
-                    <i class="material-icons">store</i>
-                  </span>
-                </div>
-                <input type="text" name="referencia" id="referencia" class="form-control w-50" placeholder="{{ __(' Ponto de referência (opcional)') }}" value="{{ old('referencia') }}">
-              </div>
+               <div class="input-group">
+                  <div class="input-group-prepend">
+                     <span class="input-group-text">
+                     <i class="material-icons">store</i>
+                     </span>
+                  </div>
+                     <input type="text" name="referencia" id="referencia" class="form-control w-25" placeholder="{{ __('Ponto de referência (opcional)') }}" value="{{ old('referencia') }}">
+               </div>
             </div>
 
             {{--
@@ -218,17 +262,17 @@
             <div class="bmd-form-group mt-3">
               <div class="input-group">
                 <div class="input-group-prepend">
-                  <span class="input-group-text" style="padding-left: 0">
+                  <span class="input-group-text">
                     <i class="material-icons">contact_phone</i>
                   </span>
                 </div>
-                <input type="text" name="telefone_fixo" id="TELEFONE" class="form-control w-50" placeholder="{{ __(' Telefone Fixo') }}" value="{{ old('telefone_fixo') }}">
+                  <input type="text" name="telefone_fixo" id="TELEFONE" class="form-control w-50" placeholder="{{ __('Telefone Fixo') }}" value="{{ old('telefone_fixo') }}">
               </div>
-              @if ($errors->has('telefone_fixo'))
-              <div id="telefone_fixo-error" class="error text-danger pl-3" for="telefone_fixo" style="display: block;">
-                <strong>{{ $errors->first('telefone_fixo') }}</strong>
-              </div>
-            @endif
+               @if ($errors->has('telefone_fixo'))
+                  <div id="telefone_fixo-error" class="error text-danger pl-3" for="telefone_fixo" style="display: block;">
+                     <strong>{{ $errors->first('telefone_fixo') }}</strong>
+                  </div>
+               @endif
             </div>
 
             {{--
@@ -240,17 +284,17 @@
             <div class="bmd-form-group{{ $errors->has('celular') ? ' has-danger' : '' }} mt-3">
               <div class="input-group">
                 <div class="input-group-prepend">
-                  <span class="input-group-text" style="padding-left: 0">
+                  <span class="input-group-text">
                     <i class="material-icons">call</i>
                   </span>
                 </div>
-                <input type="text" name="celular" id="CELULAR" class="form-control w-50" placeholder="{{ __(' Celular/WhatsApp') }}" value="{{ old('celular') }}">
+                <input type="text" name="celular" id="CELULAR" class="form-control w-50" placeholder="{{ __('Celular/WhatsApp') }}" value="{{ old('celular') }}">
               </div>
-              @if ($errors->has('celular'))
-              <div id="celular-error" class="error text-danger pl-3" for="celular" style="display: block;">
-                <strong>{{ $errors->first('celular') }}</strong>
-              </div>
-            @endif
+                  @if ($errors->has('celular'))
+                     <div id="celular-error" class="error text-danger pl-3" for="celular" style="display: block;">
+                        <strong>{{ $errors->first('celular') }}</strong>
+                     </div>
+                  @endif
             </div>
 
             {{--
@@ -260,19 +304,19 @@
             --}}
 
             <div class="bmd-form-group{{ $errors->has('email') ? ' has-danger' : '' }} mt-3">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text"  style="padding-left: 0">
-                    <i class="material-icons">email</i>
-                  </span>
-                </div>
-                <input type="email" name="email" class="form-control" placeholder="{{ __(' Email') }}" value="{{ old('email') }}" >
+               <div class="input-group">
+                  <div class="input-group-prepend">
+                     <span class="input-group-text" >
+                     <i class="material-icons">email</i>
+                     </span>
+                  </div>
+                  <input type="email" name="email" class="form-control" placeholder="{{ __('Email') }}" value="{{ old('email') }}" >
               </div>
-              @if ($errors->has('email'))
-                <div id="email-error" class="error text-danger pl-3" for="email" style="display: block;">
-                  <strong>{{ $errors->first('email') }}</strong>
-                </div>
-              @endif
+               @if ($errors->has('email'))
+                  <div id="email-error" class="error text-danger pl-3" for="email" style="display: block;">
+                     <strong>{{ $errors->first('email') }}</strong>
+                  </div>
+               @endif
             </div>
 
             {{--
@@ -282,16 +326,17 @@
             --}}
 
             <div class="bmd-form-group mt-3">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" style="padding-left: 0">
-                    <i class="material-icons">account_box</i>
-                  </span>
-                </div>
-                  <select id="status" name="tipo_usuario" class="form-control" style="cursor: pointer">
-                    <option disabled selected >{{ __(' Tipo de usuário')}}</option>
-                    <option value="Profissional">Profissional</option>
-                    <option value="Cliente">Cliente</option>
+               <div class="input-group">
+                  <div class="input-group-prepend">
+                     <span class="input-group-text">
+                        <i class="material-icons">account_box</i>
+                     </span>
+                  </div>
+                  
+                  <select id="status" name="tipo_usuario" class="form-control" style="cursor: pointer;">
+                     <option disabled selected >{{ __("Tipo de usuário")}}</option>
+                     <option value="Profissional">Profissional</option>
+                     <option value="Cliente">Cliente</option>
                   </select>
               </div>
             </div>
@@ -302,75 +347,32 @@
               
             --}}
 
-          <div id="cliente" style="display: none !important">
-            
-            {{--
-            
-              -- CAMPO DE REGISTRO 'SENHA'
-              
-            --}}
-            {{-- {{ $errors->has('password') ? ' has-danger' : '' }} --}}
-            <div class="bmd-form-group   mt-3">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" style="padding-left: 0">
-                    <i class="material-icons">lock_outline</i>
-                  </span>
-                </div>
-                <input type="password" name="password" id="password" class="form-control" placeholder="{{ __(' Senha') }}">
-              </div>
-              {{-- @if ($errors->has('password'))
-                <div id="password-error" class="error text-danger pl-3" for="password" style="display: block;">
-                  <strong>{{ $errors->first('password') }}</strong>
-                </div>
-              @endif --}}
-            </div>
-            
-            {{--
-            
-              -- CAMPO DE REGISTRO 'CONFIRMAÇÃO SENHA'
-              
-            --}}
-            {{-- {{ $errors->has('password_confirmation') ? ' has-danger' : '' }} --}}
-            <div class="bmd-form-group mt-3 ">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" style="padding-left: 0">
-                    <i class="material-icons">lock_outline</i>
-                  </span>
-                </div>
-                <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="{{ __(' Confirme sua senha') }}">
-              </div>
-              {{-- @if ($errors->has('password_confirmation'))
-                <div id="password_confirmation-error" class="error text-danger pl-3" for="password_confirmation" style="display: block;">
-                  <strong>{{ $errors->first('password_confirmation') }}</strong>
-                </div>
-              @endif --}}
-            </div>
+            <div id="cliente" style="display: none !important">
+   
+               {{--
+               
+                  -- CAMPO DE REGISTRO 'PARA O TIPO DE PAGAMENTO' (OPCIONAL)
+                  
+               --}}
 
-            {{--
-            
-              -- CAMPO DE REGISTRO 'PARA O TIPO DE PAGAMENTO' (OPCIONAL)
-              
-            --}}
+               <div class="bmd-form-group mt-3">
+                  <div class="input-group">
+                     <div class="input-group-prepend">
+                        <span class="input-group-text">
+                           <i class="material-icons">payment</i>
+                        </span>
+                     </div>
 
-            <div class="bmd-form-group mt-3">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" style="padding-left: 0">
-                    <i class="material-icons">payment</i>
-                  </span>
-                </div>
-                <select class="form-control" style="cursor: pointer">
-                  <option disabled selected style="#d1d1d1">{{__(' Forma de pagamento (opcional)')}}</option>
-                  <option value="Cartão de Crédito">Cartão de Crédito</option>
-                  <option value="PagSeguro">PagSeguro</option>
-                  <option value="Cartão de Débito">Cartão de Débito</option>
-                  <option value="Boleto">Boleto</option>
-                </select>
-              </div>
-            </div>
-          </div>
+                     <select class="form-control" name="forma_pagamento" id="forma_pagamento" style="cursor: pointer; color: #999999">
+                        <option disabled selected>{{__(' Forma de pagamento (opcional)')}}</option>
+                        <option value="Cartão de Crédito">Cartão de Crédito</option>
+                        <option value="PagSeguro">PagSeguro</option>
+                        <option value="Cartão de Débito">Cartão de Débito</option>
+                        <option value="Boleto">Boleto</option>
+                     </select>
+                  </div>
+               </div>
+         </div>
 
             {{--
             
@@ -379,112 +381,107 @@
             --}}
 
 
-          <div id="profissional" style="display: none !important">
+            <div id="profissional" style="display: none !important">
             
-            {{--
+               {{--
+               
+               -- CAMPO DE REGISTRO 'SITE' (OPCIONAL)
+               
+               --}}
+
+
+               <div class="bmd-form-group mt-3">
+                  <div class="input-group">
+                     <div class="input-group-prepend">
+                        <span class="input-group-text">
+                           <i class="material-icons">link</i>
+                        </span>
+                     </div>
+                     <input type="text" name="site" id="site" class="form-control" placeholder="{{ __('Site (opcional)') }}" value="{{ old('site') }}" >
+                  </div>
+
+               </div>
+
+               {{--
+               
+               -- CAMPO DE REGISTRO 'FACEBOOK (CONTA)'
+               
+               --}}
+
+               <div class="bmd-form-group mt-3">
+                  <div class="input-group">
+                     <div class="input-group-prepend">
+                        <span class="input-group-text">
+                           <i class="material-icons">email</i>
+                        </span>
+                     </div>
+                     <input type="text" name="facebook" class="form-control" placeholder="{{ __('Facebook (opcional)') }}" value="{{ old('facebook') }}" >
+                  </div>
+               </div>
+
+               {{--
+               
+               -- CAMPO DE REGISTRO 'TWITTER (CONTA)' (OPCIONAL)
+               
+               --}}
+
+               <div class="bmd-form-group mt-3">
+                  <div class="input-group">
+                     <div class="input-group-prepend">
+                        <span class="input-group-text">
+                           <i class="material-icons">email</i>
+                        </span>
+                     </div>
+                     <input type="text" name="twitter" class="form-control" placeholder="{{ __('Twitter (opcional)') }}" value="{{ old('twitter') }}" >
+                  </div>
+               </div>
+
+               {{--
+               
+               -- CAMPO DE REGISTRO 'LINKEDIN (CONTA)' (OPCIONAL)
+               
+               --}}
+
+               <div class="bmd-form-group mt-3">
+                  <div class="input-group">
+                     <div class="input-group-prepend">
+                        <span class="input-group-text">
+                           <i class="material-icons">email</i>
+                        </span>
+                     </div>
+                     <input type="text" name="linkedin" class="form-control" placeholder="{{ __('Linkedin (opcional)') }}" value="{{ old('linkedin') }}" >
+                  </div>
+               </div>
             
-              -- CAMPO DE REGISTRO 'SITE' (OPCIONAL)
-              
-            --}}
+               <div class="bmd-form-group mt-3 pl-3">
+                  <div class="input-group d-flex justify-content-center align-items-center">
+                     <label for="camera"><i class="material-icons-outlined">add_a_photo</i></label>
+                     <input type="file" name="foto" accept="image/*" multiple id="camera">
+                     <img id="frame">
+                  </div>
+               </div>
 
 
-            <div class="bmd-form-group{{ $errors->has('site') ? ' has-danger' : '' }} mt-3">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" style="padding-left: 0">
-                    <i class="material-icons">link</i>
-                  </span>
-                </div>
-                <input type="text" name="site" id="site" class="form-control" placeholder="{{ __(' Site (opcional)') }}" value="{{ old('site') }}" >
-              </div>
-              @if ($errors->has('site'))
-                <div id="site-error" class="error text-danger pl-3" for="site" style="display: block;">
-                  <strong>{{ $errors->first('site') }}</strong>
-                </div>
-              @endif
-            </div>
-
-            {{--
-            
-              -- CAMPO DE REGISTRO 'FACEBOOK (CONTA)'
-              
-            --}}
-
-            <div class="bmd-form-group{{ $errors->has('facebook') ? ' has-danger' : '' }} mt-3">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" style="padding-left: 0">
-                    <i class="material-icons">email</i>
-                  </span>
-                </div>
-                <input type="text" name="facebook" class="form-control" placeholder="{{ __(' Facebook') }}" value="{{ old('facebook') }}" >
-              </div>
-              @if ($errors->has('facebook'))
-                <div id="facebook-error" class="error text-danger pl-3" for="facebook" style="display: block;">
-                  <strong>{{ $errors->first('facebook') }}</strong>
-                </div>
-              @endif
-            </div>
-
-            {{--
-            
-              -- CAMPO DE REGISTRO 'TWITTER (CONTA)' (OPCIONAL)
-              
-            --}}
-
-            <div class="bmd-form-group mt-3">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" style="padding-left: 0">
-                    <i class="material-icons">email</i>
-                  </span>
-                </div>
-                <input type="text" name="twitter" class="form-control" placeholder="{{ __(' Twitter (opcional)') }}" value="{{ old('twitter') }}" >
-              </div>
-            </div>
-
-            {{--
-            
-              -- CAMPO DE REGISTRO 'LINKEDIN (CONTA)' (OPCIONAL)
-              
-            --}}
-
-            <div class="bmd-form-group mt-3">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" style="padding-left: 0">
-                    <i class="material-icons">email</i>
-                  </span>
-                </div>
-                <input type="text" name="linkedin" class="form-control" placeholder="{{ __(' Linkedin (opcional)') }}" value="{{ old('linkedin') }}" >
-              </div>
-            </div>
-            
-            {{-- <video id="player" controls autoplay width="100%"></video>
-            <button type="button" class="btn-toggle" data-element="#player" id="capture">Capture</button>
-            <canvas id="snapshot" width="290px" height="400px"></canvas> --}}
-            <input type="file" name="foto" accept="image/*" capture="camera" id="camera">
-            <img id="frame">
 
 
-            <div class="bmd-form-group mt-3">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" style="padding-left: 0">
-                    <i class="material-icons">account_box</i>
-                  </span>
-                </div>
-                  <select id="teste" name="teste" class="form-control" style="cursor: pointer">
-                    <option disabled default selected >{{ __(' teste')}}</option>
-                    <option value="CRM">CRM</option>
-                    <option value="COREN">COREN</option>
-                    <option value="CRF">CRF</option>
-                    <option value="COFEN">COFEN</option>
-                    <option value="CRN">CRN</option>
-                    <option value="CRI">CRI</option>
-                  </select>
-              </div>
-            </div>
+               <div class="bmd-form-group mt-3">
+                  <div class="input-group">
+                     <div class="input-group-prepend">
+                        <span class="input-group-text">
+                           <i class="material-icons">account_box</i>
+                        </span>
+                     </div>
+                     <select id="numeros" name="numeros" class="form-control" style="cursor: pointer">
+                        <option disabled default selected >{{ __('CRM/COREN/CRF/COFEN')}}</option>
+                        <option value="CRM">CRM</option>
+                        <option value="COREN">COREN</option>
+                        <option value="CRF">CRF</option>
+                        <option value="COFEN">COFEN</option>
+                        <option value="CRN">CRN</option>
+                        <option value="CRI">CRI</option>
+                     </select>
+                  </div>
+               </div>
 
 
             {{--
@@ -493,64 +490,47 @@
               
             --}}
  
-            <div class="CRM" style="display: none !important">
-              <div class="bmd-form-group{{ $errors->has('crm') ? ' has-danger' : '' }} mt-3">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" style="padding-left: 0">
-                      <i class="material-icons">email</i>
-                    </span>
+               <div class="CRM" style="display: none !important">
+                  <div class="bmd-form-group{{ $errors->has('crm') ? ' has-danger' : '' }} mt-3">
+                     <div class="input-group">
+                        <div class="input-group-prepend">
+                           <span class="input-group-text">
+                              <i class="material-icons">email</i>
+                           </span>
+                        </div>
+                        <input type="number" name="crm" id="CRM" class="form-control" placeholder="{{ __(' CRM') }}" value="{{ old('crm') }}" >
+                     </div>
+                     @if ($errors->has('crm'))
+                        <div id="crm-error" class="error text-danger pl-3" for="crm" style="display: block;">
+                        <strong>{{ $errors->first('crm') }}</strong>
+                        </div>
+                     @endif
                   </div>
-                  <input type="number" name="crm" id="CRM" class="form-control" placeholder="{{ __(' CRM') }}" value="{{ old('crm') }}" >
-                </div>
-                @if ($errors->has('crm'))
-                  <div id="crm-error" class="error text-danger pl-3" for="crm" style="display: block;">
-                    <strong>{{ $errors->first('crm') }}</strong>
-                  </div>
-                @endif
-              </div>
-            </div>
+               </div>
 
-            <div class="bmd-form-group mt-3">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" style="padding-left: 0">
-                    <i class="material-icons">payment</i>
-                  </span>
-                </div>
-                <select class="form-control" style="cursor: pointer">
-                  <option disabled selected style="#d1d1d1">{{__(' Forma de pagamento (opcional)')}}</option>
-                  <option value="Cartão de Crédito">Cartão de Crédito</option>
-                  <option value="PagSeguro">PagSeguro</option>
-                  <option value="Cartão de Débito">Cartão de Débito</option>
-                  <option value="Boleto">Boleto</option>
-                </select>
-              </div>
-            </div>
-          </div>
+         
             {{--
             
               -- CAMPO DE REGISTRO 'COREN'
               
             --}}
 
-            <div class="COREN" style="display: none !important">
-              <div class="bmd-form-group{{ $errors->has('coren') ? ' has-danger' : '' }} mt-3">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" style="padding-left: 0">
-                      <i class="material-icons">email</i>
-                    </span>
+               <div class="COREN" style="display: none !important">
+                  <div class="bmd-form-group{{ $errors->has('coren') ? ' has-danger' : '' }} mt-3">
+                     <div class="input-group">
+                        <div class="input-group-prepend">
+                           <span class="input-group-text">
+                              <i class="material-icons">email</i>
+                           </span>
+                        </div>
+                        <input type="text" name="coren" id="COREN" class="form-control" placeholder="{{ __(' Coren ex.: COREN-XX-000.000-XXX') }}" value="{{ old('coren') }}" >
+                     </div>
+                     @if ($errors->has('coren'))
+                        <div id="coren-error" class="error text-danger pl-3" for="coren" style="display: block;">
+                        <strong>{{ $errors->first('coren') }}</strong>
+                     @endif
                   </div>
-                  <input type="text" name="coren" id="COREN" class="form-control" placeholder="{{ __(' Coren ex.: COREN-XX-000.000-XXX') }}" value="{{ old('coren') }}" >
-                </div>
-                @if ($errors->has('coren'))
-                  <div id="coren-error" class="error text-danger pl-3" for="coren" style="display: block;">
-                    <strong>{{ $errors->first('coren') }}</strong>
-                  </div>
-                @endif
-              </div>
-            </div>
+               </div>
 
 
             {{--
@@ -559,23 +539,23 @@
               
             --}}
 
-            <div class="CRF" style="display: none !important">
-              <div class="bmd-form-group{{ $errors->has('crf') ? ' has-danger' : '' }} mt-3">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" style="padding-left: 0">
-                      <i class="material-icons">email</i>
-                    </span>
+               <div class="CRF" style="display: none !important">
+                  <div class="bmd-form-group{{ $errors->has('crf') ? ' has-danger' : '' }} mt-3">
+                     <div class="input-group">
+                        <div class="input-group-prepend">
+                           <span class="input-group-text">
+                              <i class="material-icons">email</i>
+                           </span>
+                        </div>
+                        <input type="text" name="crf" id="CRF" class="form-control" placeholder="{{ __(' CRF') }}" value="{{ old('crf') }}" >
+                     </div>
+                     @if ($errors->has('crf'))
+                        <div id="crf-error" class="error text-danger pl-3" for="crf" style="display: block;">
+                        <strong>{{ $errors->first('crf') }}</strong>
+                        </div>
+                     @endif
                   </div>
-                  <input type="text" name="crf" id="CRF" class="form-control" placeholder="{{ __(' CRF') }}" value="{{ old('crf') }}" >
-                </div>
-                @if ($errors->has('crf'))
-                  <div id="crf-error" class="error text-danger pl-3" for="crf" style="display: block;">
-                    <strong>{{ $errors->first('crf') }}</strong>
-                  </div>
-                @endif
-              </div>
-            </div>
+               </div>
 
             {{--
             
@@ -583,23 +563,23 @@
               
             --}}
 
-            <div class="COFEN" style="display: none !important">
-              <div class="bmd-form-group{{ $errors->has('cofen') ? ' has-danger' : '' }} mt-3">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" style="padding-left: 0">
-                      <i class="material-icons">email</i>
-                    </span>
+               <div class="COFEN" style="display: none !important">
+                  <div class="bmd-form-group{{ $errors->has('cofen') ? ' has-danger' : '' }} mt-3">
+                     <div class="input-group">
+                        <div class="input-group-prepend">
+                           <span class="input-group-text">
+                              <i class="material-icons">email</i>
+                           </span>
+                        </div>
+                        <input type="text" name="cofen" id="COFEN" class="form-control" placeholder="{{ __(' Cofen') }}" value="{{ old('cofen') }}" >
+                     </div>
+                     @if ($errors->has('cofen'))
+                        <div id="cofen-error" class="error text-danger pl-3" for="cofen" style="display: block;">
+                        <strong>{{ $errors->first('cofen') }}</strong>
+                        </div>
+                     @endif
                   </div>
-                  <input type="text" name="cofen" id="COFEN" class="form-control" placeholder="{{ __(' Cofen') }}" value="{{ old('cofen') }}" >
-                </div>
-                @if ($errors->has('cofen'))
-                  <div id="cofen-error" class="error text-danger pl-3" for="cofen" style="display: block;">
-                    <strong>{{ $errors->first('cofen') }}</strong>
-                  </div>
-                @endif
-              </div>
-            </div>
+               </div>
 
 
             {{--
@@ -608,219 +588,315 @@
               
             --}}
 
-            <div class="CRN" style="display: none !important">
-              <div class="bmd-form-group{{ $errors->has('crn') ? ' has-danger' : '' }} mt-3">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" style="padding-left: 0">
-                      <i class="material-icons">email</i>
-                    </span>
+               <div class="CRN" style="display: none !important">
+                  <div class="bmd-form-group{{ $errors->has('crn') ? ' has-danger' : '' }} mt-3">
+                     <div class="input-group">
+                        <div class="input-group-prepend">
+                           <span class="input-group-text">
+                              <i class="material-icons">email</i>
+                           </span>
+                        </div>
+                        <input type="text" name="crn" id="CRN" class="form-control" placeholder="{{ __(' CRN') }}" value="{{ old('crn') }}" >
+                     </div>
+                     @if ($errors->has('crn'))
+                        <div id="crn-error" class="error text-danger pl-3" for="crn" style="display: block;">
+                        <strong>{{ $errors->first('crn') }}</strong>
+                        </div>
+                     @endif
                   </div>
-                  <input type="text" name="crn" id="CRN" class="form-control" placeholder="{{ __(' CRN') }}" value="{{ old('crn') }}" >
-                </div>
-                @if ($errors->has('crn'))
-                  <div id="crn-error" class="error text-danger pl-3" for="crn" style="display: block;">
-                    <strong>{{ $errors->first('crn') }}</strong>
-                  </div>
-                @endif
-              </div>
-            </div>
+               </div>
 
-            <div class="cri" style="display: none !important">
-              <div class="bmd-form-group{{ $errors->has('cri') ? ' has-danger' : '' }} mt-3 ">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" style="padding-left: 0">
-                      <i class="material-icons">email</i>
-                    </span>
+               <div class="cri" style="display: none !important">
+                  <div class="bmd-form-group{{ $errors->has('cri') ? ' has-danger' : '' }} mt-3 ">
+                     <div class="input-group">
+                        <div class="input-group-prepend">
+                           <span class="input-group-text">
+                              <i class="material-icons">email</i>
+                           </span>
+                        </div>
+                        <input type="text" name="cri" id="CRI" class="form-control" placeholder="{{ __(' CRI') }}" value="{{ old('cri') }}" >
+                     </div>
+                     @if ($errors->has('cri'))
+                        <div id="cri-error" class="error text-danger pl-3" for="cri" style="display: block;">
+                        <strong>{{ $errors->first('cri') }}</strong>
+                        </div>
+                     @endif
                   </div>
-                  <input type="text" name="cri" id="CRI" class="form-control" placeholder="{{ __(' CRI') }}" value="{{ old('cri') }}" >
-                </div>
-                @if ($errors->has('cri'))
-                  <div id="cri-error" class="error text-danger pl-3" for="cri" style="display: block;">
-                    <strong>{{ $errors->first('cri') }}</strong>
-                  </div>
-                @endif
-              </div>
-            </div>
+               </div>
 
-            <h5 class="mt-3">Faça sua assinatura digital</h5>
-            <canvas id="canvas" class="ml-2" style="border: 1px solid #d2d2d2"  width="680px" height="100px"> 
-            </canvas>
+               <h5 class="mt-3">Faça sua assinatura digital</h5>
+               <canvas id="canvas"  class="ml-2" style="border: 1px solid #d2d2d2"  width="680px" height="100px"> 
+               </canvas>
+               <button style="float: bottom-left" type="button" id="resetCanvas">reset</button>
+               <button style="float: bottom-right" type="button" id="saveCanvas">save</button>
+
+               <input type="text" value="" name="assinatura_digital" accept="image/*" style="display: none !important"  id="imgConverted">
 
             <h5 class="mt-3">Formação (Selecione todos que se aplicam)</h5>
 
-              <div class="bmd-form-group mt-3 ">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" style="padding-left: 0">
-                    </span>
+               <div class="bmd-form-group mt-3 ">
+                  <div class="input-group">
+                     <div class="d-flex flex-column">
+                        <label for="tecnico">Técnico</label>
+                        <input class="form-check-input" type="checkbox" id="tecnico" name="tecnico" {{ old('tecnico') ? 'checked' : '' }} >
+                        <input type="text" class="form-control w-50" name="instituicao_tecnico" placeholder="Instituição">
+                        <input type="text" class="form-control w-50" name="conclusao_tecnico" placeholder="Data Conclusão" >
+                        <hr>
+                     </div>
                   </div>
-                  <div class="d-flex flex-column">
-                    <label for="superior_completo">Técnico</label>
-                    <input type="checkbox" name="tecnico" id="tecnico" value="">   
-                    <input type="text" class="form-control w-50" name="" placeholder="Instituição" id="">
-                    <input type="text" class="form-control w-50" name="" placeholder="Data Conclusão" >
-                    <hr>
-                  </div>
-                </div>
-              </div>
+               </div>
 
-              <div class="bmd-form-group mt-3 ">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" style="padding-left: 0">
-                    </span>
+               <div class="bmd-form-group mt-3 ">
+                  <div class="input-group">
+                     <div class="d-flex flex-column">
+                        <label for="superior_completo">Superior Completo</label>
+                        <input class="form-check-input" type="checkbox" id="superior_completo" name="superior_completo" {{ old('superior_completo') ? 'checked' : '' }} >
+                        <input type="text" class="form-control w-50" name="instituicao_superior" placeholder="Instituição" id="">
+                        <input type="text" class="form-control w-50" name="conclusao_superior" placeholder="Data Conclusão" > 
+                        <hr>
+                     </div>
                   </div>
-                  <div class="d-flex flex-column">
-                    <label for="superior_completo">Superior Completo</label>
-                    <input type="checkbox" name="superior_completo" id="superior_completo" value="">     
-                      <input type="text" class="form-control w-50" name="" placeholder="Instituição" id="">
-                      <input type="text" class="form-control w-50" name="" placeholder="Data Conclusão" > 
-                    <hr>
-                  </div>
-                </div>
-              </div>
+               </div>
 
-              <div class="bmd-form-group mt-3 ">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" style="padding-left: 0">
-                    </span>
+               <div class="bmd-form-group mt-3 ">
+                  <div class="input-group">
+                     <div class="d-flex flex-column">
+                        <label for="pos_graduacao">Pós-Graduação</label>
+                        <input class="form-check-input" type="checkbox" id="pos_graduacao" name="pos_graduacao" {{ old('pos_graduacao') ? 'checked' : '' }} >
+                        <input type="text" class="form-control" name="instituicao_pos" placeholder="Instituição" id="">
+                        <input type="text" class="form-control" name="conclusao_pos" placeholder="Data Conclusão" >    
+                        <hr>     
+                     </div>
                   </div>
-                  <div class="d-flex flex-column">
-                    <label for="pos_graduacao">Pós-Graduação</label>
-                    <input type="checkbox" name="pos_graduacao" id="pos_graduacao" value="">   
-                      <input type="text" class="form-control" name="" placeholder="Instituição" id="">
-                      <input type="text" class="form-control" name="" placeholder="Data Conclusão" >    
-                      <hr>     
-                  </div>
-                </div>
-              </div>
+               </div>
 
-              <div class="bmd-form-group mt-3 ">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" style="padding-left: 0">
-                    </span>
+               <div class="bmd-form-group mt-3 ">
+                  <div class="input-group">
+                     <div class="d-flex flex-column">
+                        <label for="mestrado">Mestrado</label>
+                        <input class="form-check-input" type="checkbox" id="mestrado" name="mestrado" {{ old('mestrado') ? 'checked' : '' }} >
+                        <input type="text" class="form-control" name="instituicao_mestrado" placeholder="Instituição" id="">
+                        <input type="text" class="form-control" name="conclusao_mestrado" placeholder="Data Conclusão" >    
+                        <hr>  
+                     </div>
                   </div>
-                  <div class="d-flex flex-column">
-                    <label for="mestrado">Mestrado</label>
-                    <input type="checkbox" name="mestrado" id="mestrado" value="">          
-                      <input type="text" class="form-control" name="" placeholder="Instituição" id="">
-                      <input type="text" class="form-control" name="" placeholder="Data Conclusão" >    
-                      <hr>  
-                  </div>
-                </div>
-              </div>
+               </div>
 
-              <div class="bmd-form-group mt-3 ">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" style="padding-left: 0">
-                    </span>
+               <div class="bmd-form-group mt-3 ">
+                  <div class="input-group">
+                     <div class="d-flex flex-column">
+                        <label for="doutorado">Doutorado</label>
+                        <input class="form-check-input" type="checkbox" id="doutorado" name="doutorado" {{ old('doutorado') ? 'checked' : '' }} >
+                        <input type="text" class="form-control w-50" name="instituicao_doutorado" placeholder="Instituição" id="">
+                        <input type="text" class="form-control w-50" name="conclusao_doutorado" placeholder="Data Conclusão" >     
+                        <hr>    
+                     </div>
                   </div>
-                  <div class="d-flex flex-column">
-                    <label for="doutorado">Doutorado</label>
-                    <input type="checkbox" name="doutorado" id="doutorado" value="">       
-                      <input type="text" class="form-control w-50" name="" placeholder="Instituição" id="">
-                      <input type="text" class="form-control w-50" name="" placeholder="Data Conclusão" >     
-                      <hr>    
-                  </div>
-                </div>
-              </div>
+               </div>
 
-              <div class="bmd-form-group mt-3 ">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" style="padding-left: 0">
-                    </span>
+               <div class="bmd-form-group mt-3 ">
+                  <div class="input-group">
+                     <div class="d-flex flex-column">
+                        <label for="especializacao">Especialização</label>
+                        <input class="form-check-input" type="checkbox" id="especializacao" name="especializacao" {{ old('especializacao') ? 'checked' : '' }} >
+                        <input type="text" class="form-control w-50" name="instituicao_especializacao" placeholder="Instituição" id="">
+                        <input type="text" class="form-control w-50" name="conclusao_especializacao" placeholder="Data Conclusão" >     
+                     </div>
                   </div>
-                  <div class="d-flex flex-column">
-                    <label for="especializacao">Especialização</label>
-                    <input type="checkbox" name="especializacao" id="especializacao" value="">          
-                      <input type="text" class="form-control w-50" name="" placeholder="Instituição" id="">
-                      <input type="text" class="form-control w-50" name="" placeholder="Data Conclusão" >     
+               </div>
+
+               <div class="bmd-form-group mt-3 ">
+                  <div class="input-group">
+                     <label for="diploma_certificado" class="d-flex justify-content-center align-items-center flex-column">Diploma/Certificado<i class="material-icons">save_alt</i></label>
+                     <input type="file" id="diploma_certificado" class="form-control" name="diploma_certificado" multiple >
                   </div>
-                </div>
-              </div>
+               </div>
 
-
-              <div class="bmd-form-group mt-3 ">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" style="padding-left: 0">
-                    </span>
-                  </div>
-                  <input type="file" id="diploma_certificado" class="form-control" name="diploma_certificado" accept="file_extension|image/*|media_type">
-                </div>
-              </div>
-
-              <h5 class="mt-3">Contato de Referência Pessoal</h5>
+            
+            <h5 class="mt-3">Contato de Referência Pessoal</h5>
           
 
-              <div class="bmd-form-group mt-3">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" style="padding-left: 0">
-                        <i class="material-icons">face</i>
-                    </span>
-                  </div>
-                  <input type="name" name="nomeContato1" class="form-control" placeholder="{{ __(' Nome contato') }}" value="{{ old('nomeContato1') }}">
-                </div>
-              </div>
-              <div class="bmd-form-group mt-3">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" style="padding-left: 0">
-                        <i class="material-icons">email</i>
-                    </span>
-                  </div>
-                  <input type="email" name="emailContato1" class="form-control" placeholder="{{ __(' Email contato') }}" value="{{ old('emailContato1') }}">
-                </div>
-              </div>
-              <div class="bmd-form-group mt-3">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" style="padding-left: 0">
-                        <i class="material-icons">lock_outline</i>
-                    </span>
-                  </div>
-                  <input type="password" name="celContato1" class="form-control" placeholder="{{ __(' Senha contato') }}" value="{{ old('celContato1') }}">
-                </div>
-              </div>
-              <div class="bmd-form-group mt-3">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" style="padding-left: 0">
-                        <i class="material-icons">face</i>
-                    </span>
-                  </div>
-                  <input type="name" name="nomeContato2" class="form-control" placeholder="{{ __(' Nome contato 2') }}" value="{{ old('nomeContato2') }}">
-                </div>
-              </div>
-              <div class="bmd-form-group mt-3">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" style="padding-left: 0">
-                        <i class="material-icons">email</i>
-                    </span>
-                  </div>
-                  <input type="email" name="emailContato2" class="form-control" placeholder="{{ __(' Email contato 2') }}" value="{{ old('emailContato2') }}">
-                </div>
-              </div>
-              <div class="bmd-form-group mt-3">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" style="padding-left: 0">
-                        <i class="material-icons">lock_outline</i>
-                    </span>
-                  </div>
-                  <input type="password" name="celContato2" class="form-control" placeholder="{{ __(' Senha contato 2') }}" value="{{ old('celContato2') }}">
-                </div>
-              </div>
+            {{--
+            
+              -- DADOS DO CONTATO 1
+              
+            --}}
 
 
+               {{--
+               
+                  -- CAMPO DE REGISTRO 'NOME' PARA O CONTATO 1
+               
+               --}}
+               <div class="bmd-form-group mt-3">
+                  <div class="input-group">
+                     <div class="input-group-prepend">
+                        <span class="input-group-text">
+                           <i class="material-icons">face</i>
+                        </span>
+                     </div>
+                     <input type="name" name="nomeContato1" class="form-control" placeholder="{{ __(' Nome contato') }}" value="{{ old('nomeContato1') }}">
+                  </div>
+               </div>
+
+               {{--
+               
+                  -- CAMPO DE REGISTRO 'EMAIL' PARA O CONTATO 1
+               
+               --}}
+               <div class="bmd-form-group mt-3">
+                  <div class="input-group">
+                     <div class="input-group-prepend">
+                        <span class="input-group-text">
+                           <i class="material-icons">email</i>
+                        </span>
+                     </div>
+                     <input type="email" name="emailContato1" class="form-control" placeholder="{{ __(' Email contato') }}" value="{{ old('emailContato1') }}">
+                  </div>
+               </div>
+
+               {{--
+               
+                  -- CAMPO DE REGISTRO 'TELEFONE' PARA O CONTATO 1
+               
+               --}}
+
+               <div class="bmd-form-group mt-3">
+                  <div class="input-group">
+                     <div class="input-group-prepend">
+                        <span class="input-group-text">
+                           <i class="material-icons">lock_outline</i>
+                        </span>
+                     </div>
+                     <input type="text" name="celContato1" class="form-control" placeholder="{{ __(' Senha contato') }}" value="{{ old('celContato1') }}">
+                  </div>
+               </div>
+
+            {{--
+            
+              -- DADOS DO CONTATO 2
+              
+            --}}
+
+
+               {{--
+               
+                  -- CAMPO DE REGISTRO 'NOME' PARA O CONTATO 2
+               
+               --}}
+              <div class="bmd-form-group mt-3">
+                  <div class="input-group">
+                     <div class="input-group-prepend">
+                        <span class="input-group-text">
+                           <i class="material-icons">face</i>
+                        </span>
+                     </div>
+                     <input type="name" name="nomeContato2" class="form-control" placeholder="{{ __(' Nome contato 2') }}" value="{{ old('nomeContato2') }}">
+                  </div>
+              </div>
+
+               {{--
+               
+                  -- CAMPO DE REGISTRO 'EMAIL' PARA O CONTATO 2
+               
+               --}}
+              <div class="bmd-form-group mt-3">
+                  <div class="input-group">
+                     <div class="input-group-prepend">
+                        <span class="input-group-text">
+                           <i class="material-icons">email</i>
+                        </span>
+                     </div>
+                     <input type="email" name="emailContato2" class="form-control" placeholder="{{ __(' Email contato 2') }}" value="{{ old('emailContato2') }}">
+                  </div>
+              </div>
+
+               {{--
+            
+                  -- CAMPO DE REGISTRO 'TELEFONE' PARA O CONTATO 2
+               
+               --}}
+
+              <div class="bmd-form-group mt-3">
+                  <div class="input-group">
+                     <div class="input-group-prepend">
+                        <span class="input-group-text">
+                           <i class="material-icons">lock_outline</i>
+                        </span>
+                     </div>
+                     <input type="text" name="celContato2" class="form-control" placeholder="{{ __(' Senha contato 2') }}" value="{{ old('celContato2') }}">
+                  </div>
+              </div>
+
+               {{--
+               
+                  -- CAMPO DE REGISTRO 'FORMA DE RECEBIMENTO'
+               
+               --}}
+
+               <div class="bmd-form-group mt-3">
+                  <div class="input-group">
+                     <div class="input-group-prepend">
+                        <span class="input-group-text">
+                           <i class="material-icons">payment</i>
+                        </span>
+                     </div>
+                     <select class="form-control" name="forma_recebimento" style="cursor: pointer">
+                        <option disabled selected style="#d1d1d1">{{__(' Forma de recebimento')}}</option>
+                        <option value="Cartão de Crédito">Banco</option>
+                        <option value="PagSeguro">Agência</option>
+                        <option value="Cartão de Débito">Conta</option>
+                     </select>
+                  </div>
+              </div>
+         </div>
+                    
+               {{--
+               
+                  -- CAMPO DE REGISTRO 'SENHA'
+                  
+               --}}
+               
+               <div class="bmd-form-group {{ $errors->has('password') ? ' has-danger' : '' }} mt-3">
+                  <div class="input-group">
+                     <div class="input-group-prepend">
+                        <span class="input-group-text">
+                           <i class="material-icons">lock_outline</i>
+                        </span>
+                     </div>
+                     <input type="password" name="password" id="password" class="form-control" placeholder="{{ __('Senha') }}">
+                  </div>
+                  @if ($errors->has('password'))
+                     <div id="password-error" class="error text-danger pl-3" for="password" style="display: block;">
+                     <strong>{{ $errors->first('password') }}</strong>
+                     </div>
+                  @endif
+               </div>
+              
+               {{--
+               
+                  -- CAMPO DE REGISTRO 'CONFIRMAÇÃO SENHA'
+                  
+               --}}
+
+               
+               <div class="bmd-form-group {{ $errors->has('password_confirmation') ? ' has-danger' : '' }} mt-3 ">
+                  <div class="input-group">
+                     <div class="input-group-prepend">
+                        <span class="input-group-text">
+                           <i class="material-icons">lock_outline</i>
+                        </span>
+                     </div>
+                     <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="{{ __('Confirme sua senha') }}">
+                  </div>
+                  @if ($errors->has('password_confirmation'))
+                     <div id="password_confirmation-error" class="error text-danger pl-3" for="password_confirmation" style="display: block;">
+                     <strong>{{ $errors->first('password_confirmation') }}</strong>
+                     </div>
+                  @endif
+               </div>
+
+          
 
 
 
@@ -831,16 +907,15 @@
         --}}
 
 
-      <div class="form-check mr-auto mt-3 ml-1">
-        <label class="form-check-label">
-          <input class="form-check-input" type="checkbox" id="policy" name="policy" {{ old('policy', 1) ? 'checked' : '' }} >
-          <span class="form-check-sign">
-            <span class="check"></span>
-          </span>
-          {{ __('Eu concordo com a ') }} <a href="#" style="color: #4327c2">{{ __('Política de Privacidade') }}</a>
-        </label>
-      </div>
-    </div>
+         <div class="form-check mr-auto mt-3 ml-3 pl-1">
+            <label class="form-check-label">
+               <input class="form-check-input" type="checkbox" id="policy" name="policy" {{ old('policy', 1) ? 'checked' : '' }} >
+                  <span class="form-check-sign">
+                     <span class="check"></span>
+                  </span>
+                  {{ __('Eu concordo com a ') }} <a href="#" style="color: #4327c2">{{ __('Política de Privacidade') }}</a>
+            </label>
+         </div>
 
           {{--
             
@@ -849,18 +924,81 @@
           --}}
 
 
-          <div class="card-footer justify-content-center">
+         <div class="card-footer justify-content-center">
             <button type="submit" class="btn btn-primary btn-link btn-lg" style="color: #4327c2">{{ __('Criar sua conta') }}</button>
-          </div>
-        </div>
-        </div>
-          
+         </div>          
       
-  </div>
       </form>
     </div>
   </div>
 </div>
+
+<script>
+   $('select').change(function(){
+  var sel = $(this);        
+  disableThis(sel);       
+  $('.selectpicker').selectpicker('refresh');
+});
+
+function disableThis(sel){
+  var val = sel.val();
+  var temSelecionado = false;
+    if(this.selected){
+      temSelecionado = true;      
+      $(this).parent().each(function(){
+        $(this.options).each(function(){        
+          if($(this).val() != "Cliente")
+          {
+            // $(this).prop("selected", false);
+            //     $(this).prop("disabled",true);
+          }
+        }
+        )        
+      })
+     }
+    else {
+       var forma_pagamento = $("#forma_pagamento option:selected");
+      temSelecionado = false;      
+      $(this).parent().each(function(){
+        $(this.options).each(function(){        
+          if($(this).val() != "Profissional")
+          {
+            $(forma_pagamento).val('').selectpicker('refresh');
+            // $(this).prop("selected", false);
+            //     $(this).prop("disabled",true);
+          }
+        }
+        )        
+      })
+    }
+   $(sel).children().each(function(){
+     var thisCliente = false;
+     if($(this).val() == "Cliente" && $(this).prop("selected"))
+       thisCliente = true;
+  	if($(this).val() != "Cliente" && thisCliente)
+      $(this).prop("disabled",true);
+  });
+  
+  $(sel).children().each(function(){
+     var thisProfissional = false;
+     if($(this).val() == "Profissional" && $(this).prop("selected"))
+       thisProfissional = true;
+  	if($(this).val() != "Profissional" && thisProfissional)
+      $(this).prop("disabled",true);
+  });
+  
+  $("select").children().each(function(){
+    if($(this).val() == "Cliente" && temSelecionado){
+      $(this).prop("disabled",true);      
+    } 
+  })
+  $("select").children().each(function(){
+    if($(this).val() == "Profissional" && temSelecionado){
+      $(this).prop("disabled",true);      
+    } 
+  })
+}
+</script>
 
 <script>
 
@@ -885,7 +1023,7 @@ $("#status").change(function() {
       $('#profissional').show()
  });
 
- $("#teste").change(function() {
+ $("#numeros").change(function() {
 
     $('.CRM').hide();
 
@@ -1052,7 +1190,8 @@ $("#CEP").blur(function() {
 <script>
   //Buscando os elementos do html
 var canvas = document.getElementById('canvas');
- 
+var imgConverted = document.getElementById('imgConverted')
+
  //representando uma  renderização bidimensional
  var context = canvas.getContext('2d'); 
  
@@ -1092,5 +1231,20 @@ var canvas = document.getElementById('canvas');
  canvas.addEventListener('mousedown', engage);
  canvas.addEventListener('mousemove', putPoint);
  canvas.addEventListener('mouseup', disengage);
+
+
+
+ $("#resetCanvas").click(function(){
+  var canvas= document.getElementById('canvas');
+ var ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0,  canvas.width, canvas.height);
+});
+
+$("#saveCanvas").click(function(){
+   const dataURI = canvas.toDataURL();
+   imgConverted.value = dataURI;
+   
+});
+
 </script>
 @endsection

@@ -60,6 +60,17 @@ trait RegistersUsers
             $data['diploma_certificado'] = $diplomaPath;
         }
 
+        if ($request->hasFile('assinatura_digital') && $request->assinatura_digital->isValid()) {
+
+            if ($user->assinatura_digital && Storage::exists($user->assinatura_digital)) {
+                Storage::delete($user->assinatura_digital);
+            }
+
+            $assinaturaPath = $request->assinatura_digital->store('assinatura-digital');
+
+            $data['assinatura_digital'] = $assinaturaPath;
+        }
+
         $user = $this->create($data);
 
 

@@ -1,7 +1,7 @@
 @extends('layouts.app', ['class' => 'off-canvas-sidebar', 'activePage' => 'home', 'title' => __('BMS Care')])
 
 @section('content')
-<div class="container" style="height: auto;">
+<div class="container">
   <div class="row justify-content-center">
     <div class="col-md-4">
       <div class="card card-login card-hidden mb-3">
