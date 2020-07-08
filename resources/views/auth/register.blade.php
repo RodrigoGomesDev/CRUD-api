@@ -624,15 +624,23 @@ select option {
                   </div>
                </div>
 
-               <h5 class="mt-3">Faça sua assinatura digital</h5>
-               <canvas id="canvas"  class="ml-2" style="border: 1px solid #d2d2d2"  width="680px" height="100px"> 
-               </canvas>
-               <button style="float: bottom-left" type="button" id="resetCanvas">reset</button>
-               <button style="float: bottom-right" type="button" id="saveCanvas">save</button>
+               <h5 class="mt-3 ml-5">Faça sua assinatura digital</h5>
+
+               <div class="bmd-form-group mt-3 ">
+                  <div class="input-group">
+                     <canvas id="canvas" class="ml-5 pl-3" style="border: 1px solid #d2d2d2"  width="650px" height="100px"> 
+                     </canvas>
+                     <div class="d-flex justify-content-between ml-5">
+                        <button type="button" class="btn btn-outline-danger pt-1 pb-1" id="resetCanvas">reset</button>
+                        <button type="button" class="btn btn-outline-info pt-1 pb-1" style="position: relative; left: 477px" id="saveCanvas">save</button>
+                     </div>
+                  </div>
+               </div>
+
 
                <input type="text" value="" name="assinatura_digital" accept="image/*" style="display: none !important"  id="imgConverted">
 
-            <h5 class="mt-3">Formação (Selecione todos que se aplicam)</h5>
+            <h5 class="mt-3 ml-5">Formação (Selecione todos que se aplicam)</h5>
 
                <div class="bmd-form-group mt-3 ">
                   <div class="input-group">
@@ -1236,7 +1244,7 @@ var imgConverted = document.getElementById('imgConverted')
 
  $("#resetCanvas").click(function(){
   var canvas= document.getElementById('canvas');
- var ctx = canvas.getContext('2d');
+  var ctx = canvas.getContext('2d');
     ctx.clearRect(0, 0,  canvas.width, canvas.height);
 });
 
