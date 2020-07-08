@@ -59,29 +59,29 @@ class CreateUsersTable extends Migration
             $table->text('cri')->nullable();
             $table->text('assinatura_digital')->nullable();
             
-            $table->text('tecnico');
-            $table->text('instituicao_tecnico');
-            $table->text('conclusao_tecnico');
+            $table->text('tecnico')->nullable();
+            $table->text('instituicao_tecnico')->nullable();
+            $table->text('conclusao_tecnico')->nullable();
 
-            $table->text('superior_completo');
-            $table->text('instituicao_superior');
-            $table->text('conclusao_superior');
+            $table->text('superior_completo')->nullable();
+            $table->text('instituicao_superior')->nullable();
+            $table->text('conclusao_superior')->nullable();
 
-            $table->text('pos_graduacao');
-            $table->text('instituicao_pos');
-            $table->text('conclusao_pos');
+            $table->text('pos_graduacao')->nullable();
+            $table->text('instituicao_pos')->nullable();
+            $table->text('conclusao_pos')->nullable();
 
-            $table->text('mestrado');
-            $table->text('instituicao_mestrado');
-            $table->text('conclusao_mestrado');
+            $table->text('mestrado')->nullable();
+            $table->text('instituicao_mestrado')->nullable();
+            $table->text('conclusao_mestrado')->nullable();
 
-            $table->text('doutorado');
-            $table->text('instituicao_doutorado');
-            $table->text('conclusao_doutorado');
+            $table->text('doutorado')->nullable();
+            $table->text('instituicao_doutorado')->nullable();
+            $table->text('conclusao_doutorado')->nullable();
 
-            $table->text('especializacao');
-            $table->text('instituicao_especializacao');
-            $table->text('conclusao_especializacao');
+            $table->text('especializacao')->nullable();
+            $table->text('instituicao_especializacao')->nullable();
+            $table->text('conclusao_especializacao')->nullable();
 
 
             $table->text('diploma_certificado')->nullable();

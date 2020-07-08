@@ -99,7 +99,6 @@ class RegisterController extends UserController
             'tipo_usuario' => $data['tipo_usuario'],
 
             'password' => Hash::make($data['password']),
-            // 'forma_pagamento' => $data['forma_pagamento'],
             
             'site' => $data['site'],
             'facebook' => $data['facebook'],
@@ -114,30 +113,6 @@ class RegisterController extends UserController
             'cri' => $data['cri'],
             'assinatura_digital' => $data['assinatura_digital'],
 
-            'tecnico' => $data['tecnico'],
-            'instituicao_tecnico' => $data['instituicao_tecnico'],
-            'conclusao_tecnico' => $data['conclusao_tecnico'],
-
-            'superior_completo' => $data['superior_completo'],
-            'instituicao_superior' => $data['instituicao_superior'],
-            'conclusao_superior' => $data['conclusao_superior'],
-
-            'pos_graduacao' => $data['pos_graduacao'],
-            'instituicao_pos' => $data['instituicao_pos'],
-            'conclusao_pos' => $data['conclusao_pos'],
-
-
-            'mestrado' => $data['mestrado'],
-            'instituicao_mestrado' => $data['instituicao_mestrado'],
-            'conclusao_mestrado' => $data['conclusao_mestrado'],
-
-            'doutorado' => $data['doutorado'],
-            'instituicao_doutorado' => $data['instituicao_doutorado'],
-            'conclusao_doutorado' => $data['conclusao_doutorado'],
-
-            'especializacao' => $data['especializacao'],
-            'instituicao_especializacao' => $data['instituicao_especializacao'],
-            'conclusao_especializacao' => $data['conclusao_especializacao'],
 
             'diploma_certificado' => $data['diploma_certificado'],
 

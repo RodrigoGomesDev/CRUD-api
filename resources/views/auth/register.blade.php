@@ -381,7 +381,7 @@ select option {
 
 
             <div id="profissional" style="display: none !important">
-            
+            {{-- <input type="text" name="is_admin" value="2"> --}}
                {{--
                
                -- CAMPO DE REGISTRO 'SITE' (OPCIONAL)
@@ -497,7 +497,7 @@ select option {
                               <i class="material-icons">email</i>
                            </span>
                         </div>
-                        <input type="number" name="crm" id="CRM" class="form-control" placeholder="{{ __(' CRM') }}" value="{{ old('crm') }}" >
+                        <input type="number" name="crm" id="CRM" class="form-control" placeholder="{{ __(' CRM') }}">
                      </div>
                      @if ($errors->has('crm'))
                         <div id="crm-error" class="error text-danger pl-3" for="crm" style="display: block;">
@@ -522,7 +522,7 @@ select option {
                               <i class="material-icons">email</i>
                            </span>
                         </div>
-                        <input type="text" name="coren" id="COREN" class="form-control" placeholder="{{ __(' Coren ex.: COREN-XX-000.000-XXX') }}" value="{{ old('coren') }}" >
+                        <input type="text" name="coren" id="COREN" class="form-control" placeholder="{{ __(' Coren ex.: COREN-XX-000.000-XXX') }}" >
                      </div>
                      @if ($errors->has('coren'))
                         <div id="coren-error" class="error text-danger pl-3" for="coren" style="display: block;">
@@ -546,7 +546,7 @@ select option {
                               <i class="material-icons">email</i>
                            </span>
                         </div>
-                        <input type="text" name="crf" id="CRF" class="form-control" placeholder="{{ __(' CRF') }}" value="{{ old('crf') }}" >
+                        <input type="text" name="crf" id="CRF" class="form-control" placeholder="{{ __(' CRF') }}" >
                      </div>
                      @if ($errors->has('crf'))
                         <div id="crf-error" class="error text-danger pl-3" for="crf" style="display: block;">
@@ -570,7 +570,7 @@ select option {
                               <i class="material-icons">email</i>
                            </span>
                         </div>
-                        <input type="text" name="cofen" id="COFEN" class="form-control" placeholder="{{ __(' Cofen') }}" value="{{ old('cofen') }}" >
+                        <input type="text" name="cofen" id="COFEN" class="form-control" placeholder="{{ __(' Cofen') }}">
                      </div>
                      @if ($errors->has('cofen'))
                         <div id="cofen-error" class="error text-danger pl-3" for="cofen" style="display: block;">
@@ -595,7 +595,7 @@ select option {
                               <i class="material-icons">email</i>
                            </span>
                         </div>
-                        <input type="text" name="crn" id="CRN" class="form-control" placeholder="{{ __(' CRN') }}" value="{{ old('crn') }}" >
+                        <input type="text" name="crn" id="CRN" class="form-control" placeholder="{{ __(' CRN') }}">
                      </div>
                      @if ($errors->has('crn'))
                         <div id="crn-error" class="error text-danger pl-3" for="crn" style="display: block;">
@@ -613,7 +613,7 @@ select option {
                               <i class="material-icons">email</i>
                            </span>
                         </div>
-                        <input type="text" name="cri" id="CRI" class="form-control" placeholder="{{ __(' CRI') }}" value="{{ old('cri') }}" >
+                        <input type="text" name="cri" id="CRI" class="form-control" placeholder="{{ __(' CRI') }}">
                      </div>
                      @if ($errors->has('cri'))
                         <div id="cri-error" class="error text-danger pl-3" for="cri" style="display: block;">
@@ -652,7 +652,7 @@ select option {
                            <i class="material-icons">business</i>
                         </span>
                      </div>
-                     <input type="text" class="form-control" name="instituicao_tecnico" placeholder="Instituição">
+                     <input type="text" class="form-control" name="instituicao_tecnico" id="instituicao_tecnico" placeholder="Instituição" value="{{ old('instituicao_tecnico') }}" >
                   </div>
                   <div class="input-group">
                      <div class="input-group-prepend">
@@ -660,7 +660,7 @@ select option {
                            <i class="material-icons">insert_invitation</i>
                         </span>
                      </div>
-                     <input type="text" class="form-control" name="conclusao_tecnico" placeholder="Data Conclusão" id="CONCLUSAO" >
+                  <input type="text" class="form-control" name="conclusao_tecnico" placeholder="Data Conclusão" id="CONCLUSAO" value="{{ old('CONCLUSAO') }}" >
                   </div>
                </div>
 
@@ -675,7 +675,7 @@ select option {
                            <i class="material-icons">business</i>
                         </span>
                      </div>
-                     <input type="text" class="form-control" name="instituicao_superior" placeholder="Instituição" id="">
+                     <input type="text" class="form-control" name="instituicao_superior" placeholder="Instituição" id="instituicao_superior" value={{old('instituicao_superior')}}>
                   </div>
                   <div class="input-group">
                      <div class="input-group-prepend">
@@ -683,7 +683,7 @@ select option {
                            <i class="material-icons">insert_invitation</i>
                         </span>
                      </div>
-                     <input type="text" class="form-control" name="conclusao_superior" placeholder="Data Conclusão" id="CONCLUSAO"> 
+                     <input type="text" class="form-control" name="conclusao_superior" placeholder="Data Conclusão" id="CONCLUSAO2" value={{old('CONCLUSAO2')}}> 
                   </div>
                </div>
 
@@ -698,7 +698,7 @@ select option {
                            <i class="material-icons">business</i>
                         </span>
                      </div>
-                     <input type="text" class="form-control" name="instituicao_pos" placeholder="Instituição" >
+                     <input type="text" class="form-control" name="instituicao_pos" placeholder="Instituição" value={{old('instituicao_pos')}} >
                   </div>
                   <div class="input-group">
                      <div class="input-group-prepend">
@@ -706,7 +706,7 @@ select option {
                            <i class="material-icons">insert_invitation</i>
                         </span>
                      </div>
-                     <input type="text" class="form-control" name="conclusao_pos" placeholder="Data Conclusão" id="CONCLUSAO">    
+                     <input type="text" class="form-control" name="conclusao_pos" placeholder="Data Conclusão" id="CONCLUSAO3" value={{old('CONCLUSAO3')}}>    
                   </div>
                </div>
 
@@ -721,7 +721,7 @@ select option {
                            <i class="material-icons">business</i>
                         </span>
                      </div>
-                     <input type="text" class="form-control" name="instituicao_mestrado" placeholder="Instituição" id="">
+                     <input type="text" class="form-control" name="instituicao_mestrado" placeholder="Instituição" id="instituicao_mestrado" value={{old('instituicao_mestrado')}}>
                   </div>
                   <div class="input-group">
                      <div class="input-group-prepend">
@@ -729,7 +729,7 @@ select option {
                            <i class="material-icons">insert_invitation</i>
                         </span>
                      </div>
-                     <input type="text" class="form-control" name="conclusao_mestrado" placeholder="Data Conclusão" id="CONCLUSAO">    
+                     <input type="text" class="form-control" name="conclusao_mestrado" placeholder="Data Conclusão" id="CONCLUSAO4" value={{old('CONCLUSAO4')}}>    
                   </div>
                </div>
 
@@ -744,7 +744,7 @@ select option {
                            <i class="material-icons">business</i>
                         </span>
                      </div>
-                     <input type="text" class="form-control" name="instituicao_doutorado" placeholder="Instituição" id="">
+                     <input type="text" class="form-control" name="instituicao_doutorado" placeholder="Instituição" id="instituicao_doutorado" value={{old('instituicao_doutorado')}}>
                   </div>
                   <div class="input-group">
                      <div class="input-group-prepend">
@@ -752,7 +752,7 @@ select option {
                            <i class="material-icons">insert_invitation</i>
                         </span>
                      </div>
-                     <input type="text" class="form-control" name="conclusao_doutorado" placeholder="Data Conclusão" id="CONCLUSAO">     
+                     <input type="text" class="form-control" name="conclusao_doutorado" placeholder="Data Conclusão" id="CONCLUSAO5" value={{old('CONCLUSAO5')}}>     
                   </div>
                </div>
 
@@ -767,7 +767,7 @@ select option {
                            <i class="material-icons">business</i>
                         </span>
                      </div>
-                     <input type="text" class="form-control" name="instituicao_especializacao" placeholder="Instituição" id="">
+                     <input type="text" class="form-control" name="instituicao_especializacao" placeholder="Instituição" id="instituicao_especializacao" value={{old('instituicao_especializacao')}}>
                   </div>
                   <div class="input-group">
                      <div class="input-group-prepend">
@@ -775,7 +775,7 @@ select option {
                            <i class="material-icons">insert_invitation</i>
                         </span>
                      </div>
-                     <input type="text" class="form-control" name="conclusao_especializacao" placeholder="Data Conclusão" id="CONCLUSAO">     
+                     <input type="text" class="form-control" name="conclusao_especializacao" placeholder="Data Conclusão" id="CONCLUSAO6" value={{old('CONCLUSAO6')}}>     
                   </div>
                </div>
 
@@ -1074,6 +1074,7 @@ $("#status").change(function() {
     $('#profissional').hide()
     if (this.value == "Profissional")
       $('#profissional').show()
+      // $('#is_admin').val(2)
  });
 
  $("#numeros").change(function() {
@@ -1109,6 +1110,38 @@ $("#status").change(function() {
     */
 
 
+   $(document).ready(function ($) { 
+      var $CONTATOmask = $("#CONTATO");
+      $CONTATOmask.mask('(00) 00000-0000'), {reverse: true};
+   });
+
+   $(document).ready(function ($) { 
+       var $CONTATO2mask = $("#CONTATO2");
+       $CONTATO2mask.mask('(00) 00000-0000'), {reverse: true};
+   });
+
+   $(document).ready(function ($) { 
+       var $CONTATO3mask = $("#CONTATO3");
+       $CONTATO3mask.mask('(00) 00000-0000'), {reverse: true};
+   });
+
+   $(document).ready(function ($) { 
+       var $CONTATO4mask = $("#CONTATO4");
+       $CONTATO4mask.mask('(00) 00000-0000'), {reverse: true};
+   });
+
+   $(document).ready(function ($) { 
+       var $CONTATO5mask = $("#CONTATO5");
+       $CONTATO5mask.mask('(00) 00000-0000'), {reverse: true};
+   });
+
+   $(document).ready(function ($) { 
+       var $CONTATO6mask = $("#CONTATO6");
+       $CONTATO6mask.mask('(00) 00000-0000'), {reverse: true};
+   });
+
+
+
     //CPF
     $(document).ready(function ($) { 
         var $CPFmask = $("#CPF");
@@ -1120,15 +1153,7 @@ $("#status").change(function() {
         $CONCLUSAOmask.mask('99/99/9999'), {reverse: true};
     });
 
-    $(document).ready(function ($) { 
-        var $CONTATOmask = $("#CONTATO");
-        $CONTATOmask.mask('(00) 00000-0000'), {reverse: true};
-    });
 
-    $(document).ready(function ($) { 
-        var $CONTATOmask = $("#CONTATO2");
-        $CONTATOmask.mask('(00) 00000-0000'), {reverse: true};
-    });
 
 
     //RG

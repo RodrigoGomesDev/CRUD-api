@@ -71,6 +71,10 @@ trait RegistersUsers
             $data['assinatura_digital'] = $assinaturaPath;
         }
 
+        if ($request->only('tipo_usuario') === 'Profissional') {
+            $data['is_admin'] = 2;
+        }
+
         $user = $this->create($data);
 
 
