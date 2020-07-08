@@ -24,7 +24,7 @@
     position: relative;
     background-color: white;
     opacity: 0.2;
-    left: 18px;
+    left: 12px;
     color: #ccc;
     border-radius:10px;
     border: 2px dashed #737373;
@@ -362,7 +362,6 @@ select option {
                            <i class="material-icons">payment</i>
                         </span>
                      </div>
-
                      <select class="form-control" name="forma_pagamento" id="forma_pagamento" style="cursor: pointer; color: #999999">
                         <option disabled selected>{{__(' Forma de pagamento (opcional)')}}</option>
                         <option value="Cartão de Crédito">Cartão de Crédito</option>
@@ -412,7 +411,7 @@ select option {
                   <div class="input-group">
                      <div class="input-group-prepend">
                         <span class="input-group-text">
-                           <i class="material-icons">email</i>
+                           <img src="https://img.icons8.com/ios/24/000000/facebook-f.png"/>
                         </span>
                      </div>
                      <input type="text" name="facebook" class="form-control" placeholder="{{ __('Facebook (opcional)') }}" value="{{ old('facebook') }}" >
@@ -429,7 +428,7 @@ select option {
                   <div class="input-group">
                      <div class="input-group-prepend">
                         <span class="input-group-text">
-                           <i class="material-icons">email</i>
+                           <img src="https://img.icons8.com/ios/24/000000/twitter.png"/>
                         </span>
                      </div>
                      <input type="text" name="twitter" class="form-control" placeholder="{{ __('Twitter (opcional)') }}" value="{{ old('twitter') }}" >
@@ -446,16 +445,16 @@ select option {
                   <div class="input-group">
                      <div class="input-group-prepend">
                         <span class="input-group-text">
-                           <i class="material-icons">email</i>
+                           <img src="https://img.icons8.com/ios/24/000000/linkedin.png"/>
                         </span>
                      </div>
                      <input type="text" name="linkedin" class="form-control" placeholder="{{ __('Linkedin (opcional)') }}" value="{{ old('linkedin') }}" >
                   </div>
                </div>
             
-               <div class="bmd-form-group mt-3 pl-3">
+               <div class="bmd-form-group mt-3">
                   <div class="input-group d-flex justify-content-center align-items-center">
-                     <label for="camera"><i class="material-icons-outlined">add_a_photo</i></label>
+                     <label for="camera" ><i class="material-icons-outlined">add_a_photo</i></label>
                      <input type="file" name="foto" accept="image/*" multiple id="camera">
                      <img id="frame">
                   </div>
@@ -624,15 +623,15 @@ select option {
                   </div>
                </div>
 
-               <h5 class="mt-3 ml-5">Faça sua assinatura digital</h5>
+               <h5 class="mt-3 ml-3">Faça sua assinatura digital</h5>
 
                <div class="bmd-form-group mt-3 ">
                   <div class="input-group">
-                     <canvas id="canvas" class="ml-5 pl-3" style="border: 1px solid #d2d2d2"  width="650px" height="100px"> 
+                     <canvas id="canvas" class="ml-3" style="border: 1px solid #d2d2d2"  width="350%" height="100px"> 
                      </canvas>
-                     <div class="d-flex justify-content-between ml-5">
-                        <button type="button" class="btn btn-outline-danger pt-1 pb-1" id="resetCanvas">reset</button>
-                        <button type="button" class="btn btn-outline-info pt-1 pb-1" style="position: relative; left: 477px" id="saveCanvas">save</button>
+                     <div class="d-flex justify-content-between ml-3">
+                        <button type="button" class="btn btn-outline-primary pt-1 pb-1" id="resetCanvas">reset</button>
+                        <button type="button" class="btn btn-outline-primary pt-1 pb-1" style="position: relative; left: 160px" id="saveCanvas">save</button>
                      </div>
                   </div>
                </div>
@@ -640,88 +639,157 @@ select option {
 
                <input type="text" value="" name="assinatura_digital" accept="image/*" style="display: none !important"  id="imgConverted">
 
-            <h5 class="mt-3 ml-5">Formação (Selecione todos que se aplicam)</h5>
+            <h5 class="mt-3 ml-3">Formação (Selecione todos que se aplicam)</h5>
+
+               <div class="bmd-form-group mt-3">
+                  <div class="input-group ml-4 pl-3">
+                     <label for="tecnico">Técnico</label>
+                     <input class="form-check-input" style="position: absolute; bottom: 10px" type="checkbox" id="tecnico" name="tecnico" {{ old('tecnico') ? 'checked' : '' }} >
+                  </div>
+                  <div class="input-group">
+                     <div class="input-group-prepend">
+                        <span class="input-group-text">
+                           <i class="material-icons">business</i>
+                        </span>
+                     </div>
+                     <input type="text" class="form-control" name="instituicao_tecnico" placeholder="Instituição">
+                  </div>
+                  <div class="input-group">
+                     <div class="input-group-prepend">
+                        <span class="input-group-text">
+                           <i class="material-icons">insert_invitation</i>
+                        </span>
+                     </div>
+                     <input type="text" class="form-control" name="conclusao_tecnico" placeholder="Data Conclusão" id="CONCLUSAO" >
+                  </div>
+               </div>
 
                <div class="bmd-form-group mt-3 ">
+                  <div class="input-group ml-4 pl-3">
+                     <label for="superior_completo">Superior Completo</label>
+                     <input class="form-check-input" type="checkbox" style="position: absolute; bottom: 10px" id="superior_completo" name="superior_completo" {{ old('superior_completo') ? 'checked' : '' }} >
+                  </div>
                   <div class="input-group">
-                     <div class="d-flex flex-column">
-                        <label for="tecnico">Técnico</label>
-                        <input class="form-check-input" type="checkbox" id="tecnico" name="tecnico" {{ old('tecnico') ? 'checked' : '' }} >
-                        <input type="text" class="form-control w-50" name="instituicao_tecnico" placeholder="Instituição">
-                        <input type="text" class="form-control w-50" name="conclusao_tecnico" placeholder="Data Conclusão" >
-                        <hr>
+                     <div class="input-group-prepend">
+                        <span class="input-group-text">
+                           <i class="material-icons">business</i>
+                        </span>
                      </div>
+                     <input type="text" class="form-control" name="instituicao_superior" placeholder="Instituição" id="">
+                  </div>
+                  <div class="input-group">
+                     <div class="input-group-prepend">
+                        <span class="input-group-text">
+                           <i class="material-icons">insert_invitation</i>
+                        </span>
+                     </div>
+                     <input type="text" class="form-control" name="conclusao_superior" placeholder="Data Conclusão" id="CONCLUSAO"> 
+                  </div>
+               </div>
+
+               <div class="bmd-form-group mt-3 ">
+                  <div class="input-group ml-4 pl-3">
+                     <label for="pos_graduacao">Pós-Graduação</label>
+                     <input class="form-check-input" type="checkbox" style="position: absolute; bottom: 10px" id="pos_graduacao" name="pos_graduacao" {{ old('pos_graduacao') ? 'checked' : '' }} >
+                  </div>
+                  <div class="input-group">
+                     <div class="input-group-prepend">
+                        <span class="input-group-text">
+                           <i class="material-icons">business</i>
+                        </span>
+                     </div>
+                     <input type="text" class="form-control" name="instituicao_pos" placeholder="Instituição" >
+                  </div>
+                  <div class="input-group">
+                     <div class="input-group-prepend">
+                        <span class="input-group-text">
+                           <i class="material-icons">insert_invitation</i>
+                        </span>
+                     </div>
+                     <input type="text" class="form-control" name="conclusao_pos" placeholder="Data Conclusão" id="CONCLUSAO">    
+                  </div>
+               </div>
+
+               <div class="bmd-form-group mt-3 ">
+                  <div class="input-group ml-4 pl-3">
+                     <label for="mestrado">Mestrado</label>
+                     <input class="form-check-input" type="checkbox" style="position: absolute; bottom: 10px" id="mestrado" name="mestrado" {{ old('mestrado') ? 'checked' : '' }} >
+                  </div>
+                  <div class="input-group">
+                     <div class="input-group-prepend">
+                        <span class="input-group-text">
+                           <i class="material-icons">business</i>
+                        </span>
+                     </div>
+                     <input type="text" class="form-control" name="instituicao_mestrado" placeholder="Instituição" id="">
+                  </div>
+                  <div class="input-group">
+                     <div class="input-group-prepend">
+                        <span class="input-group-text">
+                           <i class="material-icons">insert_invitation</i>
+                        </span>
+                     </div>
+                     <input type="text" class="form-control" name="conclusao_mestrado" placeholder="Data Conclusão" id="CONCLUSAO">    
+                  </div>
+               </div>
+
+               <div class="bmd-form-group mt-3 ">
+                  <div class="input-group ml-4 pl-3">
+                     <label for="doutorado">Doutorado</label>
+                     <input class="form-check-input" type="checkbox" style="position: absolute; bottom: 10px"  id="doutorado" name="doutorado" {{ old('doutorado') ? 'checked' : '' }} >
+                  </div>
+                  <div class="input-group">
+                     <div class="input-group-prepend">
+                        <span class="input-group-text">
+                           <i class="material-icons">business</i>
+                        </span>
+                     </div>
+                     <input type="text" class="form-control" name="instituicao_doutorado" placeholder="Instituição" id="">
+                  </div>
+                  <div class="input-group">
+                     <div class="input-group-prepend">
+                        <span class="input-group-text">
+                           <i class="material-icons">insert_invitation</i>
+                        </span>
+                     </div>
+                     <input type="text" class="form-control" name="conclusao_doutorado" placeholder="Data Conclusão" id="CONCLUSAO">     
+                  </div>
+               </div>
+
+               <div class="bmd-form-group mt-3 ">
+                  <div class="input-group ml-4 pl-3">
+                     <label for="especializacao">Especialização</label>
+                     <input class="form-check-input" type="checkbox" style="position: absolute; bottom: 10px" id="especializacao" name="especializacao" {{ old('especializacao') ? 'checked' : '' }} >
+                  </div>
+                  <div class="input-group">
+                     <div class="input-group-prepend">
+                        <span class="input-group-text">
+                           <i class="material-icons">business</i>
+                        </span>
+                     </div>
+                     <input type="text" class="form-control" name="instituicao_especializacao" placeholder="Instituição" id="">
+                  </div>
+                  <div class="input-group">
+                     <div class="input-group-prepend">
+                        <span class="input-group-text">
+                           <i class="material-icons">insert_invitation</i>
+                        </span>
+                     </div>
+                     <input type="text" class="form-control" name="conclusao_especializacao" placeholder="Data Conclusão" id="CONCLUSAO">     
                   </div>
                </div>
 
                <div class="bmd-form-group mt-3 ">
                   <div class="input-group">
-                     <div class="d-flex flex-column">
-                        <label for="superior_completo">Superior Completo</label>
-                        <input class="form-check-input" type="checkbox" id="superior_completo" name="superior_completo" {{ old('superior_completo') ? 'checked' : '' }} >
-                        <input type="text" class="form-control w-50" name="instituicao_superior" placeholder="Instituição" id="">
-                        <input type="text" class="form-control w-50" name="conclusao_superior" placeholder="Data Conclusão" > 
-                        <hr>
+                     <div class="input-group d-flex justify-content-center align-items-center">
+                        <label for="diploma_certificado">Diploma/Certificado<i class="material-icons">save_alt</i></label>
+                        <input type="file" id="diploma_certificado" class="form-control" name="diploma_certificado" multiple >
                      </div>
-                  </div>
-               </div>
-
-               <div class="bmd-form-group mt-3 ">
-                  <div class="input-group">
-                     <div class="d-flex flex-column">
-                        <label for="pos_graduacao">Pós-Graduação</label>
-                        <input class="form-check-input" type="checkbox" id="pos_graduacao" name="pos_graduacao" {{ old('pos_graduacao') ? 'checked' : '' }} >
-                        <input type="text" class="form-control" name="instituicao_pos" placeholder="Instituição" id="">
-                        <input type="text" class="form-control" name="conclusao_pos" placeholder="Data Conclusão" >    
-                        <hr>     
-                     </div>
-                  </div>
-               </div>
-
-               <div class="bmd-form-group mt-3 ">
-                  <div class="input-group">
-                     <div class="d-flex flex-column">
-                        <label for="mestrado">Mestrado</label>
-                        <input class="form-check-input" type="checkbox" id="mestrado" name="mestrado" {{ old('mestrado') ? 'checked' : '' }} >
-                        <input type="text" class="form-control" name="instituicao_mestrado" placeholder="Instituição" id="">
-                        <input type="text" class="form-control" name="conclusao_mestrado" placeholder="Data Conclusão" >    
-                        <hr>  
-                     </div>
-                  </div>
-               </div>
-
-               <div class="bmd-form-group mt-3 ">
-                  <div class="input-group">
-                     <div class="d-flex flex-column">
-                        <label for="doutorado">Doutorado</label>
-                        <input class="form-check-input" type="checkbox" id="doutorado" name="doutorado" {{ old('doutorado') ? 'checked' : '' }} >
-                        <input type="text" class="form-control w-50" name="instituicao_doutorado" placeholder="Instituição" id="">
-                        <input type="text" class="form-control w-50" name="conclusao_doutorado" placeholder="Data Conclusão" >     
-                        <hr>    
-                     </div>
-                  </div>
-               </div>
-
-               <div class="bmd-form-group mt-3 ">
-                  <div class="input-group">
-                     <div class="d-flex flex-column">
-                        <label for="especializacao">Especialização</label>
-                        <input class="form-check-input" type="checkbox" id="especializacao" name="especializacao" {{ old('especializacao') ? 'checked' : '' }} >
-                        <input type="text" class="form-control w-50" name="instituicao_especializacao" placeholder="Instituição" id="">
-                        <input type="text" class="form-control w-50" name="conclusao_especializacao" placeholder="Data Conclusão" >     
-                     </div>
-                  </div>
-               </div>
-
-               <div class="bmd-form-group mt-3 ">
-                  <div class="input-group">
-                     <label for="diploma_certificado" class="d-flex justify-content-center align-items-center flex-column">Diploma/Certificado<i class="material-icons">save_alt</i></label>
-                     <input type="file" id="diploma_certificado" class="form-control" name="diploma_certificado" multiple >
                   </div>
                </div>
 
             
-            <h5 class="mt-3">Contato de Referência Pessoal</h5>
+            <h5 class="mt-3 ml-3">Contato de Referência Pessoal</h5>
           
 
             {{--
@@ -773,10 +841,10 @@ select option {
                   <div class="input-group">
                      <div class="input-group-prepend">
                         <span class="input-group-text">
-                           <i class="material-icons">lock_outline</i>
+                           <i class="material-icons">contact_phone</i>
                         </span>
                      </div>
-                     <input type="text" name="celContato1" class="form-control" placeholder="{{ __(' Senha contato') }}" value="{{ old('celContato1') }}">
+                     <input type="text" name="celContato1" class="form-control" placeholder="{{ __(' Telefone contato') }}" value="{{ old('celContato1') }}" id="CONTATO">
                   </div>
                </div>
 
@@ -829,10 +897,10 @@ select option {
                   <div class="input-group">
                      <div class="input-group-prepend">
                         <span class="input-group-text">
-                           <i class="material-icons">lock_outline</i>
+                           <i class="material-icons">contact_phone</i>
                         </span>
                      </div>
-                     <input type="text" name="celContato2" class="form-control" placeholder="{{ __(' Senha contato 2') }}" value="{{ old('celContato2') }}">
+                     <input type="text" name="celContato2" class="form-control" placeholder="{{ __(' Telefone contato 2') }}" value="{{ old('celContato2') }}" id="CONTATO2">
                   </div>
               </div>
 
@@ -942,70 +1010,70 @@ select option {
 </div>
 
 <script>
-   $('select').change(function(){
-  var sel = $(this);        
-  disableThis(sel);       
-  $('.selectpicker').selectpicker('refresh');
-});
+//    $('select').change(function(){
+//   var sel = $(this);        
+//   disableThis(sel);       
+//   $('.selectpicker').selectpicker('refresh');
+// });
 
-function disableThis(sel){
-  var val = sel.val();
-  var temSelecionado = false;
-    if(this.selected){
-      temSelecionado = true;      
-      $(this).parent().each(function(){
-        $(this.options).each(function(){        
-          if($(this).val() != "Cliente")
-          {
-            // $(this).prop("selected", false);
-            //     $(this).prop("disabled",true);
-          }
-        }
-        )        
-      })
-     }
-    else {
-       var forma_pagamento = $("#forma_pagamento option:selected");
-      temSelecionado = false;      
-      $(this).parent().each(function(){
-        $(this.options).each(function(){        
-          if($(this).val() != "Profissional")
-          {
-            $(forma_pagamento).val('').selectpicker('refresh');
-            // $(this).prop("selected", false);
-            //     $(this).prop("disabled",true);
-          }
-        }
-        )        
-      })
-    }
-   $(sel).children().each(function(){
-     var thisCliente = false;
-     if($(this).val() == "Cliente" && $(this).prop("selected"))
-       thisCliente = true;
-  	if($(this).val() != "Cliente" && thisCliente)
-      $(this).prop("disabled",true);
-  });
+// function disableThis(sel){
+//   var val = sel.val();
+//   var temSelecionado = false;
+//     if(this.selected){
+//       temSelecionado = true;      
+//       $(this).parent().each(function(){
+//         $(this.options).each(function(){        
+//           if($(this).val() != "Cliente")
+//           {
+//             // $(this).prop("selected", false);
+//             //     $(this).prop("disabled",true);
+//           }
+//         }
+//         )        
+//       })
+//      }
+//     else {
+//        var forma_pagamento = $("#forma_pagamento option:selected");
+//       temSelecionado = false;      
+//       $(this).parent().each(function(){
+//         $(this.options).each(function(){        
+//           if($(this).val() != "Profissional")
+//           {
+//             $(forma_pagamento).val('').selectpicker('refresh');
+//             // $(this).prop("selected", false);
+//             //     $(this).prop("disabled",true);
+//           }
+//         }
+//         )        
+//       })
+//     }
+//    $(sel).children().each(function(){
+//      var thisCliente = false;
+//      if($(this).val() == "Cliente" && $(this).prop("selected"))
+//        thisCliente = true;
+//   	if($(this).val() != "Cliente" && thisCliente)
+//       $(this).prop("disabled",true);
+//   });
   
-  $(sel).children().each(function(){
-     var thisProfissional = false;
-     if($(this).val() == "Profissional" && $(this).prop("selected"))
-       thisProfissional = true;
-  	if($(this).val() != "Profissional" && thisProfissional)
-      $(this).prop("disabled",true);
-  });
+//   $(sel).children().each(function(){
+//      var thisProfissional = false;
+//      if($(this).val() == "Profissional" && $(this).prop("selected"))
+//        thisProfissional = true;
+//   	if($(this).val() != "Profissional" && thisProfissional)
+//       $(this).prop("disabled",true);
+//   });
   
-  $("select").children().each(function(){
-    if($(this).val() == "Cliente" && temSelecionado){
-      $(this).prop("disabled",true);      
-    } 
-  })
-  $("select").children().each(function(){
-    if($(this).val() == "Profissional" && temSelecionado){
-      $(this).prop("disabled",true);      
-    } 
-  })
-}
+//   $("select").children().each(function(){
+//     if($(this).val() == "Cliente" && temSelecionado){
+//       $(this).prop("disabled",true);      
+//     } 
+//   })
+//   $("select").children().each(function(){
+//     if($(this).val() == "Profissional" && temSelecionado){
+//       $(this).prop("disabled",true);      
+//     } 
+//   })
+// }
 </script>
 
 <script>
@@ -1069,6 +1137,22 @@ $("#status").change(function() {
         var $CPFmask = $("#CPF");
         $CPFmask.mask('000.000.000-00'), {reverse: true};
     });
+
+    $(document).ready(function ($) { 
+        var $CONCLUSAOmask = $("#CONCLUSAO");
+        $CONCLUSAOmask.mask('99/99/9999'), {reverse: true};
+    });
+
+    $(document).ready(function ($) { 
+        var $CONTATOmask = $("#CONTATO");
+        $CONTATOmask.mask('(00) 00000-0000'), {reverse: true};
+    });
+
+    $(document).ready(function ($) { 
+        var $CONTATOmask = $("#CONTATO2");
+        $CONTATOmask.mask('(00) 00000-0000'), {reverse: true};
+    });
+
 
     //RG
     $(document).ready(function ($) { 
@@ -1201,7 +1285,7 @@ var canvas = document.getElementById('canvas');
 var imgConverted = document.getElementById('imgConverted')
 
  //representando uma  renderização bidimensional
- var context = canvas.getContext('2d'); 
+var context = canvas.getContext('2d'); 
  
  //Lindando com o pincel
  var radius = 4; //Grossura do pincel

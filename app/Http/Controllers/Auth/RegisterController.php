@@ -51,22 +51,24 @@ class RegisterController extends UserController
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            // 'name' => ['required', 'string', 'max:255'],
-            // 'cpf' => ['required'],
-            // 'rg' => ['required'],
-            // 'nascimento' => ['required'],
-            // 'cep' => ['required'],
-            // 'rua' => ['required'],
-            // 'numero' => ['required'],
-            // 'bairro' => ['required'],
-            // 'complemento' => ['string'],
-            // 'cidade' => ['required'],
-            // 'estado' => ['required'],
-            // 'referencia' => ['string'],
-            // 'telefone_fixo' => ['required'],
-            // 'celular' => ['required'],
-            // 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            // 'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'name' => ['required', 'string', 'max:255'],
+            'cpf' => ['required'],
+            'rg' => ['required'],
+            'nascimento' => ['required'],
+            'cep' => ['required'],
+            'rua' => ['required'],
+            'numero' => ['required'],
+            'bairro' => ['required'],
+            'complemento' => ['string'],
+            'cidade' => ['required'],
+            'estado' => ['required'],
+            'referencia' => ['string'],
+            'telefone_fixo' => ['required'],
+            'celular' => ['required'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            // 'forma_pagamento' => ['integer'],
+            // 'forma_recebimento' => ['required_without_all:forma_pagamento']
         ]);
     }
 
@@ -99,7 +101,7 @@ class RegisterController extends UserController
             'tipo_usuario' => $data['tipo_usuario'],
 
             'password' => Hash::make($data['password']),
-            'forma_pagamento' => Hash::make($data['forma_pagamento']),
+            // 'forma_pagamento' => $data['forma_pagamento'],
             
             'site' => $data['site'],
             'facebook' => $data['facebook'],
