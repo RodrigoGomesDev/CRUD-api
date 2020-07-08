@@ -69,58 +69,20 @@
 
 
       <style>
-        .dropdown-menu {
-          animation-duration: 0.3s;
-          -webkit-animation-duration: 0.3s;
-          animation-fill-mode: both;
-          -webkit-animation-fill-mode: both;
-        }
-
-        @keyframes slideIn {
-  0% {
-    transform: translateX(1rem);
-    opacity: 0;
-  }
-  100% {
-    transform:translateX(0rem);
-    opacity: 1;
-  }
-  0% {
-    transform: translateX(1rem);
-    opacity: 0;
-  }
+        select {
+  color: gray;
+  transition: color 0s 2147483647s;
 }
 
-@-webkit-keyframes slideIn {
-  0% {
-    -webkit-transform: transform;
-    -webkit-opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateX(0);
-    -webkit-opacity: 1;
-  }
-  0% {
-    -webkit-transform: translateX(1rem);
-    -webkit-opacity: 0;
-  }
+select:focus,
+select:focus {
+  color: black;
+  transition:0s;
 }
 
-.slideIn {
-  -webkit-animation-name: slideIn;
-  animation-name: slideIn;
+select option {
+   color: #999999;
 }
-
-.caret {
-  margin-top: 8px;
-  width: 0; 
-  height: 0; 
-  border-left: 6px solid transparent;
-  border-right: 5px solid transparent;
-  
-  border-top: 6px solid #b3b3b3 ;
-}
-
   .form-control:read-only {
     background-color: white;
     border: 0;
@@ -209,20 +171,11 @@
                       <i class="material-icons">article</i>
                     </span>
                   </div>
-                  {{-- <select name="sexo">
-                    <option value="Masculino">Masculino</option>
-                    <option value="Feminino">Feminino</option>
-                  </select> --}}
-                  <div class="dropdown m-0 p-0" style=" width: 622px ">
-                      <button class="btn btn-primary dropdown-toggle p-0 m-0 mb-1 d-flex" id="dropdown1" style="background-color: white; box-shadow: none; height: 30px; width: 100%" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        <input type="text" name="sexo" style="cursor: pointer; width: 100%" id="sexo" class="form-control " placeholder="{{ __(' Sexo') }}" value="{{ old('sexo') }}" readonly  >
-                        <span class="caret"></span>
-                      </button>
-                        <div class="dropdown-menu slideIn" id="teste1" style="width: 622px " aria-labelledby="dropdownMenuButton">
-                          <li class="dropdown-item" style="cursor: pointer;">Masculino</li>
-                          <li class="dropdown-item" style="cursor: pointer;">Feminino</li>
-                        </div>
-                    </div>
+                    <select name="sexo"  style="cursor: pointer">
+                      <option disabled selected style="#d1d1d1">{{__(' Sexo')}}</option>
+                      <option value="Masculino">Masculino</option>
+                      <option value="Feminino">Feminino</option>
+                    </select>
                   </div>
               </div>
 
@@ -255,28 +208,15 @@
                       <i class="material-icons">home</i>
                     </span>
                   </div>
-                  {{-- <select name="cor" id="">
-                    <option value="Branco">Branco</option>
+                  <select name="cor" style="cursor: pointer">
+                      <option disabled selected style="#d1d1d1">{{__(' Cor')}}</option>
+                      <option value="Branco">Branco</option>
                     <option value="Pardo">Pardo</option>
                     <option value="Amarelo">Amarelo</option>
                     <option value="Indigena">Indigena</option>
                     <option value="Negro">Negro</option>
                     <option value="Outro">Outro</option>
-                  </select> --}}
-                  <div class="dropdown m-0 p-0" style="height: 30px; width: 622px ">
-                    <button class="btn btn-primary dropdown-toggle p-0 m-0 mb-1 d-flex" style="background-color: white; box-shadow: none; height: 30px; width: 100%" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                      <input type="text" name="cor" style="cursor: pointer; width: 100%" id="cor" class="form-control " placeholder="{{ __(' Cor') }}" value="{{ old('cor') }}" readonly >
-                      <span class="caret"></span>
-                    </button>
-                      <div class="dropdown-menu slideIn" style="width: 622px " aria-labelledby="dropdownMenuButton">
-                        <li class="dropdown-item" style="cursor: pointer;">Branco</li>
-                        <li class="dropdown-item" style="cursor: pointer;">Pardo</li>
-                        <li class="dropdown-item" style="cursor: pointer;">Amarelo</li>
-                        <li class="dropdown-item" style="cursor: pointer;">Indigena</li>
-                        <li class="dropdown-item" style="cursor: pointer;">Negro</li>
-                        <li class="dropdown-item" style="cursor: pointer;">Outro</li>
-                      </div>
-                  </div>
+                  </select>
                 </div>
               </div>
   
@@ -287,24 +227,13 @@
                       <i class="material-icons">home</i>
                     </span>
                   </div>
-                  {{-- <select name="estado_civil" id="">
+                  <select name="estado_civil" style="cursor: pointer">
+                    <option disabled selected style="#d1d1d1">{{__(' Estado civil')}}</option>
                     <option value="Casado">Casado</option>
                     <option value="Solteiro">Solteiro</option>
                     <option value="Divorciado">Divorciado</option>
                     <option value="Outros">Outros</option>
-                  </select> --}}
-                  <div class="dropdown m-0 p-0" style="height: 30px; width: 622px ">
-                    <button class="btn btn-primary dropdown-toggle p-0 m-0 mb-1 d-flex" style="background-color: white; box-shadow: none; height: 30px; width: 100%" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                      <input type="text" name="estado_civil" style="cursor: pointer; width: 100%" id="estado_civil" class="form-control " placeholder="{{ __(' Estado Civil') }}" value="{{ old('estado_civil') }}" readonly >
-                      <span class="caret"></span>
-                    </button>
-                      <div class="dropdown-menu slideIn" style="width: 622px " aria-labelledby="dropdownMenuButton">
-                        <li class="dropdown-item" style="cursor: pointer;">Casado</li>
-                        <li class="dropdown-item" style="cursor: pointer;">Solteiro</li>
-                        <li class="dropdown-item" style="cursor: pointer;">Divorciado</li>
-                        <li class="dropdown-item" style="cursor: pointer;">Outros</li>
-                      </div>
-                  </div>
+                  </select>
                 </div>
                 
               </div>
@@ -338,26 +267,14 @@
                       <i class="material-icons">contact_phone</i>
                     </span>
                   </div>
-                  {{-- <select name="credo_religiao" id="">
+                  <select name="credo_religiao" style="cursor: pointer">
+                    <option disabled selected style="#d1d1d1">{{__(' Credo/Religião')}}</option>
                     <option value="Cristão">Cristão</option>
                     <option value="Muçulmano">Muçulmano</option>
                     <option value="Judeu">Judeu</option>
                     <option value="Budista">Budista</option>
                     <option value="Outros">Outros</option>
-                  </select> --}}
-                  <div class="dropdown m-0 p-0" style="height: 30px; width: 622px ">
-                    <button class="btn btn-primary dropdown-toggle p-0 m-0 mb-1 d-flex" style="background-color: white; box-shadow: none; height: 30px; width: 100%" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                      <input type="text" name="credo_religiao" style="cursor: pointer; width: 100%" id="credo_religiao" class="form-control " placeholder="{{ __(' Credo/Religião') }}" value="{{ old('credo_religiao') }}" readonly >
-                      <span class="caret"></span>
-                    </button>
-                      <div class="dropdown-menu slideIn" style="width: 622px " aria-labelledby="dropdownMenuButton">
-                        <li class="dropdown-item" style="cursor: pointer;">Cristão</li>
-                        <li class="dropdown-item" style="cursor: pointer;">Muçulmano</li>
-                        <li class="dropdown-item" style="cursor: pointer;">Judeu</li>
-                        <li class="dropdown-item" style="cursor: pointer;">Budista</li>
-                        <li class="dropdown-item" style="cursor: pointer;">Outros</li>
-                      </div>
-                  </div>
+                  </select>
                 </div>
               </div>
   
@@ -368,28 +285,15 @@
                       <i class="material-icons">call</i>
                     </span>
                   </div>
-                  {{-- <select name="escolaridade" id="">
+                  <select name="escolaridade" style="cursor: pointer">
+                    <option disabled selected style="#d1d1d1">{{__(' Escolaridade')}}</option>
                     <option value="1º grau incompleto">1º grau incompleto</option>
                     <option value="1ª grau completo">1ª grau completo</option>
                     <option value="2ª grau incompleto">2ª grau incompleto</option>
                     <option value="2ª grau completo">2ª grau completo</option>
                     <option value="Superior incompleto">Superior incompleto</option>
                     <option value="Superior completo">Superior completo</option>
-                  </select> --}}
-                  <div class="dropdown m-0 p-0" style="height: 30px; width: 622px ">
-                    <button class="btn btn-primary dropdown-toggle p-0 m-0 mb-1 d-flex" style="background-color: white; box-shadow: none; height: 30px; width: 100%" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                      <input type="text" name="escolaridade" style="cursor: pointer; width: 100%" id="escolaridade" class="form-control " placeholder="{{ __(' Escolaridade') }}" value="{{ old('escolaridade') }}" readonly  >
-                      <span class="caret"></span>
-                    </button>
-                      <div class="dropdown-menu slideIn" style="width: 622px " aria-labelledby="dropdownMenuButton">
-                        <li class="dropdown-item" style="cursor: pointer;">1º grau incompleto</li>
-                        <li class="dropdown-item" style="cursor: pointer;">1ª grau completo</li>
-                        <li class="dropdown-item" style="cursor: pointer;">2ª grau incompleto</li>
-                        <li class="dropdown-item" style="cursor: pointer;">2ª grau completo</li>
-                        <li class="dropdown-item" style="cursor: pointer;">Superior incompleto</li>
-                        <li class="dropdown-item" style="cursor: pointer;">Superior completo</li>
-                      </div>
-                  </div>
+                  </select>
                 </div>
               </div>
   
@@ -400,28 +304,15 @@
                       <i class="material-icons">email</i>
                     </span>
                   </div>
-                  {{-- <select name="profissao" id="">
+                  <select name="profissao" style="cursor: pointer">
+                    <option disabled selected style="#d1d1d1">{{__(' Profissão')}}</option>
                     <option value="Funcionário Empresa Privada">Funcionário Empresa Privada</option>
                     <option value="Funcionário Público">Funcionário Público</option>
                     <option value="Profissional Liberal">Profissional Liberal</option>
                     <option value="Desempregado">Desempregado</option>
                     <option value="Empresário">Empresário</option>
                     <option value="Outros">Outros</option>
-                  </select> --}}
-                  <div class="dropdown m-0 p-0" style="height: 30px; width: 622px ">
-                    <button class="btn btn-primary dropdown-toggle p-0 m-0 mb-1 d-flex" style="background-color: white; box-shadow: none; height: 30px; width: 100%" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                      <input type="text" name="profissao" style="cursor: pointer; width: 100%" id="profissao" class="form-control " placeholder="{{ __(' Profissão') }}" value="{{ old('profissao') }}" readonly >
-                      <span class="caret"></span>
-                    </button>
-                      <div class="dropdown-menu slideIn" style="width: 622px " aria-labelledby="dropdownMenuButton">
-                        <li class="dropdown-item" style="cursor: pointer;">Funcionário Empresa Privada</li>
-                        <li class="dropdown-item" style="cursor: pointer;">Funcionário Público</li>
-                        <li class="dropdown-item" style="cursor: pointer;">Profissional Liberal</li>
-                        <li class="dropdown-item" style="cursor: pointer;">Desempregado</li>
-                        <li class="dropdown-item" style="cursor: pointer;">Empresário</li>
-                        <li class="dropdown-item" style="cursor: pointer;">Outros</li>
-                      </div>
-                  </div>
+                  </select>
                 </div>
               </div>
               
@@ -432,26 +323,15 @@
                       <i class="material-icons">lock_outline</i>
                     </span>
                   </div>
-                  {{-- <select name="situacao_previdenciaria" id="">
+                  <select name="situacao_previdenciaria" style="cursor: pointer">
+                    <option disabled selected style="#d1d1d1">{{__(' Situação previdenciaria')}}</option>
                     <option value="Sem aposentadoria">Sem aposentadoria</option>
                     <option value="Aposentadoria por idade">Aposentadoria por idade</option>
                     <option value="Aposentadoria por tempo de contribuição">Aposentadoria por tempo de contribuição</option>
                     <option value="Aposentadoria por invalidez">Aposentadoria por invalidez</option>
                     <option value="Aposentadoria especial por tempo de contribuição">Aposentadoria especial por tempo de contribuição</option>
-                  </select> --}}
-                  <div class="dropdown m-0 p-0" style="height: 30px; width: 622px ">
-                    <button class="btn btn-primary dropdown-toggle p-0 m-0 mb-1 d-flex" style="background-color: white; box-shadow: none; height: 30px; width: 100%" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                      <input type="text" name="situacao_previdenciaria" style="cursor: pointer; width: 100%" id="situacao_previdenciaria" class="form-control " placeholder="{{ __(' Situação previdenciária') }}" value="{{ old('situacao_previdenciaria') }}" readonly >
-                      <span class="caret"></span>
-                    </button>
-                      <div class="dropdown-menu slideIn" style="width: 622px " aria-labelledby="dropdownMenuButton">
-                        <li class="dropdown-item" style="cursor: pointer;">Sem aposentadoria</li>
-                        <li class="dropdown-item" style="cursor: pointer;">Aposentadoria por idade</li>
-                        <li class="dropdown-item" style="cursor: pointer;">Aposentadoria por tempo de contribuição</li>
-                        <li class="dropdown-item" style="cursor: pointer;">Aposentadoria por invalidez</li>
-                        <li class="dropdown-item" style="cursor: pointer;">Aposentadoria especial por tempo de contribuição</li>
-                      </div>
-                  </div>
+                  </select>
+                  
                 </div>
               </div>
   
@@ -485,22 +365,13 @@
                       <i class="material-icons">lock_outline</i>
                     </span>
                   </div>
-                  {{-- <select id="slct" name="cirurgia">
-                      <option value="Sim">Sim</option>
+                  <select id="slct" name="cirurgia" style="cursor: pointer">
+                    <option disabled selected style="#d1d1d1">{{__(' Cirurgia')}}</option>
+                    <option value="Sim">Sim</option>
                       <option value="Não">Não</option>
                   </select>
-                  <textarea name="textarea" class="form-control w-100" id="txtarea" rows="3" placeholder="{{ __(' Descrever') }}"></textarea>  --}}
+                  <textarea name="textarea" class="form-control w-100" id="txtarea" rows="3" placeholder="{{ __(' Descrever') }}"></textarea> 
                   
-                  <div class="dropdown m-0 p-0" style="width: 622px ">
-                    <button class="btn btn-primary dropdown-toggle p-0 m-0 mb-1 d-flex" style="background-color: white; box-shadow: none; height: 30px; width: 100%" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                      <input type="text" name="cirurgia" style="cursor: pointer; width: 603px" id="cirurgia" class="form-control " placeholder="{{ __(' Passou por alguma cirurgia recentemente') }}" value="{{ old('cirurgia') }}" readonly >
-                      <span class="caret"></span>
-                    </button>
-                      <div class="dropdown-menu slideIn"style="width: 622px " aria-labelledby="dropdownMenuButton">
-                        <li class="dropdown-item" style="cursor: pointer;">Sim</li>
-                        <li class="dropdown-item" style="cursor: pointer;">Não</li>
-                      </div>
-                  </div>
                   </div>
               </div>
 
@@ -511,7 +382,8 @@
                       <i class="material-icons">lock_outline</i>
                     </span>
                   </div>
-                  {{-- <select name="doenca_cronica" id="">
+                  <select name="doenca_cronica" style="cursor: pointer">
+                    <option disabled selected style="#d1d1d1">{{__(' Doença Cronica')}}</option>
                     <option value="Diabetes">Diabetes</option>
                     <option value="Pressão Alta">Pressão Alta</option>
                     <option value="Enfisema">Enfisema</option>
@@ -519,23 +391,8 @@
                     <option value="Cardiopatias">Cardiopatias</option>
                     <option value="Dialítico">Dialítico</option>
                     <option value="Outros">Outros</option>
-                  </select>  --}}
-                  <div class="dropdown m-0 p-0" style="height: 30px; width: 622px ">
-                      <button class="btn btn-primary dropdown-toggle p-0 m-0 mb-1 d-flex" id="teste1" style="background-color: white; box-shadow: none; height: 30px; width: 100%" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        <input type="text" name="doenca_cronica" style="cursor: pointer; width: 603px" id="doenca_cronica" class="form-control " placeholder="{{ __(' Portador de doença crônica?') }}" value="{{ old('doenca_cronica') }}" readonly >
-                        <span class="caret"></span>
-                      </button>
-                        <div class="dropdown-menu slideIn" id="teste2" style="width: 622px " aria-labelledby="dropdownMenuButton">
-                          <li class="dropdown-item" style="cursor: pointer;">Diabetes</li>
-                          <li class="dropdown-item" style="cursor: pointer;">Pressão Alta</li>
-                          <li class="dropdown-item" style="cursor: pointer;">Enfisema</li>
-                          <li class="dropdown-item" style="cursor: pointer;">DPOC</li>
-                          <li class="dropdown-item" style="cursor: pointer;">Cardiopatias</li>
-                          <li class="dropdown-item" style="cursor: pointer;">Dialítico</li>
-                          <li class="dropdown-item" style="cursor: pointer;">Outros</li>
-                        </div>
-                    </div>
-                  </div>
+                  </select> 
+                </div>
               </div>
               <div class="bmd-form-groups mt-3">
                 <div class="input-group">
@@ -544,22 +401,12 @@
                       <i class="material-icons">lock_outline</i>
                     </span>
                   </div>
-                  {{-- <select name="doenca_cronica" id="">
+                  <select name="vicio" style="cursor: pointer">
+                    <option disabled selected style="#d1d1d1">{{__(' Vicios')}}</option>
                     <option value="Tabagismo">Tabagismo</option>
                     <option value="Etilista">Etilista</option>
                     <option value="Outros">Outros</option>
-                  </select>  --}}
-                    <div class="dropdown m-0 p-0" style="height: 30px; width: 620px ">
-                      <button class="btn btn-primary dropdown-toggle p-0 m-0 mb-1 d-flex" id="teste1" style="background-color: white; box-shadow: none; height: 30px; width: 100%" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        <input type="text" name="vicio" style="cursor: pointer; width: 603px" id="vicio" class="form-control " placeholder="{{ __(' Vicios') }}" value="{{ old('vicio') }}" readonly >
-                        <span class="caret"></span>
-                      </button>
-                        <div class="dropdown-menu slideIn" id="teste2" style="width: 622px " aria-labelledby="dropdownMenuButton">
-                          <li class="dropdown-item" style="cursor: pointer;" value="1">Tabagismo</li>
-                          <li class="dropdown-item" style="cursor: pointer;" value="2">Etilista</li>
-                          <li class="dropdown-item" style="cursor: pointer;" value="3">Outros</li>
-                        </div>
-                    </div>
+                  </select> 
                   </div>
               </div>
               <div class="bmd-form-groups mt-3">

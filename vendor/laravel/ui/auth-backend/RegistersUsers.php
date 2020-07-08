@@ -71,8 +71,23 @@ trait RegistersUsers
             $data['assinatura_digital'] = $assinaturaPath;
         }
 
-        if ($request->only('tipo_usuario') === 'Profissional') {
+        if ($data['tipo_usuario'] === 'Profissional') {
             $data['is_admin'] = 2;
+            $data['forma_pagamento'] = null;
+        }
+        else {
+            $data['is_admin'] = 0;
+        }
+
+        if ($data['tipo_usuario'] === 'Cliente') {
+            $data['foto'] = null;
+            $data['assinatura_digital'] = null;
+            $data['diploma_certificado'] = null;
+            $data['forma_recebimento'] = null;
+            $data['site'] = null;
+            $data['facebook'] = null;
+            $data['twitter'] = null;
+            $data['linkedin'] = null;
         }
 
         $user = $this->create($data);

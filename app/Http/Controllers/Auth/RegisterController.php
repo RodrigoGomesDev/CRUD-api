@@ -98,6 +98,8 @@ class RegisterController extends UserController
 
             'tipo_usuario' => $data['tipo_usuario'],
 
+            'forma_pagamento' => $data['forma_pagamento'],
+
             'password' => Hash::make($data['password']),
             
             'site' => $data['site'],
@@ -113,7 +115,6 @@ class RegisterController extends UserController
             'cri' => $data['cri'],
             'assinatura_digital' => $data['assinatura_digital'],
 
-
             'diploma_certificado' => $data['diploma_certificado'],
 
             'nomeContato1' => $data['nomeContato1'],
@@ -126,6 +127,8 @@ class RegisterController extends UserController
 
 
             'forma_recebimento' => $data['forma_recebimento'],
+
+            'is_admin' => $data['is_admin']
         ]);
     }
 }

@@ -363,7 +363,7 @@ select option {
                         </span>
                      </div>
                      <select class="form-control" name="forma_pagamento" id="forma_pagamento" style="cursor: pointer; color: #999999">
-                        {{-- <option disabled selected value='null'>{{__(' Forma de pagamento (opcional)')}}</option> --}}
+                        <option disabled selected>{{__(' Forma de pagamento (opcional)')}}</option>
                         <option value="Cartão de Crédito">Cartão de Crédito</option>
                         <option value="PagSeguro">PagSeguro</option>
                         <option value="Cartão de Débito">Cartão de Débito</option>
@@ -918,7 +918,7 @@ select option {
                         </span>
                      </div>
                      <select class="form-control" name="forma_recebimento" style="cursor: pointer">
-                        <option disabled selected style="#d1d1d1">{{__(' Forma de recebimento')}}</option>
+                        <option disabled selected value="null" style="#d1d1d1">{{__(' Forma de recebimento')}}</option>
                         <option value="Cartão de Crédito">Banco</option>
                         <option value="PagSeguro">Agência</option>
                         <option value="Cartão de Débito">Conta</option>
@@ -1074,7 +1074,6 @@ $("#status").change(function() {
     $('#profissional').hide()
     if (this.value == "Profissional")
       $('#profissional').show()
-      // $('#is_admin').val(2)
  });
 
  $("#numeros").change(function() {

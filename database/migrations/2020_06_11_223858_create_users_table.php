@@ -42,15 +42,15 @@ class CreateUsersTable extends Migration
 
             //CLIENTE
             $table->text('password');
-            $table->text('forma_pagamento')->nullable();
+            $table->text('forma_pagamento')->default(null);
             //========================================//
 
             //PROFISSIONAL
             $table->text('site')->nullable();
-            $table->text('facebook');
+            $table->text('facebook')->nullable();
             $table->text('twitter')->nullable();
             $table->text('linkedin')->nullable();
-            $table->text('foto');
+            $table->text('foto')->nullable();
             $table->text('crm')->nullable();
             $table->text('coren')->nullable();
             $table->text('crf')->nullable();
@@ -94,7 +94,7 @@ class CreateUsersTable extends Migration
             $table->text('emailContato2')->nullable();
             $table->text('celContato2')->nullable();
 
-            $table->text('forma_recebimento');
+            $table->text('forma_recebimento')->nullable();
 
             //=============================================//
 
@@ -126,7 +126,7 @@ class CreateUsersTable extends Migration
             $table->text('medicacao')->nullable();
             $table->rememberToken();
             $table->timestamps();
-            $table->boolean('is_admin')->nullable();
+            $table->boolean('is_admin');
             //================================================//
         });
     }
