@@ -67,8 +67,6 @@ class RegisterController extends UserController
             'celular' => ['required'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            // 'forma_pagamento' => ['integer'],
-            // 'forma_recebimento' => ['required_without_all:forma_pagamento']
         ]);
     }
 

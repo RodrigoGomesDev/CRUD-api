@@ -363,7 +363,7 @@ select option {
                         </span>
                      </div>
                      <select class="form-control" name="forma_pagamento" id="forma_pagamento" style="cursor: pointer; color: #999999">
-                        <option disabled selected>{{__(' Forma de pagamento (opcional)')}}</option>
+                        {{-- <option disabled selected value='null'>{{__(' Forma de pagamento (opcional)')}}</option> --}}
                         <option value="Cartão de Crédito">Cartão de Crédito</option>
                         <option value="PagSeguro">PagSeguro</option>
                         <option value="Cartão de Débito">Cartão de Débito</option>
@@ -925,6 +925,50 @@ select option {
                      </select>
                   </div>
               </div>
+
+              <h5 class="mt-3 ml-3">Raio de Atuação</h5>
+
+              <div class="bmd-form-group mt-3">
+               <div class="input-group">
+                  <div class="input-group-prepend">
+                     <span class="input-group-text">
+                        <i class="material-icons">location_on</i>
+                     </span>
+                  </div>
+                  <select class="form-control" name="forma_recebimento" style="cursor: pointer">
+                     <option disabled selected style="#d1d1d1">{{__(' Endereço cadastrado')}}</option>
+                     <option value="5km">5KM</option>
+                     <option value="10km">10KM</option>
+                     <option value="20km">20KM</option>
+                     <option value="30km">30KM</option>
+                     <option value="50km">50KM</option>
+                     <option value="100km">100KM</option>
+                  </select>
+               </div>
+
+               <div class="bmd-form-group mt-3">
+                  <div class="input-group">
+                     <div class="input-group-prepend">
+                        <span class="input-group-text">
+                           <i class="material-icons">location_on</i>
+                        </span>
+                     </div>
+                     <select class="form-control" name="forma_recebimento" style="cursor: pointer">
+                        <option disabled selected style="#d1d1d1">{{__(' Localização Atual')}}</option>
+                        <option value="5km">5KM</option>
+                        <option value="10km">10KM</option>
+                        <option value="20km">20KM</option>
+                        <option value="30km">30KM</option>
+                        <option value="50km">50KM</option>
+                        <option value="100km">100KM</option>
+                     </select>
+                  </div>
+               </div>
+            </div>
+
+
+
+
          </div>
                     
                {{--
@@ -1008,73 +1052,6 @@ select option {
     </div>
   </div>
 </div>
-
-<script>
-//    $('select').change(function(){
-//   var sel = $(this);        
-//   disableThis(sel);       
-//   $('.selectpicker').selectpicker('refresh');
-// });
-
-// function disableThis(sel){
-//   var val = sel.val();
-//   var temSelecionado = false;
-//     if(this.selected){
-//       temSelecionado = true;      
-//       $(this).parent().each(function(){
-//         $(this.options).each(function(){        
-//           if($(this).val() != "Cliente")
-//           {
-//             // $(this).prop("selected", false);
-//             //     $(this).prop("disabled",true);
-//           }
-//         }
-//         )        
-//       })
-//      }
-//     else {
-//        var forma_pagamento = $("#forma_pagamento option:selected");
-//       temSelecionado = false;      
-//       $(this).parent().each(function(){
-//         $(this.options).each(function(){        
-//           if($(this).val() != "Profissional")
-//           {
-//             $(forma_pagamento).val('').selectpicker('refresh');
-//             // $(this).prop("selected", false);
-//             //     $(this).prop("disabled",true);
-//           }
-//         }
-//         )        
-//       })
-//     }
-//    $(sel).children().each(function(){
-//      var thisCliente = false;
-//      if($(this).val() == "Cliente" && $(this).prop("selected"))
-//        thisCliente = true;
-//   	if($(this).val() != "Cliente" && thisCliente)
-//       $(this).prop("disabled",true);
-//   });
-  
-//   $(sel).children().each(function(){
-//      var thisProfissional = false;
-//      if($(this).val() == "Profissional" && $(this).prop("selected"))
-//        thisProfissional = true;
-//   	if($(this).val() != "Profissional" && thisProfissional)
-//       $(this).prop("disabled",true);
-//   });
-  
-//   $("select").children().each(function(){
-//     if($(this).val() == "Cliente" && temSelecionado){
-//       $(this).prop("disabled",true);      
-//     } 
-//   })
-//   $("select").children().each(function(){
-//     if($(this).val() == "Profissional" && temSelecionado){
-//       $(this).prop("disabled",true);      
-//     } 
-//   })
-// }
-</script>
 
 <script>
 

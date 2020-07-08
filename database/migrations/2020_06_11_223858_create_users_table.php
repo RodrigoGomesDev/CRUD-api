@@ -42,7 +42,7 @@ class CreateUsersTable extends Migration
 
             //CLIENTE
             $table->text('password');
-            // $table->integer('forma_pagamento')->nullable()->default(null);
+            $table->text('forma_pagamento')->nullable();
             //========================================//
 
             //PROFISSIONAL
